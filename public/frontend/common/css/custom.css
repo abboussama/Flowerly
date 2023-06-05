@@ -183,7 +183,7 @@ html:not([dir="rtl"])
 }
 
 #toast-container > .toast-success .toast-close-button {
-    background-color: #20b250 !important;
+    background-color: #20b254 !important;
     -webkit-box-shadow: 0 0.125rem 0.3rem -0.0625rem rgba(0, 0, 0, 0.1),
         0 0.275rem 0.75rem -0.0625rem rgba(249, 250, 251, 0.06) !important;
     box-shadow: 0 0.125rem 0.3rem -0.0625rem rgba(0, 0, 0, 0.1),

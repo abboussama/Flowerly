@@ -57,40 +57,40 @@
                         </li>
                     @endcan
 
-                    @can('brands')
+                    {{-- @can('brands')
                         <li class="{{ areActiveRoutes(['admin.brands.index', 'admin.brands.edit'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.brands.index') }}"
                                 class="{{ areActiveRoutes(['admin.brands.index', 'admin.brands.edit']) }}">{{ localize('All Brands') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
-                    @can('units')
+                    {{-- @can('units')
                         <li class="{{ areActiveRoutes(['admin.units.index', 'admin.units.edit'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.units.index') }}"
                                 class="{{ areActiveRoutes(['admin.units.index']) }}">{{ localize('All Units') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
-                    @can('taxes')
+                    {{-- @can('taxes')
                         <li class="{{ areActiveRoutes(['admin.taxes.index', 'admin.taxes.edit'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.taxes.index') }}"
                                 class="{{ areActiveRoutes(['admin.taxes.index']) }}">{{ localize('All Taxes') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
                 </ul>
             </div>
         </li>
     @endcan
 
     <!-- pos -->
-    @canany(['pos'])
+    {{-- @canany(['pos'])
         <li class="side-nav-item nav-item">
             <a href="{{ route('admin.pos.index') }}" class="side-nav-link">
                 <span class="tt-nav-link-icon"><i data-feather="table"></i></span>
                 <span class="tt-nav-link-text">{{ localize('Pos System') }}</span>
             </a>
         </li>
-    @endcan
+    @endcan --}}
 
     <!-- orders -->
     @can('orders')
@@ -164,12 +164,12 @@
             <div class="collapse {{ areActiveRoutes($refundsActiveRoutes, 'show') }}" id="manageRefunds">
                 <ul class="side-nav-second-level">
 
-                    @can('refund_configurations')
+                    {{-- @can('refund_configurations')
                         <li class="{{ areActiveRoutes(['admin.refund.configurations'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.refund.configurations') }}"
                                 class="{{ areActiveRoutes(['admin.refund.configurations']) }}">{{ localize('Refund Configurations') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
                     @can('refund_requests')
                         <li class="{{ areActiveRoutes(['admin.refund.requests'], 'tt-menu-item-active') }}">
@@ -240,14 +240,14 @@
     </li>
 
     <!-- customers -->
-    @can('customers')
+    {{-- @can('customers')
         <li class="side-nav-item nav-item">
             <a href="{{ route('admin.customers.index') }}" class="side-nav-link">
                 <span class="tt-nav-link-icon"> <i data-feather="users"></i></span>
                 <span class="tt-nav-link-text">{{ localize('Customers') }}</span>
             </a>
         </li>
-    @endcan
+    @endcan --}}
 
     <!-- staffs -->
     @can('staffs')
@@ -266,7 +266,7 @@
     </li>
 
     <!-- tags -->
-    @php
+    {{-- @php
         $tagsActiveRoutes = ['admin.tags.index', 'admin.tags.edit'];
     @endphp
     @can('tags')
@@ -276,7 +276,7 @@
                 <span class="tt-nav-link-text">{{ localize('Tags') }}</span>
             </a>
         </li>
-    @endcan
+    @endcan --}}
 
     <!-- pages -->
     @php
@@ -589,7 +589,7 @@
 
 
     <!-- Roles & Permission -->
-    @php
+    {{-- @php
         $rolesActiveRoutes = ['admin.roles.index', 'admin.roles.create', 'admin.roles.edit'];
     @endphp
     @can('roles_and_permissions')
@@ -599,7 +599,7 @@
                 <span class="tt-nav-link-text">{{ localize('Roles & Permissions') }}</span>
             </a>
         </li>
-    @endcan
+    @endcan --}}
 
 
     <!-- system settings -->

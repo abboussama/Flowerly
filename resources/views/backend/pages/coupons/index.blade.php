@@ -59,7 +59,7 @@
                         <table class="table tt-footable border-top" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center">{{ localize('S/L') }}</th>
+                                    <th class="text-center">{{ localize('ID') }}</th>
                                     <th>{{ localize('Code') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Discount Amount') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Start Date') }}</th>

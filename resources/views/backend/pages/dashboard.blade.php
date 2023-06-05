@@ -286,7 +286,7 @@
                                                     <div class="d-flex align-items-center">
                                                         <div class="avatar avatar-md">
                                                             <img class="rounded-circle"
-                                                                src="{{ uploadedAsset(optional($order->user)->avatar) }}"
+                                                                src="https://4.bp.blogspot.com/-8N3690p7xak/XHFwNPenLaI/AAAAAAAAAwM/jF5KDptTj0cf4bGsjpZIp94cObCFu0FXwCLcBGAs/s1600/PLT-FL-DS-4.jpg"
                                                                 alt="avatar"
                                                                 onerror="this.onerror=null;this.src='{{ staticAsset('backend/assets/img/placeholder-thumb.png') }}';" />
                                                         </div>

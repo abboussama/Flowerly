@@ -79,7 +79,7 @@
                         <table class="table tt-footable border-top align-middle" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center" width="7%">{{ localize('S/L') }}</th>
+                                    <th class="text-center" width="7%">{{ localize('ID') }}</th>
                                     <th width="10%">{{ localize('Name') }}</th>
                                     <th width="15%">{{ localize('Logistic') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Cities') }}</th>

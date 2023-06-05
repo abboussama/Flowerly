@@ -16,14 +16,14 @@
                 <div class="side-nav-link bg-secondary-subtle mx-2 rounded-3 px-2">
                     <div class="tt-user-avatar lh-1">
                         <div class="avatar avatar-md status-online">
-                            <img class="rounded-circle" src="{{ uploadedAsset(auth()->user()->avatar) }}"
+                            <img class="rounded-circle" src="https://4.bp.blogspot.com/-8N3690p7xak/XHFwNPenLaI/AAAAAAAAAwM/jF5KDptTj0cf4bGsjpZIp94cObCFu0FXwCLcBGAs/s1600/PLT-FL-DS-4.jpg"
                                 alt="avatar">
                         </div>
                     </div>
                     <div class="tt-nav-link-text ms-2">
                         <h6 class="mb-0 lh-1 tt-line-clamp tt-clamp-1">{{ auth()->user()->name }}</h6>
                         <span
-                            class="text-muted fs-sm">{{ auth()->user()->role ? auth()->user()->role->name : localize('Super Admin') }}</span>
+                            class="text-muted fs-sm">{{ auth()->user()->role ? auth()->user()->role->name : localize('PFE Member') }}</span>
                     </div>
                 </div>
             </li>

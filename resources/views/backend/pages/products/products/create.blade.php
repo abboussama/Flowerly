@@ -123,7 +123,7 @@
                         <!--product category end-->
 
                         <!--product tags start-->
-                        <div class="card mb-4" id="section-tags">
+                        {{-- <div class="card mb-4" id="section-tags">
                             <div class="card-body">
                                 <h5 class="mb-4">{{ localize('Product Tags') }}</h5>
                                 <div class="mb-4">
@@ -136,14 +136,14 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--product tags end-->
 
                         <!--product brand and unit start-->
                         <div class="row" id="section-4">
                             <div class="col-lg-6">
                                 <div class="card mb-4">
-                                    <div class="card-body">
+                                    {{-- <div class="card-body">
                                         <h5 class="mb-4">{{ localize('Product Brand') }}</h5>
                                         <div class="tt-select-brand">
                                             <select class="select2 form-control" id="selectBrand" name="brand_id">
@@ -155,12 +155,12 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="card mb-4">
-                                    <div class="card-body">
+                                    {{-- <div class="card-body">
                                         <h5 class="mb-4">{{ localize('Product Unit') }}</h5>
                                         <div class="tt-select-brand">
                                             <select class="select2 form-control" id="selectUnit" name="unit_id">
@@ -172,7 +172,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -466,7 +466,7 @@
                         <!--shipping configuration end-->
 
                         <!--product tax start-->
-                        <div class="card mb-4" id="section-8">
+                        {{-- <div class="card mb-4" id="section-8">
                             <div class="card-body">
                                 <h5 class="mb-4">{{ localize('Product Taxes') }} ({{ localize('Default 0%') }})</h5>
                                 <div class="row g-3">
@@ -492,7 +492,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--product tax end-->
 
                         <!--product sell target & status start-->
@@ -582,49 +582,7 @@
                     </form>
                 </div>
 
-                <!--right sidebar-->
-                <div class="col-xl-3 order-1 order-md-1 order-lg-1 order-xl-2">
-                    <div class="card tt-sticky-sidebar">
-                        <div class="card-body">
-                            <h5 class="mb-4">{{ localize('Product Information') }}</h5>
-                            <div class="tt-vertical-step">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#section-1" class="active">{{ localize('Basic Information') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-2">{{ localize('Product Images') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-3">{{ localize('Category') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-tags">{{ localize('Product tags') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-4">{{ localize('Product Brand & Unit') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-5">{{ localize('Price, SKU, Stock & Variations') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-6">{{ localize('Product Discount') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-8">{{ localize('Product Taxes') }}</a>
-                                    </li>
 
-                                    <li>
-                                        <a href="#section-9">{{ localize('Sell Target and Status') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section-10">{{ localize('SEO Meta Options') }}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
