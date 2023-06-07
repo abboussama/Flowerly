@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2023 at 10:58 PM
+-- Generation Time: Jun 07, 2023 at 06:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -188,13 +188,6 @@ CREATE TABLE `carts` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `carts`
---
-
-INSERT INTO `carts` (`id`, `user_id`, `guest_user_id`, `location_id`, `product_variation_id`, `qty`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 2, NULL, 1, 6, 1, '2023-06-07 17:23:09', '2023-06-07 17:23:09', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -225,17 +218,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `parent_id`, `level`, `sorting_order_level`, `thumbnail_image`, `icon`, `is_featured`, `is_top`, `total_sale_count`, `meta_title`, `meta_image`, `meta_description`, `created_at`, `updated_at`) VALUES
-(2, 'Sympathy', 'sympathy-ko6ex', 0, 0, 2, '10', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:05:53', '2023-06-07 16:06:27'),
-(3, 'Just Because', 'just-because-d7cc4', 0, 0, 1, '11', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:07:26', '2023-06-07 16:07:26'),
-(4, 'Anniversary', 'anniversary-0qy17', 0, 0, 0, '12', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:08:00', '2023-06-07 16:08:00'),
-(5, 'Thank You', 'thank-you-Si3Sp', 0, 0, 0, '13', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:08:42', '2023-06-07 16:08:42'),
-(6, 'Get Well', 'get-well-QPnEp', 0, 0, 0, '14', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:09:24', '2023-06-07 16:09:24'),
-(7, 'Weddings', 'weddings-ydhPG', 0, 0, 0, '15', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:10:05', '2023-06-07 16:10:05'),
-(8, 'Valentine\'s Day', 'valentines-day-2U3iK', 0, 0, 0, '16', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:10:37', '2023-06-07 16:10:37'),
-(9, 'Mother\'s Day', 'mothers-day-Ydy1A', 0, 0, 0, '17', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:12:56', '2023-06-07 16:12:56'),
-(10, 'New Baby', 'new-baby-Q9UEj', 0, 0, 0, '18', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:14:02', '2023-06-07 16:14:02'),
-(11, 'Apologies', 'apologies-LS7R4', 0, 0, 0, '19', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:14:58', '2023-06-07 16:14:58'),
-(12, 'Retirement', 'retirement-QJlIY', 0, 0, 0, '20', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:17:23', '2023-06-07 16:17:23');
+(1, 'marriage', 'marriage-y4fq0', 0, 0, 0, NULL, NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 13:43:03', '2023-06-07 13:43:03');
 
 -- --------------------------------------------------------
 
@@ -277,18 +260,7 @@ CREATE TABLE `category_localizations` (
 --
 
 INSERT INTO `category_localizations` (`id`, `category_id`, `lang_key`, `name`, `thumbnail_image`, `meta_title`, `meta_image`, `meta_description`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'en', 'marriage', NULL, NULL, NULL, NULL, '2023-06-07 13:43:03', '2023-06-07 13:43:03', NULL),
-(2, 2, 'en', 'Sympathy', '10', NULL, NULL, NULL, '2023-06-07 16:05:53', '2023-06-07 16:05:53', NULL),
-(3, 3, 'en', 'Just Because', '11', NULL, NULL, NULL, '2023-06-07 16:07:26', '2023-06-07 16:07:26', NULL),
-(4, 4, 'en', 'Anniversary', '12', NULL, NULL, NULL, '2023-06-07 16:08:00', '2023-06-07 16:08:00', NULL),
-(5, 5, 'en', 'Thank You', '13', NULL, NULL, NULL, '2023-06-07 16:08:42', '2023-06-07 16:08:42', NULL),
-(6, 6, 'en', 'Get Well', '14', NULL, NULL, NULL, '2023-06-07 16:09:24', '2023-06-07 16:09:24', NULL),
-(7, 7, 'en', 'Weddings', '15', NULL, NULL, NULL, '2023-06-07 16:10:05', '2023-06-07 16:10:05', NULL),
-(8, 8, 'en', 'Valentine\'s Day', '16', NULL, NULL, NULL, '2023-06-07 16:10:37', '2023-06-07 16:10:37', NULL),
-(9, 9, 'en', 'Mother\'s Day', '17', NULL, NULL, NULL, '2023-06-07 16:12:56', '2023-06-07 16:12:56', NULL),
-(10, 10, 'en', 'New Baby', '18', NULL, NULL, NULL, '2023-06-07 16:14:02', '2023-06-07 16:14:02', NULL),
-(11, 11, 'en', 'Apologies', '19', NULL, NULL, NULL, '2023-06-07 16:14:58', '2023-06-07 16:14:58', NULL),
-(12, 12, 'en', 'Retirement', '20', NULL, NULL, NULL, '2023-06-07 16:17:23', '2023-06-07 16:17:23', NULL);
+(1, 1, 'en', 'marriage', NULL, NULL, NULL, NULL, '2023-06-07 13:43:03', '2023-06-07 13:43:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -872,161 +844,7 @@ INSERT INTO `localizations` (`id`, `lang_key`, `t_key`, `t_value`, `created_at`,
 (377, 'en', 'enter_verification_code', 'Enter verification code', '2023-06-07 15:26:36', '2023-06-07 15:26:36', NULL),
 (378, 'en', 'verify', 'Verify', '2023-06-07 15:26:36', '2023-06-07 15:26:36', NULL),
 (379, 'en', 'dont_have_get_any_code', 'Don\'t have get any code?', '2023-06-07 15:26:36', '2023-06-07 15:26:36', NULL),
-(380, 'en', 'resend', 'Resend', '2023-06-07 15:26:36', '2023-06-07 15:26:36', NULL),
-(381, 'en', 'we_have_listed_4_total_products', 'We have listed 4 total products.', '2023-06-07 15:39:51', '2023-06-07 15:39:51', NULL),
-(382, 'en', 'additional_information', 'Additional Information', '2023-06-07 15:40:40', '2023-06-07 15:40:40', NULL),
-(383, 'en', 'not_available', 'Not Available', '2023-06-07 15:40:40', '2023-06-07 15:40:40', NULL),
-(384, 'en', 'you_may_be_interested', 'You may be interested', '2023-06-07 15:40:40', '2023-06-07 15:40:40', NULL),
-(385, 'en', 'product_has_been_updated_successfully', 'Product has been updated successfully', '2023-06-07 15:44:55', '2023-06-07 15:44:55', NULL),
-(386, 'en', 'search_now', 'Search Now', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(387, 'en', 'filter_by_price', 'Filter by Price', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(388, 'en', 'filter', 'Filter', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(389, 'en', 'show', 'Show', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(390, 'en', 'sort_by', 'Sort by', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(391, 'en', 'newest_first', 'Newest First', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(392, 'en', 'off', 'Off', '2023-06-07 15:45:27', '2023-06-07 15:45:27', NULL),
-(393, 'en', 'category_has_been_deleted_successfully', 'Category has been deleted successfully', '2023-06-07 15:51:06', '2023-06-07 15:51:06', NULL),
-(394, 'en', 'update_category', 'Update Category', '2023-06-07 16:06:09', '2023-06-07 16:06:09', NULL),
-(395, 'en', 'category_has_been_updated_successfully', 'Category has been updated successfully', '2023-06-07 16:06:27', '2023-06-07 16:06:27', NULL),
-(396, 'en', 'website_homepage_configuration', 'Website Homepage Configuration', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(397, 'en', 'hero_section_configuration', 'Hero Section Configuration', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(398, 'en', 'id', 'ID', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(399, 'en', 'image', 'Image', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(400, 'en', 'sub_title', 'Sub Title', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(401, 'en', 'title', 'Title', '2023-06-07 16:17:41', '2023-06-07 16:17:41', NULL),
-(402, 'en', 'text', 'Text', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(403, 'en', 'add_new_slider', 'Add New Slider', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(404, 'en', 'type_sub_title', 'Type sub title', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(405, 'en', 'type_title', 'Type title', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(406, 'en', 'type_text', 'Type text', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(407, 'en', 'link', 'Link', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(408, 'en', 'slider_image', 'Slider Image', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(409, 'en', 'choose_slider_image', 'Choose Slider Image', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(410, 'en', 'save_slider', 'Save Slider', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(411, 'en', 'homepage_configuration', 'Homepage Configuration', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(412, 'en', 'hero_section', 'Hero Section', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(413, 'en', 'top_categories', 'Top Categories', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(414, 'en', 'featured_products', 'Featured Products', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(415, 'en', 'banner_section_one', 'Banner Section One', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(416, 'en', 'banner_section_two', 'Banner Section Two', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(417, 'en', 'client_feedback', 'Client Feedback', '2023-06-07 16:17:42', '2023-06-07 16:17:42', NULL),
-(418, 'en', 'about', 'About', '2023-06-07 16:19:56', '2023-06-07 16:19:56', NULL),
-(419, 'en', 'our_mission', 'Our Mission', '2023-06-07 16:19:56', '2023-06-07 16:19:56', NULL),
-(420, 'en', 'our_vision', 'Our Vision', '2023-06-07 16:19:56', '2023-06-07 16:19:56', NULL),
-(421, 'en', 'the_most_popular_brands', 'The Most Popular Brands', '2023-06-07 16:19:56', '2023-06-07 16:19:56', NULL),
-(422, 'en', 'update_slider', 'Update Slider', '2023-06-07 16:25:37', '2023-06-07 16:25:37', NULL),
-(423, 'en', 'slider_updated_successfully', 'Slider updated successfully', '2023-06-07 16:28:57', '2023-06-07 16:28:57', NULL),
-(424, 'en', 'intro_section', 'Intro Section', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(425, 'en', 'mission', 'Mission', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(426, 'en', 'vision', 'Vision', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(427, 'en', 'quote', 'Quote', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(428, 'en', 'quote_by', 'Quote By', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(429, 'en', 'type_name_of_the_user', 'Type name of the user', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(430, 'en', 'choose_banner_image', 'Choose Banner Image', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(431, 'en', 'about_us_configuration', 'About Us Configuration', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(432, 'en', 'popular_brands', 'Popular Brands', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(433, 'en', 'features_section', 'Features Section', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(434, 'en', 'why_choose_us', 'Why Choose Us', '2023-06-07 16:34:55', '2023-06-07 16:34:55', NULL),
-(435, 'en', 'settings_updated_successfully', 'Settings updated successfully', '2023-06-07 16:39:45', '2023-06-07 16:39:45', NULL),
-(436, 'en', 'website_header_configuration', 'Website Header Configuration', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(437, 'en', 'topbar_information', 'Topbar Information', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(438, 'en', 'welcome_text', 'Welcome Text', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(439, 'en', 'welcome_to_our_organic_store', 'Welcome to our organic store', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(440, 'en', 'topbar_email', 'Topbar Email', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(441, 'en', 'grostoresupportcom', 'grostore@support.com', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(442, 'en', 'topbar_location', 'Topbar Location', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(443, 'en', 'washington_new_york_usa__254230', 'Washington, New York, USA - 254230', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(444, 'en', 'facebook_link', 'Facebook Link', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(445, 'en', 'twitter_link', 'Twitter Link', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(446, 'en', 'linkedin_link', 'LinkedIn Link', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(447, 'en', 'youtube_link', 'Youtube Link', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(448, 'en', 'navbar_information', 'Navbar Information', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(449, 'en', 'navbar_logo', 'Navbar Logo', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(450, 'en', 'choose_navbar_logo', 'Choose Navbar Logo', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(451, 'en', 'select_pages', 'Select pages', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(452, 'en', 'contact_number', 'Contact Number', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(453, 'en', 'header_configuration', 'Header Configuration', '2023-06-07 16:41:15', '2023-06-07 16:41:15', NULL),
-(454, 'en', 'website_footer_configuration', 'Website Footer Configuration', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(455, 'en', 'select_quick_link_pages', 'Select quick link pages', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(456, 'en', 'copyright_text', 'Copyright Text', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(457, 'en', 'footer_logo', 'Footer Logo', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(458, 'en', 'choose_footer_logo', 'Choose Footer Logo', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(459, 'en', 'accepted_payment', 'Accepted Payment', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(460, 'en', 'choose_accepted_payment_banner', 'Choose Accepted Payment Banner', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(461, 'en', 'footer_configuration', 'Footer Configuration', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(462, 'en', 'general_information', 'General Information', '2023-06-07 16:46:10', '2023-06-07 16:46:10', NULL),
-(463, 'en', 'product_page_configuration', 'Product Page Configuration', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(464, 'en', 'product_details_widget', 'Product Details Widget', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(465, 'en', 'add_new_widget', 'Add New Widget', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(466, 'en', 'icon', 'Icon', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(467, 'en', 'choose_icon_image', 'Choose Icon Image', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(468, 'en', 'save_widget', 'Save Widget', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(469, 'en', 'add_promotional_banner', 'Add Promotional Banner', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(470, 'en', 'type_link', 'Type link', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(471, 'en', 'promotional_banner', 'Promotional Banner', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(472, 'en', 'choose_promotional_banner', 'Choose Promotional Banner', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(473, 'en', 'save_banner', 'Save Banner', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(474, 'en', 'product_details_page', 'Product Details Page', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(475, 'en', 'widgets', 'Widgets', '2023-06-07 16:48:26', '2023-06-07 16:48:26', NULL),
-(476, 'en', 'products_listing', 'Products Listing', '2023-06-07 16:48:45', '2023-06-07 16:48:45', NULL),
-(477, 'en', 'save', 'Save', '2023-06-07 16:48:46', '2023-06-07 16:48:46', NULL),
-(478, 'en', 'product_added_to_your_cart', 'Product added to your cart', '2023-06-07 17:23:09', '2023-06-07 17:23:09', NULL),
-(479, 'en', 'unit_price', 'Unit Price', '2023-06-07 17:23:09', '2023-06-07 17:23:09', NULL),
-(480, 'en', 'total_price', 'Total Price', '2023-06-07 17:23:09', '2023-06-07 17:23:09', NULL),
-(481, 'en', 'please_login_as_customer_to_continue', 'Please login as customer to continue', '2023-06-07 17:23:15', '2023-06-07 17:23:15', NULL),
-(482, 'en', 'issue', 'Issue', '2023-06-07 18:23:22', '2023-06-07 18:23:22', NULL),
-(483, 'en', 'message', 'Message', '2023-06-07 18:23:22', '2023-06-07 18:23:22', NULL),
-(484, 'en', 'paid', 'Paid', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(485, 'en', 'unpaid', 'Unpaid', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(486, 'en', 'order_placed', 'Order Placed', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(487, 'en', 'pending', 'Pending', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(488, 'en', 'processing', 'Processing', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(489, 'en', 'delivered', 'Delivered', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(490, 'en', 'cancelled', 'Cancelled', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(491, 'en', 'total_amount', 'Total Amount', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(492, 'en', 'amount', 'Amount', '2023-06-07 18:23:29', '2023-06-07 18:23:29', NULL),
-(493, 'en', 'sales_report', 'Sales Report', '2023-06-07 18:23:36', '2023-06-07 18:23:36', NULL),
-(494, 'en', 'product_sales_report', 'Product Sales Report', '2023-06-07 18:23:36', '2023-06-07 18:23:36', NULL),
-(495, 'en', 'high__low', 'High ⟶ Low', '2023-06-07 18:23:36', '2023-06-07 18:23:36', NULL),
-(496, 'en', 'low__high', 'Low ⟶ High', '2023-06-07 18:23:36', '2023-06-07 18:23:36', NULL),
-(497, 'en', 'total_sales', 'Total Sales', '2023-06-07 18:23:36', '2023-06-07 18:23:36', NULL);
-INSERT INTO `localizations` (`id`, `lang_key`, `t_key`, `t_value`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(498, 'en', 'category_sales_report', 'Category Sales Report', '2023-06-07 18:23:59', '2023-06-07 18:23:59', NULL),
-(499, 'en', 'category_wise_sales_report', 'Category Wise Sales Report', '2023-06-07 18:23:59', '2023-06-07 18:23:59', NULL),
-(500, 'en', 'amount_wise_sales_report', 'Amount Wise Sales Report', '2023-06-07 18:24:06', '2023-06-07 18:24:06', NULL),
-(501, 'en', 'date', 'Date', '2023-06-07 18:24:06', '2023-06-07 18:24:06', NULL),
-(502, 'en', 'delivery_status_wise_report', 'Delivery Status Wise Report', '2023-06-07 18:24:12', '2023-06-07 18:24:12', NULL),
-(503, 'en', 'add_campaign', 'Add Campaign', '2023-06-07 18:25:13', '2023-06-07 18:25:13', NULL),
-(504, 'en', 'start_date', 'Start Date', '2023-06-07 18:25:13', '2023-06-07 18:25:13', NULL),
-(505, 'en', 'end_date', 'End Date', '2023-06-07 18:25:13', '2023-06-07 18:25:13', NULL),
-(506, 'en', 'add_coupon', 'Add Coupon', '2023-06-07 18:25:18', '2023-06-07 18:25:18', NULL),
-(507, 'en', 'send_bulk_emails', 'Send Bulk Emails', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(508, 'en', 'select_users', 'Select Users', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(509, 'en', 'select_subscribers', 'Select Subscribers', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(510, 'en', 'email_subject', 'Email Subject', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(511, 'en', 'email_body', 'Email Body', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(512, 'en', 'send_emails', 'Send Emails', '2023-06-07 18:27:17', '2023-06-07 18:27:17', NULL),
-(513, 'en', 'subscribed_users', 'Subscribed users', '2023-06-07 18:27:20', '2023-06-07 18:27:20', NULL),
-(514, 'en', 'suibscribed_at', 'Suibscribed At', '2023-06-07 18:27:20', '2023-06-07 18:27:20', NULL),
-(515, 'en', 'file_has_been_deleted_successfully', 'File has been deleted successfully', '2023-06-07 18:27:43', '2023-06-07 18:27:43', NULL),
-(516, 'en', 'we_have_listed_14_total_products', 'We have listed 14 total products.', '2023-06-07 18:38:44', '2023-06-07 18:38:44', NULL),
-(517, 'en', 'conatct_us', 'Conatct Us', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(518, 'en', 'get_in_touch', 'Get In Touch', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(519, 'en', 'contact_details', 'Contact Details', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(520, 'en', 'office_address', 'Office Address', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(521, 'en', 'emergency_call', 'Emergency Call', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(522, 'en', 'general_communicationl', 'General Communicationl', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(523, 'en', 'find_us_on', 'Find us on', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(524, 'en', 'need_help_send_message', 'Need Help? Send Message', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(525, 'en', 'your_name', 'Your name', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(526, 'en', 'you_email', 'You email', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(527, 'en', 'you_phone', 'You phone', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(528, 'en', 'delivery_problem', 'Delivery Problem', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(529, 'en', 'customer_service', 'Customer Service', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(530, 'en', 'others_service', 'Others Service', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(531, 'en', 'messages', 'Messages', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(532, 'en', 'write_your_message', 'Write your message', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL),
-(533, 'en', 'send_message', 'Send Message', '2023-06-07 18:47:21', '2023-06-07 18:47:21', NULL);
+(380, 'en', 'resend', 'Resend', '2023-06-07 15:26:36', '2023-06-07 15:26:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -1138,34 +956,7 @@ INSERT INTO `media_managers` (`id`, `user_id`, `media_file`, `media_size`, `medi
 (5, 1, 'uploads/media/yqqPV512Gk5DMpvCj2UllKrCl52bam3yD6QvfiPP.png', 753, 'image', 'favicon.png', 'png', '2023-03-12 04:08:14', '2023-03-12 04:08:14', NULL),
 (6, 1, 'uploads/media/dtkoInw3SD3IF3Q2I1jFtEDiE96mDD46RHB9RdxN.jpg', 6502, 'image', '1.jpg', 'jpg', '2023-03-12 04:08:43', '2023-03-12 04:08:43', NULL),
 (7, 1, 'uploads/media/YTDQREN5aLauUwo7rkUoKSafGhfzqUYpIiM33zfc.jpg', 513716, 'image', 'back1.jpeg', 'jpeg', '2023-06-07 13:42:35', '2023-06-07 13:42:35', NULL),
-(8, 1, 'uploads/media/skiYlwShQVyUK3Rmb446qzNURuH2KtsfIHnIGd4Y.png', 392247, 'image', 'back1-removebg-preview.png', 'png', '2023-06-07 15:22:19', '2023-06-07 15:22:19', NULL),
-(10, 2, 'uploads/media/2zxziML7uCgaPOUs5YcDBV31sOkorM0oXAbmxImO.jpg', 282363, 'image', 'Sympathy.jpeg', 'jpeg', '2023-06-07 16:05:46', '2023-06-07 16:05:46', NULL),
-(11, 2, 'uploads/media/pCtcTaAHI8fM5jSq3Mae9myTrgBE0xrb3pt4yhK4.jpg', 414603, 'image', 'just_because.png', 'png', '2023-06-07 16:07:13', '2023-06-07 16:07:13', NULL),
-(12, 2, 'uploads/media/kccubnuaJiXHJIJZLu0BJ4YHKZ6u1Wpw4ASHD35F.jpg', 434151, 'image', 'Anniversary.jpeg', 'jpeg', '2023-06-07 16:07:54', '2023-06-07 16:07:54', NULL),
-(13, 2, 'uploads/media/18y7WhVZcy2TbWI1fxxjyhmPXepKTOCp1AE8YY8c.jpg', 115218, 'image', 'Thank You.jpeg', 'jpeg', '2023-06-07 16:08:29', '2023-06-07 16:08:29', NULL),
-(14, 2, 'uploads/media/cIo1BZ2plNEeVzdxneR4rCUPW6RsRdmdgrUZ94C8.jpg', 88451, 'image', 'Get Well.jpeg', 'jpeg', '2023-06-07 16:09:12', '2023-06-07 16:09:12', NULL),
-(15, 2, 'uploads/media/lGkjPh9cQI2BvIwLViDDpJg98ZRa04ebzqT8byY6.jpg', 239221, 'image', 'Weddings.jpeg', 'jpeg', '2023-06-07 16:09:58', '2023-06-07 16:09:58', NULL),
-(16, 2, 'uploads/media/28fMpciekFtvAArIYQiLVJwXACRZV2K79WsnAnqb.jpg', 134213, 'image', 'Valentine\'s Day.jpeg', 'jpeg', '2023-06-07 16:10:29', '2023-06-07 16:10:29', NULL),
-(17, 2, 'uploads/media/DQ3epvc4dRRiZ0oSRa1CjU7iVJZ3aFJjnbnHoJ4l.jpg', 342426, 'image', 'Mother\'s Day.jpeg', 'jpeg', '2023-06-07 16:12:50', '2023-06-07 16:12:50', NULL),
-(18, 2, 'uploads/media/ul0XPmRcF7vEk1xnT2KjFQWJKvHvIQ2aYFxHsRNo.jpg', 381292, 'image', 'New Baby.jpeg', 'jpeg', '2023-06-07 16:13:55', '2023-06-07 16:13:55', NULL),
-(19, 2, 'uploads/media/WAKZsOGdlTOXCZkhX1MsqH4242nCkJNeBpg0m7Ta.jpg', 31265, 'image', 'Apologies.jpeg', 'jpeg', '2023-06-07 16:14:44', '2023-06-07 16:14:44', NULL),
-(20, 2, 'uploads/media/zefeVj0I5gLsYHibkniMVnxjjiJv8Skw1nrjeh3L.jpg', 396222, 'image', 'Retirement.jpeg', 'jpeg', '2023-06-07 16:17:11', '2023-06-07 16:17:11', NULL),
-(21, 2, 'uploads/media/wAcxnNmpZVt34E92xq8r3AHJFz6qCqZ1x6658c2g.jpg', 857366, 'image', 'pexels-jill-wellington-42257.jpg', 'jpg', '2023-06-07 16:26:00', '2023-06-07 16:26:00', NULL),
-(22, 2, 'uploads/media/VPB7o7YvNNURVGOtF6jNPJWHC10oOPWs0nk116TT.png', 313880, 'image', 'Exuberance_Over_Deluxe0718_copy-removebg-preview.png', 'png', '2023-06-07 16:28:15', '2023-06-07 16:28:15', NULL),
-(23, 2, 'uploads/media/l1R65DL26Q25DRzvn5UmSd9ridfauIxFFwBx1rtl.jpg', 134016, 'image', 'Rose Garden Bouquet.png', 'png', '2023-06-07 16:50:35', '2023-06-07 16:50:35', NULL),
-(24, 2, 'uploads/media/CqOdOlNowcaXvetcOPJk5jliOjnDXCOIUTF9eGa2.jpg', 1622276, 'image', 'angelina-jollivet-mNEpmNiFdXs-unsplash.jpg', 'jpg', '2023-06-07 17:00:27', '2023-06-07 17:00:27', NULL),
-(25, 2, 'uploads/media/P9CoHdYetH8SG8feSO9YElN3LWx1PsJkp18FlnWs.jpg', 4008275, 'image', 'hai-tran-tt_HFMMae1w-unsplash.jpg', 'jpg', '2023-06-07 17:04:27', '2023-06-07 17:04:27', NULL),
-(26, 2, 'uploads/media/G2In2rjJiNpP8rqFdHPZDxKwiY1ZCWLepQDbDDnS.jpg', 2508318, 'image', 'demi-he-hPcxvCecdPI-unsplash.jpg', 'jpg', '2023-06-07 17:08:08', '2023-06-07 17:08:08', NULL),
-(27, 2, 'uploads/media/H0EdZJf69ah3BRq1yrvym3KTSY1GRRuPH7TxGZiM.jpg', 2856732, 'image', 'amanda-frank-kiQqG20_U-c-unsplash.jpg', 'jpg', '2023-06-07 17:15:18', '2023-06-07 17:15:18', NULL),
-(28, 2, 'uploads/media/gq8mf4D45q1ZJIrm1iEMfxTCHcHkjQRrZSO5oFd6.jpg', 1399790, 'image', 'marcella-marcella-hn6CC9aosEk-unsplash.jpg', 'jpg', '2023-06-07 17:18:50', '2023-06-07 17:18:50', NULL),
-(29, 2, 'uploads/media/6KydoeusDnh25hDmCxq9iJXvgJvFZJtd6XjukWtz.jpg', 581433, 'image', 'matthew-nevins-bell-hg0EDH34Nm0-unsplash.jpg', 'jpg', '2023-06-07 17:25:56', '2023-06-07 17:25:56', NULL),
-(30, 2, 'uploads/media/ouEiEq3B2DjJwygkkbvBdSMdsMO8VVbqUM6Gh73g.jpg', 3540975, 'image', 'taisiia-shestopal-JZDyFwGAEqY-unsplash.jpg', 'jpg', '2023-06-07 17:29:25', '2023-06-07 17:29:25', NULL),
-(31, 2, 'uploads/media/lBAr8qIpVhH2tkNBM6cJ6opJaKHEe1xVR9bK2uBp.jpg', 1473800, 'image', 'pexels-secret-garden-931158.jpg', 'jpg', '2023-06-07 17:35:29', '2023-06-07 17:35:29', NULL),
-(32, 2, 'uploads/media/qQOnwb4MFUnsRpisUzLfcYq6XChkUTltAUhN3Pxu.jpg', 1671756, 'image', 'pexels-kristina-paukshtite-112396.jpg', 'jpg', '2023-06-07 17:37:58', '2023-06-07 17:37:58', NULL),
-(33, 2, 'uploads/media/Ktg0SAbctLjwczlLhfKGDG59DCaknQm1ICNr90Ro.jpg', 589400, 'image', 'pexels-dominika-roseclay-894751.jpg', 'jpg', '2023-06-07 17:41:25', '2023-06-07 17:41:25', NULL),
-(34, 2, 'uploads/media/6PaOhpTDumdaY4OxZJRdb9pBwwl6ivMypKteoExy.jpg', 1671756, 'image', 'pexels-kristina-paukshtite-112396.jpg', 'jpg', '2023-06-07 17:44:48', '2023-06-07 17:44:48', NULL),
-(35, 2, 'uploads/media/Ij5s86vBwUwxYmBT6zMPngp5apO4ANe4GOSyzOmx.jpg', 1259648, 'image', 'pexels-secret-garden-931176.jpg', 'jpg', '2023-06-07 18:06:53', '2023-06-07 18:06:53', NULL),
-(36, 2, 'uploads/media/PSQfSll2ainDSmEZgHn4ybpLUQTSbk86FqADWDEG.jpg', 1842327, 'image', 'pexels-kristina-paukshtite-2317922.jpg', 'jpg', '2023-06-07 18:10:08', '2023-06-07 18:10:08', NULL);
+(8, 1, 'uploads/media/skiYlwShQVyUK3Rmb446qzNURuH2KtsfIHnIGd4Y.png', 392247, 'image', 'back1-removebg-preview.png', 'png', '2023-06-07 15:22:19', '2023-06-07 15:22:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -1679,20 +1470,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `shop_id`, `added_by`, `name`, `slug`, `brand_id`, `unit_id`, `thumbnail_image`, `gallery_images`, `product_tags`, `short_description`, `description`, `min_price`, `max_price`, `discount_value`, `discount_type`, `discount_start_date`, `discount_end_date`, `sell_target`, `stock_qty`, `is_published`, `is_featured`, `min_purchase_qty`, `max_purchase_qty`, `has_variation`, `has_warranty`, `total_sale_count`, `standard_delivery_hours`, `express_delivery_hours`, `size_guide`, `meta_title`, `meta_description`, `meta_img`, `reward_points`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'admin', 'Rustic Wildflower Bouquet', 'rustic-wildflower-bouquet', NULL, NULL, '26', '26', NULL, 'A charming bouquet filled with the beauty of wildflowers', '<p>The <b>Rustic Wildflower Bouquet</b> captures the untamed beauty of nature in a delightful arrangement. Featuring an array of wildflowers such as daisies, sunflowers, and cornflowers, this bouquet exudes a rustic charm and a whimsical appeal. Whether you want to brighten up your home or surprise someone with a heartfelt gift, the Rustic Wildflower Bouquet is a perfect choice for nature lovers and those who appreciate the beauty of simplicity.<br></p>', 60, 60, 20, 'flat', 1686096000, 1689552000, 75, 15, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:43:35', '2023-06-07 17:10:09', NULL),
-(2, 1, 'admin', 'Exotic Orchid Bouquet', 'exotic-orchid-bouquet', NULL, NULL, '25', '25', NULL, 'An enchanting bouquet featuring exotic orchids', 'Indulge in the mesmerizing beauty of the <b>Exotic Orchid Bouquet</b>. Each stem of these exquisite orchids showcases unique shapes, vibrant colors, and delicate patterns. From the elegant Phalaenopsis to the exotic Cymbidium, this bouquet is a true feast for the eyes. Perfect for adding a touch of elegance to any space or sending a gift of sophistication, the Exotic Orchid Bouquet is a symbol of luxury and refinement.<br>', 80, 80, 25, 'percent', NULL, NULL, 17, 30, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:46:57', '2023-06-07 17:05:40', NULL),
-(3, 1, 'admin', 'Spring Blossom Bouquet', 'spring-blossom-bouquet', NULL, NULL, '24', '24', NULL, 'A vibrant bouquet bursting with the colors of spring', 'The <b>Spring Blossom Bouquet</b> captures the essence of the season with its vibrant mix of blossoms. Delicate tulips, cheerful daisies, and fragrant lilies come together in a symphony of colors to create a truly captivating arrangement. Whether you\'re celebrating a birthday, sending get well wishes, or expressing your love, this bouquet is sure to bring joy and beauty to any occasion<br>', 40, 40, 20, 'percent', NULL, NULL, 20, 22, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:57:05', '2023-06-07 17:01:27', NULL),
-(4, 1, 'admin', 'Rose Garden Bouquet', 'rose-garden', NULL, NULL, '23', '23', NULL, 'Elegant bouquet featuring a variety of colorful roses.\r\nThe Rose Garden Bouquet is a stunning arrangement of vibrant roses in different shades. Perfect for expressing love, admiration, or celebration', 'The Rose Garden Bouquet is a stunning arrangement of vibrant roses in different shades. Perfect for expressing love, admiration, or celebration<br>', 50, 50, 60, 'percent', NULL, NULL, 75, 11, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 15:23:00', '2023-06-07 16:53:22', NULL),
-(5, 1, 'admin', 'Classic Rose Bouquet', 'classic-rose-bouquet-nl7hv', NULL, NULL, '27', '27', NULL, 'classic-rose-bouquet', '<p>The <b>Classic Rose Bouquet</b> is a symbol of timeless beauty and romance. This exquisite bouquet features a collection of premium long-stemmed roses in a variety of colors, carefully arranged to create a stunning display. Whether it\'s for a special occasion, a heartfelt gesture, or simply to express your love and admiration, the Classic Rose Bouquet is a perfect choice that will leave a lasting impression.<br></p>', 40, 40, 10, 'percent', 1686096000, 1689811200, 45, 49, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:16:24', '2023-06-07 17:16:24', NULL),
-(6, 1, 'admin', 'Whimsical Garden Bouquet', 'whimsical-garden-bouquet-tvdur', NULL, NULL, '28', '28', NULL, 'A whimsical and enchanting bouquet inspired by a garden', 'Step into a world of enchantment with the<b> Whimsical Garden Bouquet</b>. This delightful arrangement captures the beauty and charm of a blooming garden, featuring an assortment of colorful and fragrant flowers such as daffodils, hydrangeas, and snapdragons. With its playful and whimsical design, this bouquet is perfect for adding a touch of magic to any occasion or as a gift to bring joy and smiles<br>', 50, 50, 13, 'flat', NULL, NULL, 100, 123, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:20:07', '2023-06-07 17:20:07', NULL),
-(7, 1, 'admin', 'Elegant Calla Lily Bouquet', 'elegant-calla-lily-bouquet-s4ijk', NULL, NULL, '29', '29', NULL, 'An elegant bouquet showcasing the sophistication of calla lilies', '<p>The <b>Elegant Calla Lily Bouquet</b> exudes sophistication and grace with its sleek and sculptural calla lilies. These exquisite flowers are known for their elegance and symbolism of purity and beauty. Whether it\'s a wedding, anniversary, or any special celebration, this bouquet is a perfect choice for those seeking a touch of refinement and timeless elegance<br></p>', 40, 40, 23, 'flat', 1686096000, 1689206400, 13, 30, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:26:59', '2023-06-07 17:26:59', NULL),
-(8, 1, 'admin', 'Vibrant Spring Blossoms Bouquet', 'vibrant-spring-blossoms-bouquet-fblb8', NULL, NULL, '30', '30', NULL, 'A lively bouquet bursting with the colors of spring.', '<p>Celebrate the arrival of spring with the Vibrant<b> Spring Blossoms Bouquet</b>. This cheerful arrangement features a mix of vibrant flowers including tulips, daffodils, and hyacinths, creating a burst of color and freshness. Perfect for brightening up any space or sending warm wishes to loved ones, this bouquet captures the essence of the season and brings a sense of joy and renewal.<br></p>', 30, 30, 0, 'flat', 1686873600, 1689206400, 12, 12, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:30:18', '2023-06-07 17:30:18', NULL),
-(9, 1, 'admin', 'Exotic Tropical Paradise Bouquet', 'exotic-tropical-paradise-bouquet-huxqd', NULL, NULL, '31', '31', NULL, 'Transport yourself to a tropical paradise with this exotic bouquet', '<p>Escape to a world of tropical beauty with the <b>Exotic </b>Tropical Paradise Bouquet. This stunning arrangement showcases a mix of exotic flowers and foliage, such as orchids, bird of paradise, and palm leaves, creating a captivating display reminiscent of a lush tropical oasis. Whether it\'s for a special event, a tropical-themed party, or to add a touch of exotic flair to your home, this bouquet will transport you to paradise<br></p>', 70, 70, 23, 'flat', 1686096000, 1690416000, 3, 45, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:36:38', '2023-06-07 17:36:38', NULL),
-(10, 1, 'admin', 'Rustic Wildflower Bouquet', 'rustic-wildflower-bouquet-13htb', NULL, NULL, '32', '32', NULL, 'Embrace the charm of the countryside with this rustic wildflower bouquet.', 'Embodying the natural beauty of wildflowers, the Rustic Wildflower Bouquet captures the essence of a picturesque countryside meadow. This whimsical arrangement features an assortment of charming blooms, including daisies, sunflowers, and cornflowers, with touches of natural elements like wheat stems and twine. Perfect for rustic weddings, farmhouse-inspired decor, or to bring a touch of rustic charm to any setting, this bouquet exudes a rustic and carefree elegance<br>', 35, 35, 10, 'percent', 1686096000, 1690761600, 13, 123, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:39:00', '2023-06-07 17:39:00', NULL),
-(11, 1, 'admin', 'Classic Red Rose Bouquet', 'classic-red-rose-bouquet-vh2m0', NULL, NULL, '33', '33', NULL, 'Timeless elegance and romance with a dozen red roses', '<p>Express your love and affection with the <b>Classic Red Rose Bouquet.</b> This timeless arrangement features a dozen premium red roses carefully handcrafted to perfection. With their deep red hues and velvety petals, these roses symbolize love, passion, and romance. Whether it\'s for a special anniversary, Valentine\'s Day, or to surprise someone special, this bouquet is sure to make a lasting impression<br></p>', 65, 65, 0, 'percent', 1686096000, 1690761600, 20, 23, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
-(12, 1, 'admin', 'Fragrant Lavender Garden Bouquet', 'fragrant-lavender-garden-bouquet-hhvyv', NULL, NULL, '34', '34', NULL, 'A soothing bouquet that captivates with its calming lavender scent.', '<p>Immerse yourself in the tranquil beauty of the <b>Fragrant Lavender Garden Bouquet</b>. This enchanting arrangement showcases a variety of lavender-hued blooms, such as lavender roses, lisianthus, and statice, complemented by delicate foliage. The soothing scent of lavender permeates the air, creating a sense of relaxation and serenity. Perfect for aromatherapy, spa-like ambiance, or as a thoughtful gift for someone in need of calm and peace<br></p>', 44, 44, 70, 'percent', 1686096000, 1690761600, 19, 23, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
-(13, 1, 'admin', 'Enchanted Garden Bouquet', 'enchanted-garden-bouquet-bjnup', NULL, NULL, '35', '35', NULL, 'Step into a magical world with this enchanting garden-inspired bouquet', '<p>Immerse yourself in the whimsical beauty of the<b> Enchanted Garden Bouquet</b>. This captivating arrangement features a variety of vibrant blooms, including roses, daisies, and delphiniums, nestled among lush greenery. The combination of colors and textures creates a captivating display reminiscent of a secret garden. Whether it\'s to brighten someone\'s day or add a touch of magic to your space, this bouquet is sure to evoke joy and wonder<br></p>', 80, 80, 55, 'percent', 1686009600, 1690588800, 14, 20, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 1, 'admin', 'Rustic Wildflower Bouquet', 'rustic-wildflower-bouquet-dcbc3', NULL, NULL, '36', '36', NULL, 'Embrace the beauty of nature with this charming rustic wildflower bouquet.', '<p>Experience the rustic charm of the countryside with the<b> Rustic Wildflower Bouquet.</b> This delightful arrangement showcases an assortment of colorful wildflowers, such as sunflowers, daisies, and asters, accented with natural twine and burlap wrapping. The bouquet exudes a natural and unrefined beauty, perfect for adding a touch of countryside elegance to any occasion or space.<br></p>', 45, 45, 30, 'percent', 1686096000, 1690502400, 12, 42, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(1, 1, 'admin', 'this is  atest', 'this-is-atest-jer6y', NULL, NULL, '7', '7', NULL, 'this is a short-description test', '<p>this is a description test<br></p>', 100, 100, 0, 'percent', NULL, NULL, 75, 12, 0, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:43:35', '2023-06-07 13:43:40', NULL),
+(2, 1, 'admin', 'test product 2', 'test-product-2-7wdja', NULL, NULL, '7', '7', NULL, 'this is a test short description', '<p>this is a test description<br></p>', 100, 100, 0, 'percent', NULL, NULL, 82, 14, 0, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:46:57', '2023-06-07 13:47:04', NULL),
+(3, 1, 'admin', 'test product 3', 'test-product-3-w8dnc', NULL, NULL, '7', '7', NULL, 'this a test description', '<p>this a test description<br></p>', 525, 525, 0, 'percent', NULL, NULL, 500, 55, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 13:57:05', '2023-06-07 13:57:05', NULL),
+(4, 1, 'admin', 'this is atest', 'this-is-atest-aqrve', NULL, NULL, '8', '8', NULL, 'jdcnjs,dc dcsdc', '<p>jsdcjsdc djnsd<br></p>', 150, 150, 0, 'percent', NULL, NULL, 75, 1, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 15:23:00', '2023-06-07 15:23:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -1714,67 +1495,10 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(5, 4, 4, NULL, NULL, NULL),
-(6, 4, 9, NULL, NULL, NULL),
-(7, 3, 4, NULL, NULL, NULL),
-(8, 3, 6, NULL, NULL, NULL),
-(9, 2, 7, NULL, NULL, NULL),
-(10, 2, 9, NULL, NULL, NULL),
-(11, 2, 10, NULL, NULL, NULL),
-(12, 1, 3, NULL, NULL, NULL),
-(13, 1, 4, NULL, NULL, NULL),
-(14, 1, 5, NULL, NULL, NULL),
-(15, 1, 11, NULL, NULL, NULL),
-(16, 5, 2, NULL, NULL, NULL),
-(17, 5, 3, NULL, NULL, NULL),
-(18, 5, 5, NULL, NULL, NULL),
-(19, 5, 7, NULL, NULL, NULL),
-(20, 5, 11, NULL, NULL, NULL),
-(21, 6, 2, NULL, NULL, NULL),
-(22, 6, 7, NULL, NULL, NULL),
-(23, 6, 8, NULL, NULL, NULL),
-(24, 6, 10, NULL, NULL, NULL),
-(25, 6, 11, NULL, NULL, NULL),
-(26, 7, 2, NULL, NULL, NULL),
-(27, 7, 3, NULL, NULL, NULL),
-(28, 7, 5, NULL, NULL, NULL),
-(29, 7, 6, NULL, NULL, NULL),
-(30, 7, 12, NULL, NULL, NULL),
-(31, 8, 2, NULL, NULL, NULL),
-(32, 8, 6, NULL, NULL, NULL),
-(33, 8, 9, NULL, NULL, NULL),
-(34, 8, 10, NULL, NULL, NULL),
-(35, 9, 2, NULL, NULL, NULL),
-(36, 9, 6, NULL, NULL, NULL),
-(37, 9, 8, NULL, NULL, NULL),
-(38, 9, 9, NULL, NULL, NULL),
-(39, 9, 11, NULL, NULL, NULL),
-(40, 9, 12, NULL, NULL, NULL),
-(41, 10, 3, NULL, NULL, NULL),
-(42, 10, 4, NULL, NULL, NULL),
-(43, 10, 9, NULL, NULL, NULL),
-(44, 10, 12, NULL, NULL, NULL),
-(45, 11, 3, NULL, NULL, NULL),
-(46, 11, 4, NULL, NULL, NULL),
-(47, 11, 8, NULL, NULL, NULL),
-(48, 11, 10, NULL, NULL, NULL),
-(49, 11, 11, NULL, NULL, NULL),
-(50, 12, 2, NULL, NULL, NULL),
-(51, 12, 3, NULL, NULL, NULL),
-(52, 12, 9, NULL, NULL, NULL),
-(53, 12, 10, NULL, NULL, NULL),
-(54, 13, 3, NULL, NULL, NULL),
-(55, 13, 5, NULL, NULL, NULL),
-(56, 13, 6, NULL, NULL, NULL),
-(57, 13, 7, NULL, NULL, NULL),
-(58, 13, 9, NULL, NULL, NULL),
-(59, 13, 10, NULL, NULL, NULL),
-(60, 14, 2, NULL, NULL, NULL),
-(61, 14, 5, NULL, NULL, NULL),
-(62, 14, 6, NULL, NULL, NULL),
-(63, 14, 9, NULL, NULL, NULL),
-(64, 14, 10, NULL, NULL, NULL),
-(65, 14, 11, NULL, NULL, NULL);
+(1, 1, 1, NULL, NULL, NULL),
+(2, 2, 1, NULL, NULL, NULL),
+(3, 3, 1, NULL, NULL, NULL),
+(4, 4, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1815,20 +1539,10 @@ CREATE TABLE `product_localizations` (
 --
 
 INSERT INTO `product_localizations` (`id`, `product_id`, `name`, `short_description`, `description`, `lang_key`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'Rustic Wildflower Bouquet', 'A charming bouquet filled with the beauty of wildflowers', '<p>The <b>Rustic Wildflower Bouquet</b> captures the untamed beauty of nature in a delightful arrangement. Featuring an array of wildflowers such as daisies, sunflowers, and cornflowers, this bouquet exudes a rustic charm and a whimsical appeal. Whether you want to brighten up your home or surprise someone with a heartfelt gift, the Rustic Wildflower Bouquet is a perfect choice for nature lovers and those who appreciate the beauty of simplicity.<br></p>', 'en', '2023-06-07 13:43:35', '2023-06-07 17:08:46', NULL),
-(2, 2, 'Exotic Orchid Bouquet', 'An enchanting bouquet featuring exotic orchids', 'Indulge in the mesmerizing beauty of the <b>Exotic Orchid Bouquet</b>. Each stem of these exquisite orchids showcases unique shapes, vibrant colors, and delicate patterns. From the elegant Phalaenopsis to the exotic Cymbidium, this bouquet is a true feast for the eyes. Perfect for adding a touch of elegance to any space or sending a gift of sophistication, the Exotic Orchid Bouquet is a symbol of luxury and refinement.<br>', 'en', '2023-06-07 13:46:57', '2023-06-07 17:05:40', NULL),
-(3, 3, 'Spring Blossom Bouquet', 'A vibrant bouquet bursting with the colors of spring', 'The <b>Spring Blossom Bouquet</b> captures the essence of the season with its vibrant mix of blossoms. Delicate tulips, cheerful daisies, and fragrant lilies come together in a symphony of colors to create a truly captivating arrangement. Whether you\'re celebrating a birthday, sending get well wishes, or expressing your love, this bouquet is sure to bring joy and beauty to any occasion<br>', 'en', '2023-06-07 13:57:05', '2023-06-07 17:01:27', NULL),
-(4, 4, 'Rose Garden Bouquet', 'Elegant bouquet featuring a variety of colorful roses.\r\nThe Rose Garden Bouquet is a stunning arrangement of vibrant roses in different shades. Perfect for expressing love, admiration, or celebration', 'The Rose Garden Bouquet is a stunning arrangement of vibrant roses in different shades. Perfect for expressing love, admiration, or celebration<br>', 'en', '2023-06-07 15:23:01', '2023-06-07 16:51:51', NULL),
-(5, 5, 'Classic Rose Bouquet', NULL, '<p>The <b>Classic Rose Bouquet</b> is a symbol of timeless beauty and romance. This exquisite bouquet features a collection of premium long-stemmed roses in a variety of colors, carefully arranged to create a stunning display. Whether it\'s for a special occasion, a heartfelt gesture, or simply to express your love and admiration, the Classic Rose Bouquet is a perfect choice that will leave a lasting impression.<br></p>', 'en', '2023-06-07 17:16:24', '2023-06-07 17:16:24', NULL),
-(6, 6, 'Whimsical Garden Bouquet', NULL, 'Step into a world of enchantment with the<b> Whimsical Garden Bouquet</b>. This delightful arrangement captures the beauty and charm of a blooming garden, featuring an assortment of colorful and fragrant flowers such as daffodils, hydrangeas, and snapdragons. With its playful and whimsical design, this bouquet is perfect for adding a touch of magic to any occasion or as a gift to bring joy and smiles<br>', 'en', '2023-06-07 17:20:07', '2023-06-07 17:20:07', NULL),
-(7, 7, 'Elegant Calla Lily Bouquet', NULL, '<p>The <b>Elegant Calla Lily Bouquet</b> exudes sophistication and grace with its sleek and sculptural calla lilies. These exquisite flowers are known for their elegance and symbolism of purity and beauty. Whether it\'s a wedding, anniversary, or any special celebration, this bouquet is a perfect choice for those seeking a touch of refinement and timeless elegance<br></p>', 'en', '2023-06-07 17:26:59', '2023-06-07 17:26:59', NULL),
-(8, 8, 'Vibrant Spring Blossoms Bouquet', NULL, '<p>Celebrate the arrival of spring with the Vibrant<b> Spring Blossoms Bouquet</b>. This cheerful arrangement features a mix of vibrant flowers including tulips, daffodils, and hyacinths, creating a burst of color and freshness. Perfect for brightening up any space or sending warm wishes to loved ones, this bouquet captures the essence of the season and brings a sense of joy and renewal.<br></p>', 'en', '2023-06-07 17:30:18', '2023-06-07 17:30:18', NULL),
-(9, 9, 'Exotic Tropical Paradise Bouquet', NULL, '<p>Escape to a world of tropical beauty with the <b>Exotic </b>Tropical Paradise Bouquet. This stunning arrangement showcases a mix of exotic flowers and foliage, such as orchids, bird of paradise, and palm leaves, creating a captivating display reminiscent of a lush tropical oasis. Whether it\'s for a special event, a tropical-themed party, or to add a touch of exotic flair to your home, this bouquet will transport you to paradise<br></p>', 'en', '2023-06-07 17:36:38', '2023-06-07 17:36:38', NULL),
-(10, 10, 'Rustic Wildflower Bouquet', NULL, 'Embodying the natural beauty of wildflowers, the Rustic Wildflower Bouquet captures the essence of a picturesque countryside meadow. This whimsical arrangement features an assortment of charming blooms, including daisies, sunflowers, and cornflowers, with touches of natural elements like wheat stems and twine. Perfect for rustic weddings, farmhouse-inspired decor, or to bring a touch of rustic charm to any setting, this bouquet exudes a rustic and carefree elegance<br>', 'en', '2023-06-07 17:39:00', '2023-06-07 17:39:00', NULL),
-(11, 11, 'Classic Red Rose Bouquet', NULL, '<p>Express your love and affection with the <b>Classic Red Rose Bouquet.</b> This timeless arrangement features a dozen premium red roses carefully handcrafted to perfection. With their deep red hues and velvety petals, these roses symbolize love, passion, and romance. Whether it\'s for a special anniversary, Valentine\'s Day, or to surprise someone special, this bouquet is sure to make a lasting impression<br></p>', 'en', '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
-(12, 12, 'Fragrant Lavender Garden Bouquet', NULL, '<p>Immerse yourself in the tranquil beauty of the <b>Fragrant Lavender Garden Bouquet</b>. This enchanting arrangement showcases a variety of lavender-hued blooms, such as lavender roses, lisianthus, and statice, complemented by delicate foliage. The soothing scent of lavender permeates the air, creating a sense of relaxation and serenity. Perfect for aromatherapy, spa-like ambiance, or as a thoughtful gift for someone in need of calm and peace<br></p>', 'en', '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
-(13, 13, 'Enchanted Garden Bouquet', NULL, '<p>Immerse yourself in the whimsical beauty of the<b> Enchanted Garden Bouquet</b>. This captivating arrangement features a variety of vibrant blooms, including roses, daisies, and delphiniums, nestled among lush greenery. The combination of colors and textures creates a captivating display reminiscent of a secret garden. Whether it\'s to brighten someone\'s day or add a touch of magic to your space, this bouquet is sure to evoke joy and wonder<br></p>', 'en', '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 14, 'Rustic Wildflower Bouquet', NULL, '<p>Experience the rustic charm of the countryside with the<b> Rustic Wildflower Bouquet.</b> This delightful arrangement showcases an assortment of colorful wildflowers, such as sunflowers, daisies, and asters, accented with natural twine and burlap wrapping. The bouquet exudes a natural and unrefined beauty, perfect for adding a touch of countryside elegance to any occasion or space.<br></p>', 'en', '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(1, 1, 'this is  atest', NULL, '<p>this is a description test<br></p>', 'en', '2023-06-07 13:43:35', '2023-06-07 13:43:35', NULL),
+(2, 2, 'test product 2', NULL, '<p>this is a test description<br></p>', 'en', '2023-06-07 13:46:57', '2023-06-07 13:46:57', NULL),
+(3, 3, 'test product 3', NULL, '<p>this a test description<br></p>', 'en', '2023-06-07 13:57:05', '2023-06-07 13:57:05', NULL),
+(4, 4, 'this is atest', NULL, '<p>jsdcjsdc djnsd<br></p>', 'en', '2023-06-07 15:23:01', '2023-06-07 15:23:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -1885,20 +1599,10 @@ CREATE TABLE `product_variations` (
 --
 
 INSERT INTO `product_variations` (`id`, `product_id`, `variation_key`, `sku`, `code`, `price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, NULL, '123', '131', 60, '2023-06-07 13:43:35', '2023-06-07 17:10:09', NULL),
-(2, 2, NULL, '276', '27893', 80, '2023-06-07 13:46:57', '2023-06-07 17:05:40', NULL),
-(3, 3, NULL, '561', '87613', 40, '2023-06-07 13:57:05', '2023-06-07 17:01:27', NULL),
-(4, 4, NULL, '5432', '5672', 50, '2023-06-07 15:23:01', '2023-06-07 15:44:55', NULL),
-(5, 5, NULL, '78923', '78913', 40, '2023-06-07 17:16:24', '2023-06-07 17:16:24', NULL),
-(6, 6, NULL, '233', '2376', 50, '2023-06-07 17:20:07', '2023-06-07 17:20:07', NULL),
-(7, 7, NULL, '09248', '2078', 40, '2023-06-07 17:26:59', '2023-06-07 17:26:59', NULL),
-(8, 8, NULL, '133', '424', 30, '2023-06-07 17:30:18', '2023-06-07 17:30:18', NULL),
-(9, 9, NULL, '9768', '768', 70, '2023-06-07 17:36:38', '2023-06-07 17:36:38', NULL),
-(10, 10, NULL, '76', '768', 35, '2023-06-07 17:39:00', '2023-06-07 17:39:00', NULL),
-(11, 11, NULL, '09258', '0823', 65, '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
-(12, 12, NULL, '354', '54', 44, '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
-(13, 13, NULL, '085', '5535', 80, '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 14, NULL, '352', '142', 45, '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(1, 1, NULL, '1', '1', 100, '2023-06-07 13:43:35', '2023-06-07 13:43:35', NULL),
+(2, 2, NULL, '2', '2', 100, '2023-06-07 13:46:57', '2023-06-07 13:46:57', NULL),
+(3, 3, NULL, '3', '3', 525, '2023-06-07 13:57:05', '2023-06-07 13:57:05', NULL),
+(4, 4, NULL, '5', '5', 150, '2023-06-07 15:23:01', '2023-06-07 15:23:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -1938,20 +1642,10 @@ CREATE TABLE `product_variation_stocks` (
 --
 
 INSERT INTO `product_variation_stocks` (`id`, `product_variation_id`, `location_id`, `stock_qty`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 1, 15, '2023-06-07 13:43:35', '2023-06-07 17:10:09', NULL),
-(2, 2, 1, 30, '2023-06-07 13:46:57', '2023-06-07 17:05:40', NULL),
-(3, 3, 1, 22, '2023-06-07 13:57:05', '2023-06-07 17:01:27', NULL),
-(4, 4, 1, 11, '2023-06-07 15:23:01', '2023-06-07 15:44:55', NULL),
-(5, 5, 1, 49, '2023-06-07 17:16:24', '2023-06-07 17:16:24', NULL),
-(6, 6, 1, 123, '2023-06-07 17:20:07', '2023-06-07 17:20:07', NULL),
-(7, 7, 1, 30, '2023-06-07 17:26:59', '2023-06-07 17:26:59', NULL),
-(8, 8, 1, 12, '2023-06-07 17:30:18', '2023-06-07 17:30:18', NULL),
-(9, 9, 1, 45, '2023-06-07 17:36:38', '2023-06-07 17:36:38', NULL),
-(10, 10, 1, 123, '2023-06-07 17:39:00', '2023-06-07 17:39:00', NULL),
-(11, 11, 1, 23, '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
-(12, 12, 1, 23, '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
-(13, 13, 1, 20, '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 14, 1, 42, '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(1, 1, 1, 12, '2023-06-07 13:43:35', '2023-06-07 13:43:35', NULL),
+(2, 2, 1, 14, '2023-06-07 13:46:57', '2023-06-07 13:46:57', NULL),
+(3, 3, 1, 55, '2023-06-07 13:57:05', '2023-06-07 13:57:05', NULL),
+(4, 4, 1, 1, '2023-06-07 15:23:01', '2023-06-07 15:23:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -2149,14 +1843,14 @@ INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_a
 (12, 'site_address', 'Cecilia Chapman, 711-2880 Nulla St, Mankato Mississippi 96522', '2023-02-05 05:49:15', '2023-02-05 05:49:15', NULL),
 (13, 'registration_with', 'email', '2023-02-18 08:10:22', '2023-02-18 08:10:22', NULL),
 (14, 'registration_verification_with', 'disable', '2023-02-18 08:10:22', '2023-02-18 08:10:22', NULL),
-(15, 'topbar_welcome_text', 'Welcome to Flowerly Shop', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
-(16, 'topbar_email', 'flowerly@gmail.com', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
-(17, 'topbar_location', 'Mghila ,Beni Mellal, Morroco', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
+(15, 'topbar_welcome_text', 'Welcome to our Organic store', '2023-02-20 05:41:46', '2023-02-20 05:41:46', NULL),
+(16, 'topbar_email', 'groshop@support.com', '2023-02-20 05:41:46', '2023-02-20 05:41:46', NULL),
+(17, 'topbar_location', 'Washington, New York, USA - 254230', '2023-02-20 05:41:46', '2023-02-20 05:41:46', NULL),
 (18, 'navbar_logo', '1', '2023-02-20 05:41:46', '2023-03-12 04:04:45', NULL),
-(19, 'navbar_categories', '[\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\",\"12\"]', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
+(19, 'navbar_categories', NULL, '2023-02-20 05:41:46', '2023-03-12 04:04:45', NULL),
 (20, 'navbar_pages', '[\"1\"]', '2023-02-20 05:41:47', '2023-03-01 08:32:34', NULL),
-(21, 'navbar_contact_number', '+212612345678', '2023-02-20 05:41:47', '2023-06-07 16:45:40', NULL),
-(22, 'hero_sliders', '[{\"id\":106549,\"sub_title\":\"Express Your Love with Flowers\",\"title\":\"Send Beautiful Bouquets for Every Occasion\",\"text\":\"From birthdays to anniversaries, our stunning bouquets are the perfect way to express your love and celebrate special moments. Explore our wide range of floral arrangements and make every occasion memorable\",\"image\":\"22\",\"link\":\"https:\\/\\/www.youtube.com\\/watch?v=mZ77D66ZYtw\"}]', '2023-02-20 10:36:00', '2023-06-07 16:28:56', NULL),
+(21, 'navbar_contact_number', '+80 157 058 4567', '2023-02-20 05:41:47', '2023-02-20 05:41:47', NULL),
+(22, 'hero_sliders', '[{\"id\":106549,\"sub_title\":\"Genuine 100% Organic Products\",\"title\":\"Online Fresh Grocery Products\",\"text\":\"Assertively target market-driven intellectual capital with worldwide human capital holistic.\",\"image\":\"39\",\"link\":\"https:\\/\\/www.youtube.com\\/watch?v=mZ77D66ZYtw\"}]', '2023-02-20 10:36:00', '2023-03-01 07:33:57', NULL),
 (24, 'top_category_ids', '[\"6\",\"5\",\"4\",\"3\",\"2\"]', '2023-02-25 08:29:10', '2023-02-25 08:29:10', NULL),
 (25, 'featured_sub_title', 'Platform mindshare through effective infomediaries Dynamically implement.', '2023-02-25 09:18:46', '2023-02-25 09:18:46', NULL),
 (26, 'featured_products_left', '[\"1\",\"2\",\"5\"]', '2023-02-25 09:18:46', '2023-02-26 03:38:23', NULL),
@@ -2178,12 +1872,12 @@ INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_a
 (42, 'best_selling_products', '[\"1\",\"2\",\"3\"]', '2023-02-27 05:01:19', '2023-02-27 05:01:19', NULL),
 (43, 'best_selling_banner', '', '2023-02-27 05:01:19', '2023-02-27 05:11:30', NULL),
 (44, 'best_selling_banner_link', NULL, '2023-02-27 05:01:19', '2023-02-27 05:01:19', NULL),
-(45, 'product_listing_categories', '[\"12\",\"11\",\"10\",\"9\",\"8\",\"7\",\"6\",\"5\",\"4\",\"3\",\"2\"]', '2023-02-27 05:47:35', '2023-06-07 16:49:05', NULL),
-(46, 'footer_categories', '[\"12\",\"11\",\"10\",\"9\",\"8\",\"7\",\"6\",\"5\",\"4\",\"3\",\"2\"]', '2023-03-01 03:33:33', '2023-06-07 16:47:12', NULL),
-(47, 'quick_links', '[\"1\"]', '2023-03-01 03:33:33', '2023-06-07 16:48:14', NULL),
+(45, 'product_listing_categories', '[\"6\",\"5\",\"4\",\"3\",\"2\"]', '2023-02-27 05:47:35', '2023-02-27 05:47:35', NULL),
+(46, 'footer_categories', NULL, '2023-03-01 03:33:33', '2023-03-12 03:59:31', NULL),
+(47, 'quick_links', '[\"2\"]', '2023-03-01 03:33:33', '2023-03-01 03:33:33', NULL),
 (48, 'footer_logo', '2', '2023-03-01 03:33:33', '2023-03-12 04:05:55', NULL),
 (49, 'accepted_payment_banner', '3', '2023-03-01 03:33:33', '2023-03-12 04:05:55', NULL),
-(50, 'copyright_text', 'Developed by&nbsp; <font color=\"#ff9c00\"><b>Flowerly Team . </b></font><br>', '2023-03-01 03:49:42', '2023-06-07 17:22:10', NULL),
+(50, 'copyright_text', '© All Designed, Developed and 💕 by <b><font color=\"#ff9c00\">ThemeTags</font></b>', '2023-03-01 03:49:42', '2023-03-12 03:59:31', NULL),
 (51, 'product_page_widgets', '[]', '2023-03-01 07:35:08', '2023-03-12 03:56:25', NULL),
 (52, 'product_page_banner_link', NULL, '2023-03-01 08:20:50', '2023-03-01 08:20:50', NULL),
 (53, 'product_page_banner', '59', '2023-03-01 08:20:50', '2023-03-01 08:20:50', NULL),
@@ -2191,15 +1885,15 @@ INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_a
 (55, 'twitter_link', 'https://twitter.com/', '2023-03-01 08:45:01', '2023-03-01 08:45:01', NULL),
 (56, 'linkedin_link', 'https://www.linkedin.com/', '2023-03-01 08:45:01', '2023-03-01 08:45:01', NULL),
 (57, 'youtube_link', 'https://www.youtube.com/', '2023-03-01 08:45:01', '2023-03-01 08:45:01', NULL),
-(58, 'about_us', 'At Flowerly , we are passionate about delivering beautiful flowers and creating memorable experiences. With years of experience in the floral industry, we have established ourselves as a trusted name in providing exquisite floral arrangements for every occasion', '2023-03-01 08:46:33', '2023-06-07 16:45:40', NULL),
-(59, 'about_intro_sub_title', 'Bringing Beauty and Joy to Every Occasion', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(60, 'about_intro_title', 'Flowerly - Your Trusted Floral Partner', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(61, 'about_intro_text', 'At Flowerly , we are passionate about delivering the beauty of nature right to your doorstep. We believe that flowers have the power to brighten someone\'s day, celebrate special moments, and convey heartfelt emotions', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(62, 'about_intro_mission', 'Our mission is to provide exceptional floral experiences by offering a wide selection of high-quality flowers, creative arrangements, and reliable delivery services. We strive to exceed customer expectations with our dedication to quality, craftsmanship, and customer satisfaction.', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(63, 'about_intro_vision', 'Our vision is to be the preferred online destination for customers seeking exquisite and personalized floral gifts. We aim to create lasting impressions with our stunning floral creations, exceptional customer service, and convenient online shopping experience.', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(64, 'about_intro_quote', 'Flowers are the music of the ground. From earth\'s lips, spoken without sound', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(65, 'about_intro_quote_by', 'Edwin Curran', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
-(66, 'about_intro_image', '21', '2023-03-04 03:54:12', '2023-06-07 16:39:41', NULL),
+(58, 'about_us', 'Explain to you how all this mistaken denouncing pleasure and praising pain was born and we will give you a complete account of the system, and expound the actual teachings.\r\n          \r\n          Mistaken denouncing pleasure and praising pain was born and we will give you complete account of the system expound.', '2023-03-01 08:46:33', '2023-03-01 08:46:33', NULL),
+(59, 'about_intro_sub_title', '100% Organic Food Provide', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(60, 'about_intro_title', 'Be healthy & <br> eat fresh organic food', '2023-03-04 03:54:12', '2023-03-11 04:49:49', NULL),
+(61, 'about_intro_text', 'Assertively target market lorem ipsum is simply free text available dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt simply freeutation labore et dolore.', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(62, 'about_intro_mission', 'Continually transform virtual meta- methodologies. leverage existing alignments.', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(63, 'about_intro_vision', 'Continually transform virtual meta- methodologies. leverage existing alignments.', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(64, 'about_intro_quote', 'Assertively target market Lorem ipsum is simply free consectetur notted elit sed do eiusmod', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(65, 'about_intro_quote_by', 'George Scholll', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
+(66, 'about_intro_image', '60', '2023-03-04 03:54:12', '2023-03-04 03:54:12', NULL),
 (67, 'about_popular_brand_ids', '[\"1\",\"2\"]', '2023-03-04 04:16:59', '2023-03-04 04:16:59', NULL),
 (68, 'about_features_title', 'Our Working Ability', '2023-03-04 04:49:27', '2023-03-04 04:49:27', NULL),
 (69, 'about_features_sub_title', 'Assertively target market lorem ipsum is simply free text available dolor incididunt simply free ut labore et dolore.', '2023-03-04 04:49:27', '2023-03-04 04:49:27', NULL),
@@ -2912,13 +2606,13 @@ ALTER TABLE `campaign_products`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category_brands`
@@ -2930,7 +2624,7 @@ ALTER TABLE `category_brands`
 -- AUTO_INCREMENT for table `category_localizations`
 --
 ALTER TABLE `category_localizations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -2984,7 +2678,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT for table `localizations`
 --
 ALTER TABLE `localizations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=534;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=381;
 
 --
 -- AUTO_INCREMENT for table `locations`
@@ -3014,7 +2708,7 @@ ALTER TABLE `logistic_zone_cities`
 -- AUTO_INCREMENT for table `media_managers`
 --
 ALTER TABLE `media_managers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -3074,13 +2768,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_colors`
@@ -3092,7 +2786,7 @@ ALTER TABLE `product_colors`
 -- AUTO_INCREMENT for table `product_localizations`
 --
 ALTER TABLE `product_localizations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_tags`
@@ -3110,7 +2804,7 @@ ALTER TABLE `product_taxes`
 -- AUTO_INCREMENT for table `product_variations`
 --
 ALTER TABLE `product_variations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_variation_combinations`
@@ -3122,7 +2816,7 @@ ALTER TABLE `product_variation_combinations`
 -- AUTO_INCREMENT for table `product_variation_stocks`
 --
 ALTER TABLE `product_variation_stocks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `refunds`
