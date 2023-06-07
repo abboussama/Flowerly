@@ -57,7 +57,7 @@
                                         @endif
                                         <small>({{ localize('Enter phone number with country code') }})</small>
                                     </label>
-                                    <input type="text" id="phone" name="phone" placeholder="+xxxxxxxxxx"
+                                    <input type="text" id="phone" name="phone" placeholder="+212xxxxxxx" value="+212"
                                         class="theme-input" value="{{ old('phone') }}"
                                         @if (getSetting('registration_with') == 'email_and_phone') required @endif>
                                 </div>

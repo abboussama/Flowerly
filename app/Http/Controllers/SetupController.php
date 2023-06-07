@@ -72,7 +72,7 @@ class SetupController extends Controller
     }
 
     # check db connection
-    function checkDatabaseConnection($db_host = "", $db_name = "", $db_user = "", $db_pass = "", $db_port = 25060)
+    function checkDatabaseConnection($db_host = "", $db_name = "", $db_user = "", $db_pass = "", $db_port = 3306)
 {
     if (@mysqli_connect($db_host, $db_user, $db_pass, $db_name, $db_port)) {
         return true;
