@@ -196,10 +196,10 @@
 
 
     <!-- Rewards & Wallet -->
-    @php
+    {{-- @php
         $rewardsActiveRoutes = ['admin.rewards.configurations', 'admin.rewards.setPoints', 'admin.wallet.configurations'];
-    @endphp
-    @canany(['reward_configurations', 'set_reward_points'])
+    @endphp --}}
+    {{-- @canany(['reward_configurations', 'set_reward_points'])
         <li class="side-nav-item nav-item {{ areActiveRoutes($rewardsActiveRoutes, 'tt-menu-item-active') }}">
             <a data-bs-toggle="collapse" href="#manageRewards"
                 aria-expanded="{{ areActiveRoutes($rewardsActiveRoutes, 'true') }}" aria-controls="manageRewards"
@@ -232,7 +232,7 @@
                 </ul>
             </div>
         </li>
-    @endcan
+    @endcan --}}
 
     <!-- Users -->
     <li class="side-nav-title side-nav-item nav-item">
@@ -618,12 +618,12 @@
             <div class="collapse {{ areActiveRoutes($settingsActiveRoutes, 'show') }}" id="systemSetting">
                 <ul class="side-nav-second-level">
 
-                    @can('auth_settings')
+                    {{-- @can('auth_settings')
                         <li class="{{ areActiveRoutes(['admin.settings.authSettings'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.settings.authSettings') }}"
                                 class="{{ areActiveRoutes(['admin.settings.authSettings']) }}">{{ localize('Auth Settings') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
                     {{-- @can('otp_settings')
                         <li class="{{ areActiveRoutes(['admin.settings.otpSettings'], 'tt-menu-item-active') }}">
@@ -632,13 +632,13 @@
                         </li>
                     @endcan --}}
 
-                    @can('order_settings')
+                    {{-- @can('order_settings')
                         <li
                             class="{{ areActiveRoutes(['admin.orderSettings', 'admin.timeslot.edit'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.orderSettings') }}"
                                 class="{{ areActiveRoutes(['admin.generalSettings']) }}">{{ localize('Order Settings') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
                     <li class="d-none {{ areActiveRoutes(['admin.smtpSettings.index'], 'tt-menu-item-active') }}">
                         <a href="{{ route('admin.smtpSettings.index') }}"
@@ -659,21 +659,21 @@
                         </li>
                     @endcan
 
-                    @can('payment_settings')
+                    {{-- @can('payment_settings')
                         <li class="{{ areActiveRoutes(['admin.settings.paymentMethods'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.settings.paymentMethods') }}"
                                 class="{{ areActiveRoutes(['admin.settings.paymentMethods']) }}">{{ localize('Payment Methods') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
-                    @can('social_login_settings')
+                    {{-- @can('social_login_settings')
                         <li class="{{ areActiveRoutes(['admin.settings.socialLogin'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.settings.socialLogin') }}"
                                 class="{{ areActiveRoutes(['admin.settings.socialLogin']) }}">{{ localize('Social Media Login') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
-                    @can('language_settings')
+                    {{-- @can('language_settings')
                         <li
                             class="{{ areActiveRoutes(
                                 ['admin.languages.index', 'admin.languages.edit', 'admin.languages.localizations'],
@@ -682,9 +682,9 @@
                             <a href="{{ route('admin.languages.index') }}"
                                 class="{{ areActiveRoutes(['admin.languages.index', 'admin.languages.edit', 'admin.languages.localizations']) }}">{{ localize('Multilingual Settings') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
-                    @can('currency_settings')
+                    {{-- @can('currency_settings')
                         <li
                             class="{{ areActiveRoutes(
                                 ['admin.currencies.index', 'admin.currencies.edit', 'admin.currencies.localizations'],
@@ -693,7 +693,7 @@
                             <a href="{{ route('admin.currencies.index') }}"
                                 class="{{ areActiveRoutes(['admin.currencies.index', 'admin.currencies.edit', 'admin.currencies.localizations']) }}">{{ localize('Multi Currency Settings') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
                 </ul>
             </div>
         </li>

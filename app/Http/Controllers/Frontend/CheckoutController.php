@@ -102,6 +102,7 @@ class CheckoutController extends Controller
             $orderGroup->sub_total_amount                   = getSubTotal($carts, false, '', false);
             $orderGroup->total_tax_amount                   = getTotalTax($carts);
             $orderGroup->total_coupon_discount_amount       = 0;
+            $orderGroup->gift_card_message                  = $request->gift_card_message;
             if (getCoupon() != '') {
                 # todo::[for eCommerce] handle coupon for multi vendor
                 $orderGroup->total_coupon_discount_amount   = getCouponDiscount(getSubTotal($carts, false), getCoupon());

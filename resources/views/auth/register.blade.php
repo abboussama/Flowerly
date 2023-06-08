@@ -1,10 +1,43 @@
-@extends('layouts.auth')
+<?php
 
+function is_valid($phone) {
+    $api_key = '8fba9eb7';
+    $api_secret = 'eDGtmXg7mq9fhj17';
+    $endpoint = "https://api.nexmo.com/ni/advanced/json?api_key=$api_key&api_secret=$api_secret&number=$phone";
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $endpoint);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    curl_close($ch);
+
+    if ($httpCode === 200) {
+        // Successful request
+        $data = json_decode($response, true);
+
+        if ($data['valid_number'] === 'valid') {
+            // Phone number is valid
+            return "number is valid";
+        } else {
+            // Phone number is not valid
+            return "number is not valid";
+        }
+    } else {
+        // Request failed
+        return false;
+    }
+}
+
+
+?>
+@extends('layouts.auth')
 
 @section('title')
     {{ localize('Sign Up') }}
 @endsection
-
 
 @section('contents')
     <section class="login-section py-5">
@@ -14,8 +47,7 @@
                 <div class="col-lg-5 col-12 tt-login-img"
                     data-background="{{ staticAsset('frontend/default/assets/img/banner/login-banner.jpg') }}"></div>
                 <div class="col-lg-5 col-12 bg-white d-flex p-0 tt-login-col shadow">
-                    <form class="tt-login-form-wrap p-3 p-md-6 p-lg-6 py-7 w-100 " action="{{ route('register') }}"
-                        method="POST" id="login-form">
+                    <form class="tt-login-form-wrap p-3 p-md-6 p-lg-6 py-7 w-100" method="POST" id="login-form" action="{{ route('register') }}">
                         @csrf
                         <div class="mb-7">
                             <a href="{{ route('home') }}">
@@ -57,7 +89,7 @@
                                         @endif
                                         <small>({{ localize('Enter phone number with country code') }})</small>
                                     </label>
-                                    <input type="text" id="phone" name="phone" placeholder="+212xxxxxxx" value="+212"
+                                    <input type="text" id="phone" name="phone" placeholder="+212xxxxxxx" value=""
                                         class="theme-input" value="{{ old('phone') }}"
                                         @if (getSetting('registration_with') == 'email_and_phone') required @endif>
                                 </div>
@@ -90,8 +122,7 @@
                         </div>
                         <div class="row g-4 mt-3">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary w-100 sign-in-btn"
-                                    onclick="handleSubmit()">{{ localize('Sign Up') }}</button>
+                                <button type="submit" class="btn btn-primary w-100 sign-in-btn">{{ localize('Sign Up') }}</button>
                             </div>
 
                         </div>
@@ -108,11 +139,47 @@
     <script>
         "use strict";
 
-        // disable login button
-        function handleSubmit() {
-            $('#login-form').on('submit', function(e) {
-                $('.sign-in-btn').prop('disabled', true);
-            });
-        }
+        function is_valid(phone) {
+    var apiKey = '8fba9eb7';
+    var apiSecret = 'eDGtmXg7mq9fhj17';
+    var endpoint = `https://api.nexmo.com/ni/advanced/json?api_key=${apiKey}&api_secret=${apiSecret}&number=${phone}`;
+
+    return fetch(endpoint)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Request failed');
+            }
+        })
+        .then(data => {
+            if (data.valid_number === 'valid') {
+                return 'number is valid';
+            } else {
+                return 'number is not valid';
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            return false;
+        });
+}
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            var phoneInput = document.getElementById('phone');
+            var phone = phoneInput.value.trim();
+
+            if (phone === '') {
+                event.preventDefault(); // No phone number entered
+            }
+
+            if (!is_valid(phone)) {
+                alert('Invalid phone number. Please enter a valid phone number.');
+                event.preventDefault(); // Prevent form submission
+            } else {
+                // Phone number is valid, disable the submit button
+                document.querySelector('.sign-in-btn').disabled = true;
+            }
+        });
     </script>
 @endsection

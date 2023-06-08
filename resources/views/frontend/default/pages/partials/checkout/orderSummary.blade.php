@@ -5,18 +5,18 @@
     </div>
     <table class="sidebar-table w-100 mt-5">
         <tr>
-            <td>(+) {{ localize('Items') }}({{ count($carts) }}):</td>
+            <td>->  {{ localize('Items') }}({{ count($carts) }}):</td>
             <td class="text-end">{{ formatPrice(getSubTotal($carts, false, '', false)) }}</td>
         </tr>
 
-        <tr>
-            <td>(+) {{ localize('Tax') }}:</td>
+        {{-- <tr>
+            <td>->  {{ localize('Tax') }}:</td>
             <td class="text-end">{{ formatPrice(getTotalTax($carts)) }}</td>
-        </tr>
+        </tr> --}}
 
         @if (isset($shippingAmount))
             <tr>
-                <td>(+) {{ localize('Shipping Charge') }}:</td>
+                <td>->  {{ localize('Shipping Charge') }}:</td>
                 <td class="text-end">{{ formatPrice($shippingAmount) }}</td>
             </tr>
         @endif
@@ -68,11 +68,6 @@
     </div>
 
     <span class="sidebar-spacer d-block my-4 opacity-50"></span>
-
-    <div class="label-input-field mt-6">
-        <label>{{ 'Add Tips For Deliveryman?' }}</label>
-        <input type="number" name="tips" value="0" min="0" step="0.001">
-    </div>
 
     <button type="submit" class="btn btn-primary btn-md rounded mt-6 w-100">{{ localize('Place Order') }}</button>
 </div>

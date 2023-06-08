@@ -96,7 +96,7 @@
                             <div class="row justify-content-between g-3">
                                 <div class="col-xl-7 col-lg-6">
                                     <div class="welcome-message">
-                                        <h6 class="mb-2">{{ localize('Customer Info') }}</h6>
+                                        <h6 class="mb-2"><span class="text-success">{{ localize('Customer Info') }}</span></h6>
                                         <p class="mb-0">{{ localize('Name') }}: {{ optional($order->user)->name }}</p>
                                         <p class="mb-0">{{ localize('Email') }}: {{ optional($order->user)->email }}</p>
                                         <p class="mb-0">{{ localize('Phone') }}: {{ optional($order->user)->phone }}</p>
@@ -105,64 +105,65 @@
                                             $deliveryInfo = json_decode($order->scheduled_delivery_info);
                                         @endphp
 
-                                        <p class="mb-0">{{ localize('Delivery Type') }}:
-                                            <span
+                                        {{-- <p class="mb-0">{{ localize('Delivery Type') }}: --}}
+                                            {{-- <span
                                                 class="badge bg-primary">{{ Str::title(Str::replace('_', ' ', $order->shipping_delivery_type)) }}</span>
 
 
-                                        </p>
+                                        </p> --}}
                                         @if ($order->shipping_delivery_type == getScheduledDeliveryType())
-                                            <p class="mb-0">
-                                                {{ localize('Delivery Time') }}:
-                                                {{ date('d F', $deliveryInfo->scheduled_date) }},
-                                                {{ $deliveryInfo->timeline }}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-xl-5 col-lg-6">
-                                    <div class="shipping-address d-flex justify-content-md-end">
-                                        <div class="border-end pe-2">
-                                            <h6 class="mb-2">{{ localize('Shipping Address') }}</h6>
-                                            @php
-                                                $shippingAddress = $order->orderGroup->shippingAddress;
-                                            @endphp
-                                            <p class="mb-0">
-                                                @if ($order->orderGroup->is_pos_order)
-                                                    {{ $order->orderGroup->pos_order_address }}
-                                                @else
-                                                    {{ optional($shippingAddress)->address }},
-                                                    {{ optional(optional($shippingAddress)->city)->name }},
-                                                    {{ optional(optional($shippingAddress)->state)->name }},
-                                                    {{ optional(optional($shippingAddress)->country)->name }}
-                                                @endif
-                                            </p>
-                                        </div>
-                                        @if (!$order->orderGroup->is_pos_order)
-                                            <div class="ms-4">
-                                                <h6 class="mb-2">{{ localize('Billing Address') }}</h6>
-                                                @php
-                                                    $billingAddress = $order->orderGroup->billingAddress;
-                                                @endphp
-                                                <p class="mb-0">
+    <p class="mb-0">
+        <span class="text-success">{{ localize('Delivery Time') }}:</span>
+        <span class="text-success">{{ date('d F', $deliveryInfo->scheduled_date) }}, {{ $deliveryInfo->timeline }}</span>
+    </p>
+@endif
+</div>
+</div>
 
-                                                    {{ optional($billingAddress)->address }},
-                                                    {{ optional(optional($billingAddress)->city)->name }},
-                                                    {{ optional(optional($billingAddress)->state)->name }},
-                                                    {{ optional(optional($billingAddress)->country)->name }}
-                                                </p>
-                                            </div>
-                                        @endif
+<div class="mb-4"></div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+@if (!$order->orderGroup->is_pos_order)
+    <div class="ms-1">
+        <h6 class="mb-2"><span class="text-success">{{ localize('Gift Card Message') }}</span></h6>
+        @php
+            $gift_card_message = $order->orderGroup->gift_card_message;
+        @endphp
+        <textarea class="form-control border border-success" style="resize: vertical;" rows="3" readonly>{{ $gift_card_message }}</textarea>
+    </div>
+@endif
+
+<div class="mb-4"></div>
+
+<div class="col-xl-5 col-lg-6 ms-1">
+    <div class="shipping-address d-flex justify-content-md-end">
+        <div class="border-end pe-2">
+            <h6 class="mb-2"><span class="text-success">{{ localize('Shipping Address') }}</span></h6>
+            @php
+                $shippingAddress = $order->orderGroup->shippingAddress;
+            @endphp
+            <p class="mb-0">
+                @if ($order->orderGroup->is_pos_order)
+                    <span class="text-success">{{ $order->orderGroup->pos_order_address }}</span>
+                @else
+                    {{ optional($shippingAddress)->address }},
+                    {{ optional(optional($shippingAddress)->city)->name }},
+                    {{ optional(optional($shippingAddress)->state)->name }},
+                    {{ optional(optional($shippingAddress)->country)->name }}
+                @endif
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
 
                         <!--order details-->
                         <table class="table tt-footable border-top" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center" width="7%">{{ localize('S/L') }}</th>
+                                    <th class="text-center" width="7%">{{ localize('ID') }}</th>
                                     <th>{{ localize('Products') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Unit Price') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('QTY') }}</th>
@@ -245,10 +246,7 @@
                                         <strong>{{ formatPrice($order->orderGroup->sub_total_amount) }}</strong>
                                     </div>
 
-                                    <div class="col-auto">
-                                        <h6 class="mb-1">{{ localize('Tips') }}</h6>
-                                        <strong>{{ formatPrice($order->orderGroup->total_tips_amount) }}</strong>
-                                    </div>
+                                
 
                                     <div class="col-auto ps-lg-5">
                                         <h6 class="mb-1">{{ localize('Shipping Cost') }}</h6>
@@ -267,36 +265,6 @@
                                         <strong
                                             class="text-accent">{{ formatPrice($order->orderGroup->grand_total_amount) }}</strong>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--right sidebar-->
-                <div class="col-xl-3 order-1 order-md-1 order-lg-1 order-xl-2">
-                    <div class="tt-sticky-sidebar">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="mb-4">{{ localize('Order Logs') }}</h5>
-                                <div class="tt-vertical-step">
-                                    <ul class="list-unstyled">
-
-                                        @forelse ($order->orderUpdates as $orderUpdate)
-                                            <li>
-                                                <a class="{{ $loop->first ? 'active' : '' }}">
-                                                    {{ $orderUpdate->note }} <br> By
-                                                    <span
-                                                        class="text-capitalize">{{ optional($orderUpdate->user)->name }}</span>
-                                                    at
-                                                    {{ date('d M, Y', strtotime($orderUpdate->created_at)) }}.</a>
-                                            </li>
-                                        @empty
-                                            <li>
-                                                <a class="active">{{ localize('No logs found') }}</a>
-                                            </li>
-                                        @endforelse
-                                    </ul>
                                 </div>
                             </div>
                         </div>

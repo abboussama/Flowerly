@@ -46,47 +46,6 @@
                 </div>
                 <ul class="navbar-nav flex-row align-items-center tt-top-navbar">
 
-                    <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link tt-visit-store" target="_blank">
-                            <i data-feather="globe" class="me-2"></i>
-                            {{ localize('Visit Store') }}
-                        </a>
-                    </li>
-
-
-
-                    <li class="nav-item dropdown">
-                        @php
-                            if (Session::has('locale')) {
-                                $locale = Session::get('locale', Config::get('app.locale'));
-                            } else {
-                                $locale = env('DEFAULT_LANGUAGE');
-                            }
-                            $currentLanguage = \App\Models\Language::where('code', $locale)->first();
-                        @endphp
-
-                    <li class="nav-item dropdown tt-curency-lang-dropdown d-none d-md-block">
-                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <img src="{{ staticAsset('backend/assets/img/flags/' . $currentLanguage->flag . '.png') }}"
-                                alt="country" class="img-fluid me-1"> {{ $currentLanguage->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0">
-                            @foreach (\App\Models\Language::where('is_active', 1)->get() as $key => $language)
-                                <!-- item-->
-                                <li>
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item @if ($currentLanguage->code == $language->code) active @endif"
-                                        onclick="changeLocaleLanguage(this)" data-flag="{{ $language->code }}">
-                                        <img src="{{ staticAsset('backend/assets/img/flags/' . $language->flag . '.png') }}"
-                                            alt="{{ $language->code }}" class="img-fluid me-1"> <span
-                                            class="align-middle">{{ $language->name }}</span>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-
 
                     @php
                         if (Session::has('currency_code')) {
@@ -96,22 +55,6 @@
                         }
                         $currentCurrency = \App\Models\Currency::where('code', $currency_code)->first();
                     @endphp
-
-                    <li class="nav-item dropdown tt-curency-lang-dropdown d-none d-md-block">
-                        <a href="#" class="nav-link text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">{{ $currentCurrency->symbol }} {{ $currentCurrency->code }}</a>
-                        <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0">
-
-                            @foreach (\App\Models\Currency::where('is_active', 1)->get() as $key => $currency)
-                                <li>
-                                    <a class="dropdown-item fs-xs text-uppercase" href="javascript:void(0);"
-                                        onclick="changeLocaleCurrency(this)" data-currency="{{ $currency->code }}">
-                                        {{ $currency->symbol }} {{ $currency->code }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
 
 
                     <li class="nav-item">

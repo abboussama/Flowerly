@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2023 at 01:51 AM
+-- Generation Time: Jun 08, 2023 at 05:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -226,16 +226,16 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `parent_id`, `level`, `sorting_order_level`, `thumbnail_image`, `icon`, `is_featured`, `is_top`, `total_sale_count`, `meta_title`, `meta_image`, `meta_description`, `created_at`, `updated_at`) VALUES
-(2, 'Sympathy', 'sympathy-ko6ex', 0, 0, 2, '10', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:05:53', '2023-06-07 16:06:27'),
+(2, 'Sympathy', 'sympathy-ko6ex', 0, 0, 2, '10', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:05:53', '2023-06-08 00:44:14'),
 (3, 'Just Because', 'just-because-d7cc4', 0, 0, 1, '11', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:07:26', '2023-06-07 16:07:26'),
 (4, 'Anniversary', 'anniversary-0qy17', 0, 0, 0, '12', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:08:00', '2023-06-07 16:08:00'),
-(5, 'Thank You', 'thank-you-Si3Sp', 0, 0, 0, '13', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:08:42', '2023-06-07 16:08:42'),
-(6, 'Get Well', 'get-well-QPnEp', 0, 0, 0, '14', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:09:24', '2023-06-07 16:09:24'),
+(5, 'Thank You', 'thank-you-Si3Sp', 0, 0, 0, '13', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:08:42', '2023-06-08 00:44:14'),
+(6, 'Get Well', 'get-well-QPnEp', 0, 0, 0, '14', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:09:24', '2023-06-08 00:44:14'),
 (7, 'Weddings', 'weddings-ydhPG', 0, 0, 0, '15', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:10:05', '2023-06-07 16:10:05'),
 (8, 'Valentine\'s Day', 'valentines-day-2U3iK', 0, 0, 0, '16', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:10:37', '2023-06-07 16:10:37'),
-(9, 'Mother\'s Day', 'mothers-day-Ydy1A', 0, 0, 0, '17', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:12:56', '2023-06-07 16:12:56'),
-(10, 'New Baby', 'new-baby-Q9UEj', 0, 0, 0, '18', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:14:02', '2023-06-07 16:14:02'),
-(11, 'Apologies', 'apologies-LS7R4', 0, 0, 0, '19', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:14:58', '2023-06-07 16:14:58'),
+(9, 'Mother\'s Day', 'mothers-day-Ydy1A', 0, 0, 0, '17', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:12:56', '2023-06-08 00:44:14'),
+(10, 'New Baby', 'new-baby-Q9UEj', 0, 0, 0, '18', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:14:02', '2023-06-08 00:44:14'),
+(11, 'Apologies', 'apologies-LS7R4', 0, 0, 0, '19', NULL, 0, 0, 2, NULL, NULL, NULL, '2023-06-07 16:14:58', '2023-06-08 00:44:14'),
 (12, 'Retirement', 'retirement-QJlIY', 0, 0, 0, '20', NULL, 0, 0, 0, NULL, NULL, NULL, '2023-06-07 16:17:23', '2023-06-07 16:17:23');
 
 -- --------------------------------------------------------
@@ -430,7 +430,8 @@ CREATE TABLE `currencies` (
 --
 
 INSERT INTO `currencies` (`id`, `code`, `name`, `symbol`, `alignment`, `rate`, `is_active`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'usd', 'US Dollar', '$', 0, 1, 1, '2022-11-27 11:21:37', '2022-11-27 11:21:37', NULL);
+(1, 'usd', 'US Dollar', '$', 0, 1, 0, '2022-11-27 11:21:37', '2023-06-08 00:37:08', NULL),
+(3, 'Dirham', 'Moroccan Dirham', 'Dhs', 1, 10, 1, '2023-06-08 00:35:46', '2023-06-08 00:35:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -1038,7 +1039,254 @@ INSERT INTO `localizations` (`id`, `lang_key`, `t_key`, `t_value`, `created_at`,
 (541, 'en', 'standard_delivery_charge', 'Standard Delivery Charge', '2023-06-07 21:05:23', '2023-06-07 21:05:23', NULL),
 (542, 'en', '1__3_days', '1 - 3 days', '2023-06-07 21:05:23', '2023-06-07 21:05:23', NULL),
 (543, 'en', 'save_zone', 'Save Zone', '2023-06-07 21:05:23', '2023-06-07 21:05:23', NULL),
-(544, 'en', 'zone_information', 'Zone Information', '2023-06-07 21:05:23', '2023-06-07 21:05:23', NULL);
+(544, 'en', 'zone_information', 'Zone Information', '2023-06-07 21:05:23', '2023-06-07 21:05:23', NULL),
+(545, 'en', 'off', 'Off', '2023-06-07 23:13:19', '2023-06-07 23:13:19', NULL),
+(546, 'en', 'the_password_must_be_at_least_6_characters', 'The password must be at least 6 characters.', '2023-06-07 23:21:05', '2023-06-07 23:21:05', NULL),
+(547, 'en', 'your_account_has_been_verified_successfully', 'Your account has been verified successfully', '2023-06-07 23:22:43', '2023-06-07 23:22:43', NULL),
+(548, 'en', 'customer_dashboard', 'Customer Dashboard', '2023-06-07 23:22:43', '2023-06-07 23:22:43', NULL),
+(549, 'en', 'total_shipped', 'Total Shipped', '2023-06-07 23:22:43', '2023-06-07 23:22:43', NULL),
+(550, 'en', 'new_orders', 'New Orders', '2023-06-07 23:22:43', '2023-06-07 23:22:43', NULL),
+(551, 'en', 'manage_my_account', 'Manage My Account', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(552, 'en', 'order_history', 'Order History', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(553, 'en', 'wallet_history', 'Wallet History', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(554, 'en', 'refund_history', 'Refund History', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(555, 'en', 'track_order', 'Track Order', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(556, 'en', 'updated_profile', 'Updated Profile', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(557, 'en', 'log_out', 'Log out', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(558, 'en', 'total', 'Total', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(559, 'en', 'status', 'Status', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(560, 'en', 'my_orders', 'My Orders', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(561, 'en', 'my_wishlist', 'My Wishlist', '2023-06-07 23:22:44', '2023-06-07 23:22:44', NULL),
+(562, 'en', 'check_out', 'Check Out', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(563, 'en', 'shipping_address', 'Shipping Address', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(564, 'en', 'add_address', 'Add Address', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(565, 'en', 'add_your_address_to_checkout', 'Add your address to checkout', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(566, 'en', 'preferred_delivery_time', 'Preferred Delivery Time', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(567, 'en', 'regular_delivery', 'Regular Delivery', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(568, 'en', 'we_will_deliver_your_products_soon', 'We will deliver your products soon.', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(569, 'en', 'enhance_your_bouquet_with_a_heartfelt_message', 'Enhance Your Bouquet With a Heartfelt Message', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(570, 'en', 'gift_card_message', 'Gift Card Message', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(571, 'en', 'happy_birthay', 'Happy Birthay', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(572, 'en', 'payment_method', 'Payment Method', '2023-06-07 23:23:05', '2023-06-07 23:23:05', NULL),
+(573, 'en', 'order_summery', 'Order Summery', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(574, 'en', 'tax', 'Tax', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(575, 'en', 'place_order', 'Place Order', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(576, 'en', 'add_new_address', 'Add New Address', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(577, 'en', 'select_country', 'Select Country', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(578, 'en', 'select_state', 'Select State', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(579, 'en', 'city', 'City', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(580, 'en', 'select_city', 'Select City', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(581, 'en', 'default_address', 'Default Address?', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(582, 'en', 'no', 'No', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(583, 'en', 'set_default', 'Set Default', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(584, 'en', 'address', 'Address', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(585, 'en', '25_elephant_road_new_town', '2/5 Elephant Road, New Town', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(586, 'en', 'update_address', 'Update Address', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(587, 'en', 'delete_address', 'Delete Address', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(588, 'en', 'want_to_delete_this_address', 'Want to delete this address?', '2023-06-07 23:23:06', '2023-06-07 23:23:06', NULL),
+(589, 'en', 'address_has_been_inserted_successfully', 'Address has been inserted successfully', '2023-06-07 23:23:35', '2023-06-07 23:23:35', NULL),
+(590, 'en', 'billing_address', 'Billing Address', '2023-06-07 23:23:35', '2023-06-07 23:23:35', NULL),
+(591, 'en', 'available_logistics', 'Available Logistics', '2023-06-07 23:23:37', '2023-06-07 23:23:37', NULL),
+(592, 'en', 'we_are_not_shipping_to_your_city_now', 'We are not shipping to your city now.', '2023-06-07 23:23:37', '2023-06-07 23:23:37', NULL),
+(593, 'en', 'zone_has_been_inserted_successfully', 'Zone has been inserted successfully', '2023-06-07 23:24:32', '2023-06-07 23:24:32', NULL),
+(594, 'en', 'personal_information', 'Personal Information', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(595, 'en', 'phone_number', 'Phone Number', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(596, 'en', 'alternative_phone', 'Alternative Phone', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(597, 'en', 'your_alternative_phone', 'Your Alternative Phone', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(598, 'en', 'additional_info', 'Additional Info', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(599, 'en', 'type_your_additional_informations_here', 'Type your additional informations here', '2023-06-07 23:29:00', '2023-06-07 23:29:00', NULL),
+(600, 'en', 'payment_methods_settings', 'Payment Methods Settings', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(601, 'en', 'cash_on_delivery', 'Cash On Delivery', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(602, 'en', 'enable_cod', 'Enable COD', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(603, 'en', 'disable', 'Disable', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(604, 'en', 'enable', 'Enable', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(605, 'en', 'paypal_credentials', 'Paypal Credentials', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(606, 'en', 'paypal_client_id', 'Paypal Client ID', '2023-06-07 23:39:57', '2023-06-07 23:39:57', NULL),
+(607, 'en', 'paypal_client_secret', 'Paypal Client Secret', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(608, 'en', 'enable_paypal', 'Enable Paypal', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(609, 'en', 'enable_test_sandbox_mode', 'Enable Test Sandbox Mode', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(610, 'en', 'stripe_credentials', 'Stripe Credentials', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(611, 'en', 'stripe_key', 'Stripe Key', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(612, 'en', 'stripe_secret', 'Stripe Secret', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(613, 'en', 'enable_stripe', 'Enable Stripe', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(614, 'en', 'paytm_credentials', 'PayTm Credentials', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(615, 'en', 'paytm_environment', 'PayTm Environment', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(616, 'en', 'paytm_merchant_id', 'PayTm Merchant ID', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(617, 'en', 'paytm_merchant_key', 'PayTm Merchant Key', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(618, 'en', 'paytm_merchant_website', 'PayTm Merchant Website', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(619, 'en', 'paytm_channel', 'PayTm Channel', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(620, 'en', 'paytm_industry_type', 'PayTm Industry Type', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(621, 'en', 'enable_paytm', 'Enable PayTm', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(622, 'en', 'razorpay_credentials', 'Razorpay Credentials', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(623, 'en', 'razorpay_key', 'Razorpay Key', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(624, 'en', 'razorpay_secret', 'Razorpay Secret', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(625, 'en', 'enable_razorpay', 'Enable Razorpay', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(626, 'en', 'iyzico_credentials', 'IyZico Credentials', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(627, 'en', 'iyzico_api_key', 'IyZico API Key', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(628, 'en', 'iyzico_secret_key', 'IyZico Secret Key', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(629, 'en', 'enable_iyzico', 'Enable IyZico', '2023-06-07 23:39:58', '2023-06-07 23:39:58', NULL),
+(630, 'en', 'save_configuration', 'Save Configuration', '2023-06-07 23:39:59', '2023-06-07 23:39:59', NULL),
+(631, 'en', 'payment_settings_updated_successfully', 'Payment settings updated successfully', '2023-06-07 23:41:26', '2023-06-07 23:41:26', NULL),
+(632, 'en', 'pay_with_stripe', 'Pay with Stripe', '2023-06-07 23:41:30', '2023-06-07 23:41:30', NULL),
+(633, 'en', 'happy_birthday', 'Happy Birthday', '2023-06-07 23:43:14', '2023-06-07 23:43:14', NULL),
+(634, 'en', 'your_order_has_been_placed_successfully', 'Your order has been placed successfully', '2023-06-07 23:47:22', '2023-06-07 23:47:22', NULL),
+(635, 'en', 'your_order_has_been_placed', 'Your order has been placed', '2023-06-07 23:47:22', '2023-06-07 23:47:22', NULL),
+(636, 'en', 'invoice', 'INVOICE', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(637, 'en', 'invoice_no', 'Invoice No', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(638, 'en', 'order_date', 'Order Date', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(639, 'en', 'shipping_information', 'SHIPPING INFORMATION', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(640, 'en', 'billing_information', 'BILLING INFORMATION', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(641, 'en', 'item', 'Item', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(642, 'en', 'qty', 'Qty', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(643, 'en', 'tips', 'Tips', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(644, 'en', 'shipping_cost', 'Shipping Cost', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(645, 'en', 'grand_total', 'Grand Total', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(646, 'en', 'hello', 'Hello', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(647, 'en', 'best_regards', 'Best Regards', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(648, 'en', 'website', 'Website', '2023-06-07 23:47:23', '2023-06-07 23:47:23', NULL),
+(649, 'en', 'here_are_your_order_details_we_thank_you_for_your_purchase', 'Here are your order details. We thank you for your purchase.', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(650, 'en', 'uprice', 'U.Price', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(651, 'en', 'tprice', 'T.Price', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(652, 'en', 'sub_total', 'Sub Total', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(653, 'en', 'request_refund', 'Request Refund', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(654, 'en', 'refund_reason', 'Refund Reason', '2023-06-07 23:47:29', '2023-06-07 23:47:29', NULL),
+(655, 'en', 'type_refund_reason', 'Type refund reason', '2023-06-07 23:47:30', '2023-06-07 23:47:30', NULL),
+(656, 'en', 'submit', 'Submit', '2023-06-07 23:47:30', '2023-06-07 23:47:30', NULL),
+(657, 'en', 'rejection_reason', 'Rejection Reason', '2023-06-07 23:47:30', '2023-06-07 23:47:30', NULL),
+(658, 'en', 'new', 'New', '2023-06-07 23:47:33', '2023-06-07 23:47:33', NULL),
+(659, 'en', 'new_order_placed', 'New Order Placed', '2023-06-07 23:47:33', '2023-06-07 23:47:33', NULL),
+(660, 'en', 'search_by_namephone', 'Search by name/phone', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(661, 'en', 'location', 'Location', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(662, 'en', 'online_orders', 'Online Orders', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(663, 'en', 'pos_orders', 'POS Orders', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(664, 'en', 'payment', 'Payment', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(665, 'en', 'type', 'Type', '2023-06-07 23:47:40', '2023-06-07 23:47:40', NULL),
+(666, 'en', 'order_details', 'Order Details', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(667, 'en', 'download_invoice', 'Download Invoice', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(668, 'en', 'customer_info', 'Customer Info', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(669, 'en', 'order_logs', 'Order Logs', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(670, 'en', 'no_logs_found', 'No logs found', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(671, 'en', 'payment_status_has_been_updated', 'Payment status has been updated', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(672, 'en', 'delivery_status_has_been_updated', 'Delivery status has been updated', '2023-06-07 23:48:27', '2023-06-07 23:48:27', NULL),
+(673, 'en', 'login__registration', 'Login & Registration', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(674, 'en', 'customer_registration', 'Customer Registration', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(675, 'en', 'email_required', 'Email Required', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(676, 'en', 'email__phone_both_required', 'Email & Phone Both Required', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(677, 'en', 'registration_verification', 'Registration Verification', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(678, 'en', 'email_verification', 'Email Verification', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(679, 'en', 'otp_verification', 'OTP Verification', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(680, 'en', 'google_recaptcha_v3', 'Google Recaptcha V3', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(681, 'en', 'recaptcha_site_key', 'Recaptcha Site Key', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(682, 'en', 'recaptcha_secret_key', 'Recaptcha Secret Key', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(683, 'en', 'enable_recaptcha', 'Enable Recaptcha', '2023-06-08 00:13:13', '2023-06-08 00:13:13', NULL),
+(684, 'en', 'configure_general_settings', 'Configure General Settings', '2023-06-08 00:13:14', '2023-06-08 00:13:14', NULL),
+(685, 'en', 'google_recaptcha', 'Google Recaptcha', '2023-06-08 00:13:14', '2023-06-08 00:13:14', NULL),
+(686, 'en', 'order_information', 'Order Information', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(687, 'en', 'enable_scheduled_order', 'Enable Scheduled Order', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(688, 'en', 'scheduled_order_days', 'Scheduled Order Days', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(689, 'en', 'order_code_prefix', 'Order Code Prefix', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(690, 'en', 'grostore', '#Grostore-', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(691, 'en', 'order_code_starts_from', 'Order Code Starts From', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(692, 'en', '1001', '1001', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(693, 'en', 'invoice_thank_you_message', 'Invoice Thank You Message', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(694, 'en', 'type_your_thank_you_message_for_invoice', 'Type your thank you message for invoice', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(695, 'en', 'scheduled_time_slot_list', 'Scheduled Time Slot List', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(696, 'en', 'time_slot', 'Time Slot', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(697, 'en', 'sorting_order', 'Sorting Order', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(698, 'en', 'add_new_time_slot', 'Add New Time Slot', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(699, 'en', '8am__9am', '8am - 9am', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(700, 'en', 'timeslots_with_lower_sorting_order_will_be_shown_first', 'Timeslots with lower sorting order will be shown first', '2023-06-08 00:21:26', '2023-06-08 00:21:26', NULL),
+(701, 'en', 'configure_order_settings', 'Configure Order Settings', '2023-06-08 00:21:27', '2023-06-08 00:21:27', NULL),
+(702, 'en', 'time_slot_list', 'Time Slot List', '2023-06-08 00:21:27', '2023-06-08 00:21:27', NULL),
+(703, 'en', 'smtp_configuration', 'SMTP Configuration', '2023-06-08 00:22:31', '2023-06-08 00:22:31', NULL),
+(704, 'en', 'sendmail', 'Sendmail', '2023-06-08 00:22:31', '2023-06-08 00:22:31', NULL),
+(705, 'en', 'smtp', 'SMTP', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(706, 'en', 'mail_host', 'Mail Host', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(707, 'en', 'type_mail_host', 'Type mail Host', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(708, 'en', 'mail_port', 'Mail Port', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(709, 'en', 'type_mail_port', 'Type mail port', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(710, 'en', 'mail_username', 'Mail Username', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(711, 'en', 'type_mail_username', 'Type mail username', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(712, 'en', 'mail_password', 'Mail Password', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(713, 'en', 'type_mail_password', 'Type mail password', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(714, 'en', 'mail_encryption', 'Mail Encryption', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(715, 'en', 'type_mail_encryption', 'Type mail encryption', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(716, 'en', 'mail_from_address', 'Mail From Address', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(717, 'en', 'type_mail_from_address', 'Type mail from address', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(718, 'en', 'mail_from_name', 'Mail From Name', '2023-06-08 00:22:32', '2023-06-08 00:22:32', NULL),
+(719, 'en', 'type_mail_from_name', 'Type mail from name', '2023-06-08 00:22:33', '2023-06-08 00:22:33', NULL),
+(720, 'en', 'configure_smtp', 'Configure SMTP', '2023-06-08 00:22:33', '2023-06-08 00:22:33', NULL),
+(721, 'en', 'smtp_information', 'SMTP Information', '2023-06-08 00:22:33', '2023-06-08 00:22:33', NULL),
+(722, 'en', 'social_login_configurations', 'Social Login Configurations', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(723, 'en', 'google_login', 'Google Login', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(724, 'en', 'google_client_id', 'Google Client ID', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(725, 'en', 'google_client_secret', 'Google Client Secret', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(726, 'en', 'is_active', 'Is Active?', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(727, 'en', 'facebook_login', 'Facebook Login', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(728, 'en', 'facebook_app_id', 'Facebook App ID', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(729, 'en', 'facebook_app_secret', 'Facebook App Secret', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(730, 'en', 'faccebook_login', 'Faccebook Login', '2023-06-08 00:22:51', '2023-06-08 00:22:51', NULL),
+(731, 'en', 'general_informations', 'General Informations', '2023-06-08 00:26:20', '2023-06-08 00:26:20', NULL),
+(732, 'en', 'system_title', 'System Title', '2023-06-08 00:26:20', '2023-06-08 00:26:20', NULL),
+(733, 'en', 'browser_tab_title_separator', 'Browser Tab Title Separator', '2023-06-08 00:26:20', '2023-06-08 00:26:20', NULL),
+(734, 'en', 'dashboard_logo__favicon', 'Dashboard Logo & Favicon', '2023-06-08 00:26:20', '2023-06-08 00:26:20', NULL),
+(735, 'en', 'dashboard_logo', 'Dashboard Logo', '2023-06-08 00:26:20', '2023-06-08 00:26:20', NULL),
+(736, 'en', 'choose_dashboard_logo', 'Choose Dashboard Logo', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(737, 'en', 'favicon', 'Favicon', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(738, 'en', 'choose_favicon', 'Choose Favicon', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(739, 'en', 'maintenance_mode', 'Maintenance Mode', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(740, 'en', 'enable_maintenance_mode', 'Enable Maintenance Mode', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(741, 'en', 'set_maintenance_mode', 'Set maintenance mode', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(742, 'en', 'meta_keywords', 'Meta Keywords', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(743, 'en', 'dashborad_logo__favicon', 'Dashborad Logo & Favicon', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(744, 'en', 'seo_configuration', 'SEO Configuration', '2023-06-08 00:26:21', '2023-06-08 00:26:21', NULL),
+(745, 'en', 'currencies', 'Currencies', '2023-06-08 00:26:42', '2023-06-08 00:26:42', NULL),
+(746, 'en', 'symbol', 'Symbol', '2023-06-08 00:26:42', '2023-06-08 00:26:42', NULL),
+(747, 'en', 'alignment', 'Alignment', '2023-06-08 00:26:42', '2023-06-08 00:26:42', NULL),
+(748, 'en', '1_usd__', '1 USD = ?', '2023-06-08 00:26:42', '2023-06-08 00:26:42', NULL),
+(749, 'en', 'symbolamount', '[symbol][amount]', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(750, 'en', 'add_new_currency', 'Add New Currency', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(751, 'en', 'currency_name', 'Currency Name', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(752, 'en', 'type_currency_name', 'Type currency name', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(753, 'en', 'currency_symbol', 'Currency Symbol', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(754, 'en', 'type_symbol', 'Type symbol', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(755, 'en', 'currency_code', 'Currency Code', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(756, 'en', 'type_code', 'Type code', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(757, 'en', 'rate', 'Rate', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(758, 'en', 'amountsymbol', '[amount][symbol]', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(759, 'en', 'symbol_amount', '[symbol] [amount]', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(760, 'en', 'amount_symbol', '[amount] [symbol]', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(761, 'en', 'save_currency', 'Save Currency', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(762, 'en', 'set_default_currency', 'Set Default Currency', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(763, 'en', 'default_currency', 'Default Currency', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(764, 'en', 'no_of_decimals', 'No of Decimals', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(765, 'en', 'price_format', 'Price Format', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(766, 'en', 'show_full_price_1000000', 'Show Full Price (1000000)', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(767, 'en', 'truncate_price_1m1b', 'Truncate Price (1M/1B)', '2023-06-08 00:26:43', '2023-06-08 00:26:43', NULL),
+(768, 'en', 'save_configurations', 'Save Configurations', '2023-06-08 00:26:44', '2023-06-08 00:26:44', NULL),
+(769, 'en', 'currency_information', 'Currency Information', '2023-06-08 00:26:44', '2023-06-08 00:26:44', NULL),
+(770, 'en', 'all_currencies', 'All Currencies', '2023-06-08 00:26:44', '2023-06-08 00:26:44', NULL),
+(771, 'en', 'currency_configurations', 'Currency Configurations', '2023-06-08 00:26:44', '2023-06-08 00:26:44', NULL),
+(772, 'en', 'default_currency_can_not_be_disabled', 'Default currency can not be disabled', '2023-06-08 00:26:44', '2023-06-08 00:26:44', NULL),
+(773, 'en', 'currency_has_been_inserted_successfully', 'Currency has been inserted successfully', '2023-06-08 00:28:53', '2023-06-08 00:28:53', NULL),
+(774, 'en', 'update_currency', 'Update Currency', '2023-06-08 00:29:24', '2023-06-08 00:29:24', NULL),
+(775, 'en', 'currency_has_been_updated_successfully', 'Currency has been updated successfully', '2023-06-08 00:29:33', '2023-06-08 00:29:33', NULL),
+(776, 'en', 'currency_changed_to_', 'Currency changed to ', '2023-06-08 00:29:42', '2023-06-08 00:29:42', NULL),
+(777, 'en', 'scheduled_delivery', 'Scheduled Delivery', '2023-06-08 00:39:33', '2023-06-08 00:39:33', NULL),
+(778, 'en', 'fast_delivery', 'Fast Delivery', '2023-06-08 00:43:49', '2023-06-08 00:43:49', NULL),
+(779, 'en', 'type_your_name', 'Type your name', '2023-06-08 00:48:13', '2023-06-08 00:48:13', NULL),
+(780, 'en', 'type_your_email', 'Type your email', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(781, 'en', 'type_your_phone', 'Type your phone', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(782, 'en', 'avatar', 'Avatar', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(783, 'en', 'choose_avatar', 'Choose Avatar', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(784, 'en', 'retype_password', 'Re-type password', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(785, 'en', 'user_information', 'User Information', '2023-06-08 00:48:14', '2023-06-08 00:48:14', NULL),
+(786, 'en', '1000__how_many_points', '$1.000 = How many points?', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL),
+(787, 'en', 'type_reward_points', 'Type reward points', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL),
+(788, 'en', 'waiting_days_for_wallet_conversion', 'Waiting Days for Wallet Conversion', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL),
+(789, 'en', 'type_waiting_days', 'Type waiting days', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL),
+(790, 'en', 'enable_reward_points', 'Enable Reward Points', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL),
+(791, 'en', 'reward_information', 'Reward Information', '2023-06-08 00:48:30', '2023-06-08 00:48:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -1118,6 +1366,13 @@ CREATE TABLE `logistic_zones` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `logistic_zones`
+--
+
+INSERT INTO `logistic_zones` (`id`, `name`, `logistic_id`, `standard_delivery_charge`, `express_delivery_charge`, `standard_delivery_time`, `express_delivery_time`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Beni Mellal - DHL', 3, 0, 0, '1 - 3 days', NULL, '2023-06-07 23:24:32', '2023-06-07 23:24:32', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1133,6 +1388,13 @@ CREATE TABLE `logistic_zone_cities` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `logistic_zone_cities`
+--
+
+INSERT INTO `logistic_zone_cities` (`id`, `logistic_id`, `logistic_zone_id`, `city_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 3, 1, 6, '2023-06-07 23:24:32', '2023-06-07 23:24:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1350,6 +1612,14 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `order_group_id`, `shop_id`, `user_id`, `guest_user_id`, `location_id`, `delivery_status`, `payment_status`, `applied_coupon_code`, `coupon_discount_amount`, `admin_earning_percentage`, `total_admin_earnings`, `total_vendor_earnings`, `logistic_id`, `logistic_name`, `pickup_or_delivery`, `shipping_delivery_type`, `scheduled_delivery_info`, `pickup_hub_id`, `shipping_cost`, `tips_amount`, `reward_points`, `created_at`, `updated_at`) VALUES
+(1, 4, 1, 6, NULL, 1, 'order_placed', 'paid', NULL, 0, 0, 31.5, 0, 3, 'DHL Morocco', 'delivery', 'regular', NULL, NULL, 0, 0, 0, '2023-06-07 23:46:36', '2023-06-07 23:47:22'),
+(2, 6, 1, 7, NULL, 1, 'order_placed', 'paid', NULL, 0, 0, 31.5, 0, 3, 'DHL Morocco', 'delivery', 'regular', NULL, NULL, 0, 0, 0, '2023-06-08 00:44:14', '2023-06-08 00:44:53');
+
 -- --------------------------------------------------------
 
 --
@@ -1384,8 +1654,21 @@ CREATE TABLE `order_groups` (
   `total_tips_amount` double NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `gift_card_message` varchar(255) DEFAULT 'NONE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order_groups`
+--
+
+INSERT INTO `order_groups` (`id`, `user_id`, `guest_user_id`, `order_code`, `shipping_address_id`, `billing_address_id`, `location_id`, `phone_no`, `alternative_phone_no`, `sub_total_amount`, `total_tax_amount`, `total_coupon_discount_amount`, `total_shipping_cost`, `grand_total_amount`, `payment_method`, `payment_status`, `payment_details`, `is_manual_payment`, `manual_payment_details`, `is_pos_order`, `pos_order_address`, `additional_discount_value`, `additional_discount_type`, `total_discount_amount`, `total_tips_amount`, `created_at`, `updated_at`, `deleted_at`, `gift_card_message`) VALUES
+(1, 6, NULL, 1, 1, 1, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'cash_on_delivery', 'unpaid', NULL, 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-07 23:43:50', '2023-06-07 23:43:50', NULL, 'Have a great time ~Oussama'),
+(2, 6, NULL, 2, 1, 1, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'cash_on_delivery', 'unpaid', NULL, 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-07 23:44:12', '2023-06-07 23:44:12', NULL, 'Have a great time ~Oussama'),
+(3, 6, NULL, 3, 1, 1, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'cash_on_delivery', 'unpaid', NULL, 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-07 23:45:00', '2023-06-07 23:45:00', NULL, 'Have a great time ~Oussama'),
+(4, 6, NULL, 4, 1, 1, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'stripe', 'paid', '\"{\\\"status\\\":\\\"Success\\\"}\"', 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-07 23:46:36', '2023-06-07 23:47:22', NULL, 'Happy birthay friend'),
+(5, 7, NULL, 5, 2, 2, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'cash_on_delivery', 'unpaid', NULL, 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-08 00:43:04', '2023-06-08 00:43:04', NULL, 'Happy Marriage to you'),
+(6, 7, NULL, 6, 2, 2, 1, NULL, NULL, 31.5, 0, 0, 0, 31.5, 'stripe', 'paid', '\"{\\\"status\\\":\\\"Success\\\"}\"', 0, NULL, 0, NULL, 0, 'flat', 0, 0, '2023-06-08 00:44:14', '2023-06-08 00:44:53', NULL, 'happy marriage to you');
 
 -- --------------------------------------------------------
 
@@ -1407,6 +1690,14 @@ CREATE TABLE `order_items` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `order_id`, `product_variation_id`, `qty`, `location_id`, `unit_price`, `total_tax`, `total_price`, `reward_points`, `is_refunded`, `created_at`, `updated_at`) VALUES
+(1, 1, 14, 1, 1, 31.5, 0, 31.5, 0, 0, '2023-06-07 23:46:36', '2023-06-07 23:46:36'),
+(2, 2, 14, 1, 1, 31.5, 0, 31.5, 0, 0, '2023-06-08 00:44:14', '2023-06-08 00:44:14');
 
 -- --------------------------------------------------------
 
@@ -1728,7 +2019,7 @@ INSERT INTO `products` (`id`, `shop_id`, `added_by`, `name`, `slug`, `brand_id`,
 (11, 1, 'admin', 'Classic Red Rose Bouquet', 'classic-red-rose-bouquet-vh2m0', NULL, NULL, '33', '33', NULL, 'Timeless elegance and romance with a dozen red roses', '<p>Express your love and affection with the <b>Classic Red Rose Bouquet.</b> This timeless arrangement features a dozen premium red roses carefully handcrafted to perfection. With their deep red hues and velvety petals, these roses symbolize love, passion, and romance. Whether it\'s for a special anniversary, Valentine\'s Day, or to surprise someone special, this bouquet is sure to make a lasting impression<br></p>', 65, 65, 0, 'percent', 1686096000, 1690761600, 20, 23, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
 (12, 1, 'admin', 'Fragrant Lavender Garden Bouquet', 'fragrant-lavender-garden-bouquet-hhvyv', NULL, NULL, '34', '34', NULL, 'A soothing bouquet that captivates with its calming lavender scent.', '<p>Immerse yourself in the tranquil beauty of the <b>Fragrant Lavender Garden Bouquet</b>. This enchanting arrangement showcases a variety of lavender-hued blooms, such as lavender roses, lisianthus, and statice, complemented by delicate foliage. The soothing scent of lavender permeates the air, creating a sense of relaxation and serenity. Perfect for aromatherapy, spa-like ambiance, or as a thoughtful gift for someone in need of calm and peace<br></p>', 44, 44, 70, 'percent', 1686096000, 1690761600, 19, 23, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
 (13, 1, 'admin', 'Enchanted Garden Bouquet', 'enchanted-garden-bouquet-bjnup', NULL, NULL, '35', '35', NULL, 'Step into a magical world with this enchanting garden-inspired bouquet', '<p>Immerse yourself in the whimsical beauty of the<b> Enchanted Garden Bouquet</b>. This captivating arrangement features a variety of vibrant blooms, including roses, daisies, and delphiniums, nestled among lush greenery. The combination of colors and textures creates a captivating display reminiscent of a secret garden. Whether it\'s to brighten someone\'s day or add a touch of magic to your space, this bouquet is sure to evoke joy and wonder<br></p>', 80, 80, 55, 'percent', 1686009600, 1690588800, 14, 20, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 1, 'admin', 'Rustic Wildflower Bouquet', 'rustic-wildflower-bouquet-dcbc3', NULL, NULL, '36', '36', NULL, 'Embrace the beauty of nature with this charming rustic wildflower bouquet.', '<p>Experience the rustic charm of the countryside with the<b> Rustic Wildflower Bouquet.</b> This delightful arrangement showcases an assortment of colorful wildflowers, such as sunflowers, daisies, and asters, accented with natural twine and burlap wrapping. The bouquet exudes a natural and unrefined beauty, perfect for adding a touch of countryside elegance to any occasion or space.<br></p>', 45, 45, 30, 'percent', 1686096000, 1690502400, 12, 42, 1, 0, 1, 1, 0, 1, 0, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(14, 1, 'admin', 'Rustic Wildflower Bouquet', 'rustic-wildflower-bouquet-dcbc3', NULL, NULL, '36', '36', NULL, 'Embrace the beauty of nature with this charming rustic wildflower bouquet.', '<p>Experience the rustic charm of the countryside with the<b> Rustic Wildflower Bouquet.</b> This delightful arrangement showcases an assortment of colorful wildflowers, such as sunflowers, daisies, and asters, accented with natural twine and burlap wrapping. The bouquet exudes a natural and unrefined beauty, perfect for adding a touch of countryside elegance to any occasion or space.<br></p>', 45, 45, 30, 'percent', 1686096000, 1690502400, 12, 40, 1, 0, 1, 1, 0, 1, 2, 72, 24, NULL, NULL, NULL, NULL, 0, '2023-06-07 18:11:04', '2023-06-08 00:44:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -1987,7 +2278,7 @@ INSERT INTO `product_variation_stocks` (`id`, `product_variation_id`, `location_
 (11, 11, 1, 23, '2023-06-07 17:42:59', '2023-06-07 17:42:59', NULL),
 (12, 12, 1, 23, '2023-06-07 17:45:56', '2023-06-07 17:45:56', NULL),
 (13, 13, 1, 20, '2023-06-07 18:08:18', '2023-06-07 18:08:18', NULL),
-(14, 14, 1, 42, '2023-06-07 18:11:04', '2023-06-07 18:11:04', NULL);
+(14, 14, 1, 40, '2023-06-07 18:11:04', '2023-06-08 00:44:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -2172,7 +2463,7 @@ CREATE TABLE `system_settings` (
 
 INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'google_login', '0', '2022-12-07 05:33:40', '2022-12-07 05:33:41', NULL),
-(2, 'default_currency', 'usd', '2022-12-07 05:55:08', '2022-12-07 05:55:08', NULL),
+(2, 'default_currency', 'Dirham', '2022-12-07 05:55:08', '2023-06-08 00:37:02', NULL),
 (3, 'no_of_decimals', '2', '2022-12-07 05:55:08', '2022-12-07 05:55:08', NULL),
 (4, 'truncate_price', '0', '2022-12-07 05:55:08', '2022-12-07 05:55:08', NULL),
 (5, 'enable_multi_vendor', '0', '2022-12-25 05:00:08', '2023-02-18 07:56:54', NULL),
@@ -2183,8 +2474,8 @@ INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_a
 (10, 'system_title', 'Grostore Online Store', '2023-02-05 05:48:44', '2023-03-07 05:46:14', NULL),
 (11, 'title_separator', ':', '2023-02-05 05:48:44', '2023-02-05 05:48:44', NULL),
 (12, 'site_address', 'Cecilia Chapman, 711-2880 Nulla St, Mankato Mississippi 96522', '2023-02-05 05:49:15', '2023-02-05 05:49:15', NULL),
-(13, 'registration_with', 'email', '2023-02-18 08:10:22', '2023-02-18 08:10:22', NULL),
-(14, 'registration_verification_with', 'disable', '2023-02-18 08:10:22', '2023-02-18 08:10:22', NULL),
+(13, 'registration_with', 'email_and_phone', '2023-02-18 08:10:22', '2023-06-08 00:16:21', NULL),
+(14, 'registration_verification_with', 'phone', '2023-02-18 08:10:22', '2023-06-08 00:16:21', NULL),
 (15, 'topbar_welcome_text', 'Welcome to Flowerly Shop', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
 (16, 'topbar_email', 'flowerly@gmail.com', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
 (17, 'topbar_location', 'Mghila ,Beni Mellal, Morroco', '2023-02-20 05:41:46', '2023-06-07 16:45:40', NULL),
@@ -2247,7 +2538,18 @@ INSERT INTO `system_settings` (`id`, `entity`, `value`, `created_at`, `updated_a
 (75, 'about_us_why_choose_us', '[]', '2023-03-04 06:05:13', '2023-03-12 03:57:43', NULL),
 (76, 'admin_panel_logo', '4', '2023-03-04 08:37:03', '2023-03-12 04:08:21', NULL),
 (77, 'favicon', '5', '2023-03-04 08:37:03', '2023-03-12 04:08:21', NULL),
-(78, 'invoice_thanksgiving', 'Thank you for shopping from our store and for your order. it is really awesome to have you as one of our paid users. We hope that you will be happy with Qlearly, if you ever have any questions, suggestions or concerns please do not hesitate to contact us.', '2023-03-07 06:04:15', '2023-03-07 06:09:20', NULL);
+(78, 'invoice_thanksgiving', 'Thank you for choosing to shop at our store and for placing your order. We truly appreciate your support and value you as a valued customer. Our team is delighted to have you as one of our valued users. Your satisfaction is our top priority, so if you ever have any questions, suggestions, or concerns, please feel free to reach out to us. We are here to assist you and ensure your experience with us is exceptional.', '2023-03-07 06:04:15', '2023-06-08 00:22:15', NULL),
+(79, 'enable_cod', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(80, 'enable_paypal', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(81, 'paypal_sandbox', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(82, 'enable_stripe', '1', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(83, 'enable_paytm', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(84, 'enable_razorpay', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(85, 'enable_iyzico', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(86, 'iyzico_sandbox', '0', '2023-06-07 23:41:25', '2023-06-07 23:41:25', NULL),
+(87, 'enable_recaptcha', '1', '2023-06-08 00:16:21', '2023-06-08 00:16:21', NULL),
+(88, 'enable_scheduled_order', '0', '2023-06-08 00:22:15', '2023-06-08 00:40:49', NULL),
+(89, 'allowed_order_days', NULL, '2023-06-08 00:22:15', '2023-06-08 00:22:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -2347,7 +2649,7 @@ INSERT INTO `users` (`id`, `role_id`, `user_type`, `name`, `email`, `phone`, `em
 (1, NULL, 'admin', 'Oussama', 'oussaabb101@gmail.com', NULL, 0, NULL, NULL, '$2y$10$/BuSO4.mdR7OlfOHUo7WyuDlNJ49/Xddq.eOkZ0VYlLvYhf0xp8C.', NULL, NULL, '6', NULL, 0, 0, 1, '2023-06-07 13:06:00', NULL, '2023-06-07 13:40:00', NULL),
 (2, 1, 'staff', 'Othmane', 'othmanedaoui7@gmail.com', '', 0, NULL, NULL, '$2y$10$l0rterx.D94g39YJqpAUEeJI4Exb0v.t4nd.8ouG4B/2eEPqKDRw6', NULL, NULL, NULL, NULL, 0, 0, 1, NULL, '2023-06-07 15:23:40', '2023-06-07 15:23:40', NULL),
 (3, 1, 'staff', 'Hajar', 'wafiqhajaar@gmail.com', '', 0, NULL, NULL, '$2y$10$MVFlnb0KLRIJMDcBoTbheeJPAIA/RX1aW7OhKrBuXdhvP5bj8Ue/y', NULL, NULL, NULL, NULL, 0, 0, 1, NULL, '2023-06-07 15:23:54', '2023-06-07 15:23:54', NULL),
-(4, NULL, 'customer', 'oussama abbou', 'oussamajskt9@gmail.com', '+212649986442', 0, '737664', NULL, '$2y$10$XPAR.Xys1zp5t0LiBa.0S.4JnVPafsA.0dO0hi0gllxG5RUX7speG', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, '2023-06-07 15:26:34', '2023-06-07 15:26:35', NULL);
+(7, NULL, 'customer', 'Client', 'client@gmail.com', '+212649986442', 1, '442993', NULL, '$2y$10$PBUqlFwrKW6GxQvU4C3bq.Bz27zAbkNE4gDbfFdJ76QJXHJCXeCCe', 'S6NszPCVFBWVO60g2r11Cv9HnIfntSHRYzTgGKQQNSnsL2DvwDR0ksmW16q3', NULL, NULL, NULL, 0, 0, NULL, '2023-06-08 00:18:28', '2023-06-08 00:17:30', '2023-06-08 00:18:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -2367,6 +2669,14 @@ CREATE TABLE `user_addresses` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_addresses`
+--
+
+INSERT INTO `user_addresses` (`id`, `user_id`, `country_id`, `state_id`, `city_id`, `address`, `is_default`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 6, 1, 1, 6, 'mghila 123', 1, '2023-06-07 23:23:35', '2023-06-07 23:23:35', NULL),
+(2, 7, 1, 1, 6, '123 street X', 1, '2023-06-08 00:42:16', '2023-06-08 00:42:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -2948,7 +3258,7 @@ ALTER TABLE `campaign_products`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -3002,7 +3312,7 @@ ALTER TABLE `coupon_usages`
 -- AUTO_INCREMENT for table `currencies`
 --
 ALTER TABLE `currencies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -3020,7 +3330,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT for table `localizations`
 --
 ALTER TABLE `localizations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=545;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=792;
 
 --
 -- AUTO_INCREMENT for table `locations`
@@ -3038,13 +3348,13 @@ ALTER TABLE `logistics`
 -- AUTO_INCREMENT for table `logistic_zones`
 --
 ALTER TABLE `logistic_zones`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `logistic_zone_cities`
 --
 ALTER TABLE `logistic_zone_cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `media_managers`
@@ -3062,19 +3372,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_groups`
 --
 ALTER TABLE `order_groups`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_updates`
@@ -3206,7 +3516,7 @@ ALTER TABLE `subscribed_users`
 -- AUTO_INCREMENT for table `system_settings`
 --
 ALTER TABLE `system_settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -3236,13 +3546,13 @@ ALTER TABLE `unit_localizations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_addresses`
 --
 ALTER TABLE `user_addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `variations`

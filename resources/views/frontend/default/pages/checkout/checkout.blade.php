@@ -116,7 +116,7 @@
                                             class="tt-address-info bg-white rounded p-4 position-relative">
                                             <div class="d-flex flex-wrap justify-content-between align-items-center">
                                                 <span class=""><i class="fas fa-truck me-1"></i>
-                                                    {{ localize('Regular Delivery') }}
+                                                    {{ localize('Fast Delivery') }}
                                                 </span>
                                                 <p class="mb-0 fs-sm">
                                                     {{ localize('We will deliver your products soon.') }}
@@ -182,12 +182,14 @@
                                 <!-- Delivery Time -->
 
                             </div>
+                            <br>
+                            <br>
 
                             <!-- personal information -->
-                            <h4 class="mt-7">{{ localize('Personal Information') }}</h4>
+                            <h4 class="mt-7">{{ localize('Enhance Your Bouquet With a Heartfelt Message') }} <span style="color: red;">&#x2764;&#xFE0F;</span> </h4>
                             <div class="checkout-form mt-3 p-5 bg-white rounded-2">
                                 <div class="row g-4">
-                                    <div class="col-sm-6">
+                                    {{-- <div class="col-sm-6">
                                         <div class="label-input-field">
                                             <label>{{ localize('Phone') }}</label>
                                             <input type="text" name="phone"
@@ -201,15 +203,15 @@
                                             <input type="text" name="alternative_phone"
                                                 placeholder="{{ localize('Your Alternative Phone') }}">
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="col-sm-12">
                                         <div class="label-input-field">
-                                            <label>{{ localize('Additional Info') }}</label>
-                                            <textarea rows="3" type="text" name="additional_info"
-                                                placeholder="{{ localize('Type your additional informations here') }}"></textarea>
+                                            <label>{{ localize('Gift Card Message') }}</label>
+                                            <textarea rows="3" type="text" name="gift_card_message" placeholder="{{ localize('Happy Birthday') }}" style="font-style: italic;"></textarea>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <!-- personal information -->
