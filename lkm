@@ -1,0 +1,47 @@
+[33mcommit 8dfa6088dd4a6bd6dd4a08756fcb4ae20a590ea6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Oussama <oussaabb101@gmail.com>
+Date:   Thu Jun 8 04:12:57 2023 +0100
+
+    adding the Stripe controller, the gift card message option, and Recaptcha v3
+
+[33mcommit af3c66035b2e7015f87e4c43e04739eeff2bbf3c[m
+Author: OTHMANE DAOUI <OTHMANEDAOUI7@GMAIL.COM>
+Date:   Thu Jun 8 02:03:55 2023 +0200
+
+    forget update db
+
+[33mcommit fd9741b18a8538975464fb151aa64e4ed1ed5def[m
+Author: OTHMANE DAOUI <OTHMANEDAOUI7@GMAIL.COM>
+Date:   Thu Jun 8 01:57:46 2023 +0200
+
+    add Logistics Companies is Done !
+
+[33mcommit 96e215489787cec7b12171ef7fa92e5e14b9fd87[m
+Author: OTHMANE DAOUI <OTHMANEDAOUI7@GMAIL.COM>
+Date:   Wed Jun 7 23:02:18 2023 +0200
+
+    add categories(11) , add products(14) , contact us , about us , header , footer and logo are done !
+
+[33mcommit b90c27c1e3b50bbecf06d204a38d1f3bf8d49adc[m
+Author: Oussama <oussaabb101@gmail.com>
+Date:   Wed Jun 7 17:31:07 2023 +0100
+
+    changing from a local DB to a hosted DB
+
+[33mcommit 5c89895f09a7b85fe9fa1b8204f62b4b90b4611d[m
+Author: OTHMANE DAOUI <OTHMANEDAOUI7@GMAIL.COM>
+Date:   Tue Jun 6 17:14:31 2023 +0200
+
+    add header , contact us , logo and footer , 3 categories
+
+[33mcommit 8efd65136cb4e244b215c387d769f65e6b184a90[m
+Author: Oussama <oussaabb101@gmail.com>
+Date:   Mon Jun 5 15:45:22 2023 +0100
+
+    Initial commit
+
+[33mcommit 440b3e5cecc222985a3ce5ac4bfba6093a791023[m
+Author: Oussama <oussaabb101@gmail.com>
+Date:   Mon Jun 5 14:47:51 2023 +0100
+
+    Initial commit
