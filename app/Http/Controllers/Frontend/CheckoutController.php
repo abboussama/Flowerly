@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use Notification;
 use Config;
 use Session;
+use Exception;
 
 class CheckoutController extends Controller
 {
@@ -103,6 +104,7 @@ class CheckoutController extends Controller
             $orderGroup->total_tax_amount                   = getTotalTax($carts);
             $orderGroup->total_coupon_discount_amount       = 0;
             $orderGroup->gift_card_message                  = $request->gift_card_message;
+
             if (getCoupon() != '') {
                 # todo::[for eCommerce] handle coupon for multi vendor
                 $orderGroup->total_coupon_discount_amount   = getCouponDiscount(getSubTotal($carts, false), getCoupon());
@@ -261,9 +263,67 @@ class CheckoutController extends Controller
                 $user->save();
 
                 flash(localize('Your order has been placed successfully'))->success();
+                try {
+                    $url = "https://rest.nexmo.com/sms/json";
+                    $data = array(
+                        "from" => "Flowerly Admin",
+                        "text" => "a new sale has been made, amount = " . $orderGroup->grand_total_amount,
+                        "to" => "+212649986442",
+                        "api_key" => "8fba9eb7",
+                        "api_secret" => "eDGtmXg7mq9fhj17"
+                    );
+                    $ch = curl_init($url);
+                    curl_setopt($ch, CURLOPT_POST, true);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    $response = curl_exec($ch);
+                
+                    if ($response === false) {
+                        echo "Error: " . curl_error($ch);
+                    } else {
+                        // Check the response here
+                        $responseData = json_decode($response, true);
+                        // Handle the response as needed
+                    }
+                
+                    curl_close($ch);
+                } catch (Exception $e) {
+                    // Handle the exception here
+                    // dd($e);
+                }
+    
                 return redirect()->route('checkout.success', $orderGroup->order_code);
             } else {
                 flash(localize('Your order has been placed successfully'))->success();
+                try {
+                    $url = "https://rest.nexmo.com/sms/json";
+                    $data = array(
+                        "from" => "Flowerly Admin",
+                        "text" => "a new sale has been made, amount = " . $orderGroup->grand_total_amount,
+                        "to" => "+212649986442",
+                        "api_key" => "8fba9eb7",
+                        "api_secret" => "eDGtmXg7mq9fhj17"
+                    );
+                    $ch = curl_init($url);
+                    curl_setopt($ch, CURLOPT_POST, true);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    $response = curl_exec($ch);
+                
+                    if ($response === false) {
+                        echo "Error: " . curl_error($ch);
+                    } else {
+                        // Check the response here
+                        $responseData = json_decode($response, true);
+                        // Handle the response as needed
+                    }
+                
+                    curl_close($ch);
+                } catch (Exception $e) {
+                    // Handle the exception here
+                    // dd($e);
+                }
+    
                 return redirect()->route('checkout.success', $orderGroup->order_code);
             }
         }
@@ -310,6 +370,35 @@ class CheckoutController extends Controller
 
         clearOrderSession();
         flash(localize('Your order has been placed successfully'))->success();
+        try {
+            $url = "https://rest.nexmo.com/sms/json";
+            $data = array(
+                "from" => "Flowerly Admin",
+                "text" => "a new sale has been made, amount = " . $orderGroup->grand_total_amount,
+                "to" => "+212649986442",
+                "api_key" => "8fba9eb7",
+                "api_secret" => "eDGtmXg7mq9fhj17"
+            );
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+        
+            if ($response === false) {
+                echo "Error: " . curl_error($ch);
+            } else {
+                // Check the response here
+                $responseData = json_decode($response, true);
+                // Handle the response as needed
+            }
+        
+            curl_close($ch);
+        } catch (Exception $e) {
+            // Handle the exception here
+            // dd($e);
+        }
+
         return redirect()->route('checkout.success', $orderGroup->order_code);
     }
 }

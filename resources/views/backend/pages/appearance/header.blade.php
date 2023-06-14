@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">{{ localize('Categories') }}</label>
+                                    <label class="form-label">{{ localize('Occasions') }}</label>
                                     <input type="hidden" name="types[]" value="navbar_categories">
 
                                     @php

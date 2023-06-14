@@ -158,7 +158,7 @@
                         <div class="category-dropdown position-relative d-none d-md-inline-block">
 
                             <a href="javascript:void(0)"
-                                class="category-dropdown-btn fw-bold d-none d-sm-inline-block">{{ localize('Categories') }}<span
+                                class="category-dropdown-btn fw-bold d-none d-sm-inline-block">{{ localize('Occasions') }}<span
                                     class="ms-1"><i class="fa-solid fa-angle-down"></i></span></a>
 
                             <div class="category-dropdown-box scrollbar">
@@ -187,11 +187,11 @@
                         </div>
                         <nav class="gshop-navmenu ms-3 d-none d-xl-block">
                             <ul class="d-flex align-itmes-center justify-content-end">
-                                <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li>
-                                <li><a href="{{ route('products.index') }}">{{ localize('Products') }}</a></li>
+                                {{-- <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li> --}}
+                                <li><a href="{{ route('products.index') }}">{{ localize('Bouquets') }}</a></li>
                                 <li><a href="{{ route('home.campaigns') }}">{{ localize('Campaigns') }}</a>
                                 </li>
-                                <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a>
+                                {{-- <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a> --}}
                                 </li>
 
                                 <li class="has-submenu">
