@@ -166,7 +166,7 @@
                             <!--product category end-->
 
                             <!--product tag start-->
-                            <div class="card mb-4" id="section-tags">
+                            {{-- <div class="card mb-4" id="section-tags">
                                 <div class="card-body">
                                     <h5 class="mb-4">{{ localize('Product Tags') }}</h5>
                                     <div class="mb-4">
@@ -183,11 +183,11 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--product tag end-->
 
                             <!--product brand and unit start-->
-                            <div class="row" id="section-4">
+                            {{-- <div class="row" id="section-4">
                                 <div class="col-lg-6">
                                     <div class="card mb-4">
                                         <div class="card-body">
@@ -224,7 +224,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--product brand and unit end-->
 
                             <!--product price sku and stock start-->
@@ -595,7 +595,7 @@
                             <!--shipping configuration end-->
 
                             <!--product tax start-->
-                            <div class="card mb-4" id="section-8">
+                            {{-- <div class="card mb-4" id="section-8">
                                 <div class="card-body">
                                     <h5 class="mb-4">{{ localize('Product Taxes') }} ({{ localize('Default 0%') }})
                                     </h5>
@@ -637,7 +637,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--product tax end-->
 
                             <!--product sell target & status start-->
@@ -677,7 +677,7 @@
                             <!--product sell target & status end-->
 
                             <!--seo meta description start-->
-                            <div class="card mb-4" id="section-10">
+                            {{-- <div class="card mb-4" id="section-10">
                                 <div class="card-body">
                                     <h5 class="mb-4">{{ localize('SEO Meta Configuration') }}</h5>
 
@@ -718,7 +718,7 @@
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--seo meta description end-->
                         @endif
 
@@ -755,9 +755,9 @@
                                         <li>
                                             <a href="#section-3">{{ localize('Category') }}</a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="#section-tags">{{ localize('Product tags') }}</a>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <a href="#section-4">{{ localize('Product Brand & Unit') }}</a>
                                         </li>

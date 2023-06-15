@@ -1,8 +1,8 @@
 <section class="featured-products pt-120 pb-200 bg-shade position-relative overflow-hidden z-1">
-    <img src="{{ staticAsset('frontend/default/assets/img/shapes/roll-1.png') }}" alt="roll"
+    {{-- <img src="{{ staticAsset('frontend/default/assets/img/shapes/roll-1.png') }}" alt="roll"
         class="position-absolute roll-1 z--1" data-parallax='{"y": -120}'>
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/roll-2.png') }}" alt="roll"
-        class="position-absolute roll-2 z--1" data-parallax='{"y": 120}'>
+        class="position-absolute roll-2 z--1" data-parallax='{"y": 120}'> --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6">

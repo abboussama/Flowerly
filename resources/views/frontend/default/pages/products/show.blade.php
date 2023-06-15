@@ -91,7 +91,7 @@
                         <!-- description -->
                     </div>
 
-                    <div class="col-xl-3 col-lg-6 col-md-8 d-none d-xl-block">
+                    {{-- <div class="col-xl-3 col-lg-6 col-md-8 d-none d-xl-block">
                         <div class="gshop-sidebar">
                             <div class="sidebar-widget info-sidebar bg-white rounded-3 py-3">
                                 @foreach ($product_page_widgets as $widget)
@@ -116,7 +116,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
     </section>

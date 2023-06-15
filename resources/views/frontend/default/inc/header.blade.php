@@ -11,7 +11,7 @@
 
                     <ul
                         class="d-flex align-items-center justify-content-center justify-content-xl-end topbar-info-right">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="mailto:{{ getSetting('topbar_email') }}">
                                 <span class="me-1">
                                     <svg width="16" height="14" viewBox="0 0 20 14" fill="none"
@@ -23,8 +23,8 @@
                                 </span>
                                 {{ getSetting('topbar_email') }}
                             </a>
-                        </li>
-                        <li class="nav-item dropdown tt-language-dropdown">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown tt-language-dropdown">
                             <span class="me-1">
                                 <svg width="12" height="17" viewBox="0 0 12 17" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
                             @else
                                 {{ getSetting('topbar_location') }}
                             @endif
-                        </li>
+                        </li> --}}
 
 
                         @php
@@ -81,7 +81,7 @@
                             }
                         @endphp
 
-                        <li class="nav-item dropdown tt-language-dropdown">
+                        {{-- <li class="nav-item dropdown tt-language-dropdown">
                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="true">
                                 <img src="{{ staticAsset('backend/assets/img/flags/' . $currentLanguage->flag . '.png') }}"
@@ -100,7 +100,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                        </li>
+                        </li> --}}
 
                         @php
                             if (Session::has('currency_code')) {
@@ -115,7 +115,7 @@
                             }
                         @endphp
 
-                        <li class="nav-item dropdown tt-curency-dropdown">
+                        {{-- <li class="nav-item dropdown tt-curency-dropdown">
                             <a href="#" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">{{ $currentCurrency->symbol }}
                                 {{ $currentCurrency->code }}</a>
@@ -129,7 +129,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="btn btn-link p-0 tt-theme-toggle fw-normal">
@@ -187,11 +187,11 @@
                         </div>
                         <nav class="gshop-navmenu ms-3 d-none d-xl-block">
                             <ul class="d-flex align-itmes-center justify-content-end">
-                                {{-- <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li> --}}
+                                <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li>
                                 <li><a href="{{ route('products.index') }}">{{ localize('Bouquets') }}</a></li>
                                 <li><a href="{{ route('home.campaigns') }}">{{ localize('Campaigns') }}</a>
                                 </li>
-                                {{-- <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a> --}}
+                                <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a>
                                 </li>
 
                                 <li class="has-submenu">

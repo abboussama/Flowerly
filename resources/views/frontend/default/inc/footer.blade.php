@@ -4,7 +4,7 @@
 </div>
 
 <footer class="gshop-footer position-relative pt-8 bg-dark z-1 overflow-hidden">
-    <img src="{{ staticAsset('frontend/default/assets/img/shapes/tomato.svg') }}" alt="tomato"
+    {{-- <img src="{{ staticAsset('frontend/default/assets/img/shapes/tomato.svg') }}" alt="tomato"
         class="position-absolute z--1 tomato vector-shape">
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/pata-lg.svg') }}" alt="pata"
         class="position-absolute z--1 pata-lg vector-shape">
@@ -22,7 +22,7 @@
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/tomato-slice.svg') }}" alt="tomato slice"
         class="position-absolute tomato-slice vector-shape z--1">
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/tomato-half.svg') }}" alt="tomato"
-        class="position-absolute tomato-half z--1 vector-shape">
+        class="position-absolute tomato-half z--1 vector-shape"> --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6">

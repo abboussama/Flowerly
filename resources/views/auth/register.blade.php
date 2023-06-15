@@ -45,7 +45,7 @@ function is_valid($phone) {
             <div class="row justify-content-center">
                 {{-- todo:: make banner dynamic --}}
                 <div class="col-lg-5 col-12 tt-login-img"
-                    data-background="{{ staticAsset('frontend/default/assets/img/banner/login-banner.jpg') }}"></div>
+                    data-background="{{ staticAsset('frontend/default/assets/img/banner/login-signup.jpg') }}"></div>
                 <div class="col-lg-5 col-12 bg-white d-flex p-0 tt-login-col shadow">
                     <form class="tt-login-form-wrap p-3 p-md-6 p-lg-6 py-7 w-100" method="POST" id="login-form" action="{{ route('register') }}">
                         @csrf
@@ -139,47 +139,37 @@ function is_valid($phone) {
     <script>
         "use strict";
 
-        function is_valid(phone) {
-    var apiKey = '8fba9eb7';
-    var apiSecret = 'eDGtmXg7mq9fhj17';
-    var endpoint = `https://api.nexmo.com/ni/advanced/json?api_key=${apiKey}&api_secret=${apiSecret}&number=${phone}`;
+//         function is_valid(phone) {
+//     var apiKey = '8fba9eb7';
+//     var apiSecret = 'eDGtmXg7mq9fhj17';
+//     var endpoint = `https://api.nexmo.com/ni/advanced/json?api_key=${apiKey}&api_secret=${apiSecret}&number=${phone}`;
 
-    return fetch(endpoint)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Request failed');
-            }
-        })
-        .then(data => {
-            if (data.valid_number === 'valid') {
-                return 'number is valid';
-            } else {
-                return 'number is not valid';
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            return false;
-        });
-}
+//     return fetch(endpoint)
+//         .then(response => {
+//             if (response.ok) {
+//                 return response.json();
+//             } else {
+//                 throw new Error('Request failed');
+//             }
+//         })
+//         .then(data => {
+//             if (data.valid_number === 'valid') {
+//                 return 'number is valid';
+//             } else {
+//                 return 'number is not valid';
+//             }
+//         })
+//         .catch(error => {
+//             console.error(error);
+//             return false;
+//         });
+// }
 
         document.getElementById('login-form').addEventListener('submit', function(event) {
-            var phoneInput = document.getElementById('phone');
-            var phone = phoneInput.value.trim();
-
-            if (phone === '') {
-                event.preventDefault(); // No phone number entered
-            }
-
-            if (!is_valid(phone)) {
-                alert('Invalid phone number. Please enter a valid phone number.');
-                event.preventDefault(); // Prevent form submission
-            } else {
+            
                 // Phone number is valid, disable the submit button
                 document.querySelector('.sign-in-btn').disabled = true;
-            }
+        
         });
     </script>
 @endsection

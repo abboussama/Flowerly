@@ -1,6 +1,6 @@
 <section class="gshop-hero pt-120 bg-white position-relative z-1 overflow-hidden">
-    <img src="{{ staticAsset('frontend/default/assets/img/shapes/leaf-shadow.png') }}" alt="leaf"
-        class="position-absolute leaf-shape z--1 rounded-circle d-none d-lg-inline">
+    {{-- <img src="{{ staticAsset('frontend/default/assets/img/shapes/leaf-shadow.png') }}" alt="leaf"
+        class="position-absolute leaf-shape z--1 rounded-circle d-none d-lg-inline"> --}}
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/mango.png') }}" alt="mango"
         class="position-absolute mango z--1" data-parallax='{"y": -120}'>
 

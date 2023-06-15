@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-12 tt-login-img"
-                    data-background="{{ staticAsset('frontend/default/assets/img/banner/login-banner.jpg') }}"></div>
+                    data-background="{{ staticAsset('frontend/default/assets/img/banner/login-signup.jpg') }}"></div>
                 <div class="col-lg-5 col-12 bg-white d-flex p-0 tt-login-col shadow">
                     <form class="tt-login-form-wrap p-3 p-md-6 p-lg-6 py-7 w-100" action="{{ route('login') }}" method="POST"
                         id="login-form">
@@ -22,7 +22,7 @@
                             </a>
                         </div>
                         <h2 class="mb-4 h3">{{ localize('Hey there!') }}
-                            <br>{{ localize('Welcome back to Grostore.') }}
+                            <br>{{ localize('Welcome back to Flowerly.') }}
                         </h2>
 
                         <div class="row g-3">

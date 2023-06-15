@@ -75,10 +75,10 @@
                                             {{ $key + 1 + ($coupons->currentPage() - 1) * $coupons->perPage() }}</td>
                                         <td>
                                             <a class="d-flex align-items-center" target="_blank">
-                                                <div class="avatar avatar-sm">
+                                                {{-- <div class="avatar avatar-sm">
                                                     <img class="rounded-circle" src="{{ uploadedAsset($coupon->banner) }}"
                                                         alt="{{ $coupon->code }}" />
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="fs-sm mb-0 ms-2">{{ $coupon->code }}
                                                 </h6>
                                             </a>
