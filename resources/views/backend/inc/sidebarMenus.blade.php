@@ -645,12 +645,12 @@
                             class="{{ areActiveRoutes(['admin.smtpSettings.index']) }}">{{ localize('Admin Store') }}</a>
                     </li>
 
-                    @can('smtp_settings')
+                    {{-- @can('smtp_settings')
                         <li class="{{ areActiveRoutes(['admin.smtpSettings.index'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.smtpSettings.index') }}"
                                 class="{{ areActiveRoutes(['admin.smtpSettings.index']) }}">{{ localize('SMTP Settings') }}</a>
                         </li>
-                    @endcan
+                    @endcan --}}
 
                     @can('general_settings')
                         <li class="{{ areActiveRoutes(['admin.generalSettings'], 'tt-menu-item-active') }}">

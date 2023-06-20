@@ -95,7 +95,7 @@
                         <table class="table tt-footable border-top align-middle" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center">{{ localize('S/L') }}
+                                    <th class="text-center">{{ localize('ID') }}
                                     </th>
                                     <th>{{ localize('Placed On') }}</th>
                                     <th data-breakpoints="xs">{{ localize('Items') }}</th>

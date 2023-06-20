@@ -1,8 +1,6 @@
 <section class="gshop-hero pt-120 bg-white position-relative z-1 overflow-hidden">
     {{-- <img src="{{ staticAsset('frontend/default/assets/img/shapes/leaf-shadow.png') }}" alt="leaf"
         class="position-absolute leaf-shape z--1 rounded-circle d-none d-lg-inline"> --}}
-    <img src="{{ staticAsset('frontend/default/assets/img/shapes/mango.png') }}" alt="mango"
-        class="position-absolute mango z--1" data-parallax='{"y": -120}'>
 
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/hero-circle-sm.png') }}" alt="circle"
         class="position-absolute hero-circle circle-sm z--1 d-none d-md-inline">
@@ -47,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="at-header-social d-none d-xl-flex align-items-center position-absolute">
+    {{-- <div class="at-header-social d-none d-xl-flex align-items-center position-absolute">
         <span class="title fw-medium">{{ localize('Follow on') }}</span>
         <ul class="social-list ms-3">
             <li>
@@ -57,7 +55,7 @@
             <li><a href="{{ getSetting('linkedin_link') }}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
             <li><a href="{{ getSetting('youtube_link') }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
         </ul>
-    </div>
+    </div> --}}
     <div class="gshop-hero-slider-pagination theme-slider-control position-absolute top-50 translate-middle-y z-5">
     </div>
 </section>

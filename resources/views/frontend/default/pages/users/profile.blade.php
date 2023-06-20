@@ -78,6 +78,102 @@
                             <button type="submit" class="btn btn-primary mt-6">{{ localize('Change Password') }}</button>
                         </form>
                     </div>
+
+
+                    {{-- testing --}}
+                    
+                    @php
+        function checkBreach($email){
+            try {
+                $url = "https://haveibeenpwned.com/api/v3/breachedaccount/" . urlencode($email);
+                $headers = array(
+                    "hibp-api-key: 5821a868c41143119a508b6dac616e5a",
+                    "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+                );
+    
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+                $response = curl_exec($ch);
+    
+                if ($response === false) {
+                    echo "Error: " . curl_error($ch);
+                }
+    
+                curl_close($ch);
+                $responseData = json_decode($response, true);
+                if ($responseData === null) {
+                    echo '<div class="icon-text"><img src="https://img.freepik.com/free-vector/green-leaf-check-mark_78370-1146.jpg?w=740&t=st=1687050294~exp=1687050894~hmac=95e6ffef93f44c1f535600847e6b031650ab5e0d6f303dd115b81c98d2b05c67" alt="Icon"> <p class="text-success"><b>Great News! Your Credentials Are Safe.</b></p></div>';
+                } else {
+
+                    return $responseData;
+                    // foreach ($responseData as $data) {
+                    //     //print_r($data['Name']);
+                    //     // echo "<h6>{$data['Name']}</h6>";
+                    //     // echo "<h6>{$data['LogoPath']}</h6>";
+                    // }
+                }
+            } catch (Exception $e) {
+                // Handle any exceptions here
+            }
+        }
+    @endphp
+            
+                    
+                    
+                    <div class="change-password bg-white py-5 px-4 mt-4 rounded">
+                        <h6 class="mb-4">{{ localize('Check if your email is breached:') }}</h6>
+                            <div class="row g-4">
+                                <div class="col-sm-10">
+                                    <div class="label-input-field">
+                                        <br>
+                                        @php
+                                        $email = $user->email;
+                                        $breached = checkBreach($email);
+                                        if($breached != null){
+                                            echo '<div class="icon-text-danger"><p class="text-danger"><b>OMG! the password linked to your email `'.$user->email.'` May Be Leaked! Please Consider Changing your password, and use a password different from the one you used in the websites listed below.</b></p></div><br>';
+                    foreach ($breached as $data) {
+                        //echo $data['Name'];
+
+                        //curl
+                        $url = "https://haveibeenpwned.com/api/v3/breach/" . $data['Name'];
+                $header = array(
+                    "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+                );
+    
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+                $response = curl_exec($ch);
+    
+                if ($response === false) {
+                    echo "Error: " . curl_error($ch);
+                }
+    
+                curl_close($ch);
+                $responseBreach = json_decode($response, true);
+                
+                //what the customer will see 
+                $name = $responseBreach['Name'];
+                $logoPath = $responseBreach['LogoPath'];
+                $domain = $responseBreach['Domain'];
+                $description = $responseBreach['Description'];
+                echo '<div class="icon-text-danger"><img src='.$logoPath.' alt="Icon"> <p class="text-danger"><b>'.$name.'</b></p><br><p>domain: <a href=https://' . $domain .'>' . $domain . '</a></p><br><p>'. $description .'</p><br></div>';
+
+            }   
+                                        }
+                                        @endphp
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+                    {{-- end testing --}}
                 </div>
             </div>
         </div>

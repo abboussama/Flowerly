@@ -71,7 +71,7 @@
                         <table class="table tt-footable border-top" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center">{{ localize('S/L') }}
+                                    <th class="text-center">{{ localize('ID') }}
                                     </th>
                                     <th>{{ localize('Product Name') }}</th>
                                     <th class="text-end">{{ localize('Total Sales') }}</th>

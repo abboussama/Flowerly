@@ -60,6 +60,30 @@
 
     <!--build:css-->
     @include('frontend.default.inc.css', ['localLang' => $localLang])
+    <!-- Custom CSS -->
+    <style>
+        .icon-text {
+            display: flex;
+            align-items: center;
+        }
+        .icon-text-danger {
+            display: block;
+            align-items: center;
+        }
+        .icon-text-danger img {
+            padding-bottom: 0px;
+            width: 70px;
+            height: 70px;
+            margin-right: 5px;
+        }
+        .icon-text img {
+            padding-bottom: 15px;
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+    </style>
     <!-- endbuild --> 
 
     <!-- PWA  -->

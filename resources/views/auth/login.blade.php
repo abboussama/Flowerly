@@ -68,6 +68,12 @@
                             </div>
                         </div>
 
+
+                        <!--recaptcha v2-->
+                        <br>
+                        <div class="icon-text-danger"><p class="text-danger"><b>{{ localize('Humans Only, No Cyborgs!') }}</b></p></div>
+                        <div class="g-recaptcha" data-sitekey="6LdYhawmAAAAAFXtd2-LWlayTE4O6O3VUWOXQl8E"></div>
+                        <!--end-recpatcha v2-->
                         <div class="d-flex align-items-center justify-content-between mt-4">
                             <div class="checkbox d-inline-flex align-items-center gap-2">
                                 <div class="theme-checkbox flex-shrink-0">
@@ -78,33 +84,6 @@
                             </div>
                             <a href="{{ route('password.request') }}" class="fs-sm">{{ localize('Forgot Password') }}</a>
                         </div>
-
-                        @if (env('DEMO_MODE') == 'On')
-                            <div class="row mt-5">
-                                <div class="col-12">
-                                    <label class="fw-bold">Admin Access</label>
-                                    <div
-                                        class="d-flex flex-wrap align-items-center justify-content-between border-bottom pb-3">
-                                        <small>admin@themetags.com</small>
-                                        <small>123456</small>
-                                        <button class="btn btn-sm btn-secondary py-0 px-2" type="button"
-                                            onclick="copyAdmin()">Copy</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 mt-3">
-                                    <label class="fw-bold">Customer Access</label>
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                        <small>customer@themetags.com</small>
-                                        <small>123456</small>
-
-                                        <button class="btn btn-sm btn-secondary py-0 px-2" type="button"
-                                            onclick="copyCustomer()">Copy</button>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-
                         <div class="row g-4 mt-3">
                             <div class="col-sm-12">
                                 <button type="submit" class="btn btn-primary w-100 sign-in-btn"

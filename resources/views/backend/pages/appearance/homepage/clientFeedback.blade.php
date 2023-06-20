@@ -28,7 +28,7 @@
                                 <table class="table tt-footable" data-use-parent-width="true">
                                     <thead>
                                         <tr>
-                                            <th class="text-center" width="7%">{{ localize('S/L') }}</th>
+                                            <th class="text-center" width="7%">{{ localize('ID') }}</th>
                                             <th>{{ localize('Image') }}</th>
                                             <th>{{ localize('Name') }}</th>
                                             <th data-breakpoints="xs sm md lg xl">{{ localize('Review') }}</th>

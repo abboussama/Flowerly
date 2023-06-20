@@ -269,7 +269,7 @@
                                             <th data-breakpoints="xs">{{ localize('Items') }}</th>
                                             <th data-breakpoints="xs">{{ localize('Payment Status') }}</th>
                                             <th data-breakpoints="xs">{{ localize('Delivery Status') }}</th>
-                                            <th data-breakpoints="xs">{{ localize('Delivery Type') }}</th>
+                                            {{-- <th data-breakpoints="xs">{{ localize('Delivery Type') }}</th> --}}
                                             <th data-breakpoints="xs" class="text-end">{{ localize('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -339,12 +339,12 @@
                                                     @endif
                                                 </td>
 
-                                                <td>
+                                                {{-- <td>
                                                     <span
                                                         class="badge rounded-pill text-capitalize {{ $order->shipping_delivery_type == getScheduledDeliveryType() ? 'bg-soft-warning' : 'bg-secondary' }}">
                                                         {{ Str::title(Str::replace('_', ' ', $order->shipping_delivery_type)) }}
                                                     </span>
-                                                </td>
+                                                </td> --}}
 
                                                 <td class="text-end">
                                                     <a href="{{ route('admin.orders.show', $order->id) }}"

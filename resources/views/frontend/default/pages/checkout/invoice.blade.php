@@ -98,7 +98,7 @@
                     <div class="table-responsive mt-6">
                         <table class="table invoice-table">
                             <tr>
-                                <th>{{ localize('S/L') }}</th>
+                                <th>{{ localize('ID') }}</th>
                                 <th>{{ localize('Products') }}</th>
                                 <th>{{ localize('U.Price') }}</th>
                                 <th>{{ localize('QTY') }}</th>

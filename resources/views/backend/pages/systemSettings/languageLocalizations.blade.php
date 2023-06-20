@@ -56,7 +56,7 @@
                                 id="localization-table">
                                 <thead class="py-3">
                                     <tr>
-                                        <th class="text-center py-3" width="5%">{{ localize('S/L') }}
+                                        <th class="text-center py-3" width="5%">{{ localize('ID') }}
                                         </th>
                                         <th width="40%" class="py-3">{{ localize('Lang Key') }}</th>
                                         <th data-breakpoints="xs sm" class="py-3">{{ localize('Localizations') }}</th>
