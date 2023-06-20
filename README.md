@@ -30,4 +30,4 @@ Flowerly is an online shop built with Laravel that specializes in selling beauti
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/flowerly.git
+   git clone https://github.com/abboussama/flowerly.git
