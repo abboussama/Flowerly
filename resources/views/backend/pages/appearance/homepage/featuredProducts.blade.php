@@ -28,8 +28,8 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="mb-4">
-                                    <label for="featured_sub_title"
-                                        class="form-label">{{ localize('Section Sub Title') }}</label>
+                                    {{-- <label for="featured_sub_title"
+                                        class="form-label">{{ localize('Section Sub Title') }}</label> --}}
                                     <input type="hidden" name="types[]" value="featured_sub_title">
                                     <input type="text" name="featured_sub_title" id="featured_sub_title"
                                         placeholder="{{ localize('Type sub title') }}" class="form-control"

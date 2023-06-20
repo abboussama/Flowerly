@@ -1,5 +1,5 @@
 <aside class="tt-sidebar bg-light-subtle" id="sidebar">
-    <div class="tt-brand">
+    {{-- <div class="tt-brand">
         <a href="{{ route('admin.dashboard') }}" class="tt-brand-link">
             <img src="{{ uploadedAsset(getSetting('favicon')) }}" class="tt-brand-favicon ms-1" alt="favicon" />
             <img src="{{ uploadedAsset(getSetting('admin_panel_logo')) }}" class="tt-brand-logo ms-2" alt="logo" />
@@ -7,7 +7,7 @@
         <a href="javascript:void(0);" class="tt-toggle-sidebar">
             <span><i data-feather="chevron-left"></i></span>
         </a>
-    </div>
+    </div> --}}
 
     <div class="tt-sidebar-nav pb-9 pt-4" data-simplebar>
 

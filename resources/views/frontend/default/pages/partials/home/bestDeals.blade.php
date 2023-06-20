@@ -1,4 +1,4 @@
-<section class="pb-120 position-relative z-1 pt-120">
+{{-- <section class="pb-120 position-relative z-1 pt-120">
     <div class="container">
         <div class="row g-4 align-items-center justify-content-center">
             <div class="col-xxl-4 col-xl-5 order-2 order-xxl-1 d-none d-xl-block d-none-1399">
@@ -63,4 +63,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}

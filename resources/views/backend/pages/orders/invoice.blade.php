@@ -43,16 +43,16 @@
             <br>
             <p
                 style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; line-height: 24px; vertical-align: top;">
-                {{ localize('Invoice No') }} : {{ getSetting('order_code_prefix') }}
-                {{ $order->orderGroup->order_code }}<br>
+                {{-- {{ localize('Invoice No') }} : {{ getSetting('order_code_prefix') }} --}}
+                {{-- {{ $order->orderGroup->order_code }}<br> --}}
                 {{ localize('Order Date') }} : {{ date('d M, Y', strtotime($order->created_at)) }}
             </p>
 
-            @if ($order->location_id != null)
+            {{-- @if ($order->location_id != null)
                 <p>
                     {{ optional($order->location)->name }}
                 </p>
-            @endif
+            @endif --}}
         </td>
         <td colspan="4" align="right"
             style="width: 300px; text-align: right; padding-left: 50px; line-height: 1.5; color: #323232;">
@@ -282,16 +282,7 @@
                                             </td>
                                         </tr>
 
-                                        <tr>
-                                            <td
-                                                style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                {{ localize('Tips') }}
-                                            </td>
-                                            <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; white-space:nowrap;"
-                                                width="80">
-                                                {{ formatPrice($order->orderGroup->total_tips_amount) }}
-                                            </td>
-                                        </tr>
+                                    
 
                                         <tr>
                                             <td
@@ -316,17 +307,6 @@
                                                 </td>
                                             </tr>
                                         @endif
-
-                                        <tr>
-                                            <td
-                                                style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                {{ localize('Tax') }}
-                                            </td>
-                                            <td
-                                                style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                {{ formatPrice($order->orderGroup->total_tax_amount) }}
-                                            </td>
-                                        </tr>
 
                                         @if ($order->orderGroup->is_pos_order)
                                             <tr>

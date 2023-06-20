@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">{{ localize('Top Trending Products') }}</label>
+                                    {{-- <label class="form-label">{{ localize('Top Trending Products') }}</label> --}}
                                     <input type="hidden" name="types[]" value="top_trending_products">
                                     <select class="select2 form-control top_trending_products" multiple="multiple"
                                         data-placeholder="{{ localize('Select products') }}" name="top_trending_products[]"

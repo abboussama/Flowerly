@@ -187,11 +187,11 @@
                         </div>
                         <nav class="gshop-navmenu ms-3 d-none d-xl-block">
                             <ul class="d-flex align-itmes-center justify-content-end">
-                                <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li>
+                                {{-- <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li> --}}
                                 <li><a href="{{ route('products.index') }}">{{ localize('Bouquets') }}</a></li>
-                                <li><a href="{{ route('home.campaigns') }}">{{ localize('Campaigns') }}</a>
+                                {{-- <li><a href="{{ route('home.campaigns') }}">{{ localize('Campaigns') }}</a> --}}
                                 </li>
-                                <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a>
+                                {{-- <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a> --}}
                                 </li>
 
                                 <li class="has-submenu">
@@ -206,7 +206,7 @@
                                             }
                                         @endphp
 
-                                        <li><a href="{{ route('home.blogs') }}">{{ localize('Blogs') }}</a></li>
+                                        {{-- <li><a href="{{ route('home.blogs') }}">{{ localize('Blogs') }}</a></li> --}}
                                         <li><a
                                                 href="{{ route('home.pages.aboutUs') }}">{{ localize('About Us') }}</a>
                                         </li>
@@ -228,7 +228,7 @@
                         </nav>
                         <div
                             class="gshop-header-icons d-none d-md-inline-flex align-items-center justify-content-end ms-3">
-                            <div class="gshop-header-search dropdown">
+                            {{-- <div class="gshop-header-search dropdown">
                                 <button type="button" class="header-icon" data-bs-toggle="dropdown">
                                     <svg width="18" height="23" viewBox="0 0 22 23" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -239,9 +239,9 @@
                                             d="M21.7406 20.9824L16.6436 15.8853C16.2962 15.538 15.7338 15.538 15.3865 15.8853C15.0391 16.2323 15.0391 16.7954 15.3865 17.1424L20.4835 22.2395C20.6571 22.4131 20.8845 22.5 21.1121 22.5C21.3393 22.5 21.5669 22.4131 21.7406 22.2395C22.0879 21.8925 22.0879 21.3294 21.7406 20.9824Z"
                                             fill="#5D6374" />
                                     </svg>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end border-0">
-                                    <form class="search-form d-flex align-items-center"
+                                </button> --}}
+                                {{-- <div class="dropdown-menu dropdown-menu-end border-0"> --}}
+                                    {{-- <form class="search-form d-flex align-items-center"
                                         action="{{ route('products.index') }}">
                                         <input type="text" placeholder="{{ localize('Search products') }}"
                                             class="w-100" name="search"
@@ -250,9 +250,9 @@
                                    @endisset>
                                         <button type="submit" class="submit-icon-btn-secondary"><i
                                                 class="fa-solid fa-magnifying-glass"></i></button>
-                                    </form>
-                                </div>
-                            </div>
+                                    </form> --}}
+                                {{-- </div> --}}
+                            {{-- </div> --}}
                             <div class="gshop-header-user position-relative">
                                 <button type="button" class="header-icon">
                                     <svg width="18" height="25" viewBox="0 0 22 25" fill="none"

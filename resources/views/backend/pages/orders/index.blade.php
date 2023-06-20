@@ -7,7 +7,7 @@
 @section('contents')
     <section class="tt-section pt-4">
         <div class="container">
-            <div class="row mb-3">
+            {{-- <div class="row mb-3">
                 <div class="col-12">
                     <div class="card tt-page-header">
                         <div class="card-body d-lg-flex align-items-center justify-content-lg-between">
@@ -17,12 +17,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row g-4">
                 <div class="col-12">
                     <div class="card mb-4" id="section-1">
-                        <form class="app-search" action="{{ Request::fullUrl() }}" method="GET">
+                        {{-- <form class="app-search" action="{{ Request::fullUrl() }}" method="GET">
                             <div class="card-header border-bottom-0">
                                 <div class="row justify-content-between g-3">
                                     <div class="col-auto flex-grow-1 d-none">
@@ -119,23 +119,22 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> --}}
 
                         <table class="table tt-footable border-top align-middle" data-use-parent-width="true">
                             <thead>
                                 <tr>
-                                    <th class="text-center">{{ localize('ID') }}
-                                    </th>
-                                    <th>{{ localize('Order Code') }}</th>
+                                    <th class="text-center">{{ localize('ID') }}</th>
+                                    {{-- <th>{{ localize('Order Code') }}</th> --}}
                                     <th data-breakpoints="xs sm md">{{ localize('Customer') }}</th>
                                     <th>{{ localize('Placed On') }}</th>
-                                    <th data-breakpoints="xs">{{ localize('Items') }}</th>
+                                    <th data-breakpoints="xs">{{ localize('Num of Items') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Payment') }}</th>
-                                    <th data-breakpoints="xs sm">{{ localize('Status') }}</th>
-                                    <th data-breakpoints="xs sm">{{ localize('Type') }}</th>
-                                    @if (count($locations) > 0)
+                                    {{-- <th data-breakpoints="xs sm">{{ localize('Status') }}</th> --}}
+                                    {{-- <th data-breakpoints="xs sm">{{ localize('Type') }}</th> --}}
+                                    {{-- @if (count($locations) > 0)
                                         <th data-breakpoints="xs sm">{{ localize('Location') }}</th>
-                                    @endif
+                                    @endif --}}
                                     <th data-breakpoints="xs sm" class="text-end">{{ localize('Action') }}</th>
                                 </tr>
                             </thead>
@@ -145,9 +144,9 @@
                                         <td class="text-center">
                                             {{ $key + 1 + ($orders->currentPage() - 1) * $orders->perPage() }}</td>
 
-                                        <td class="fs-sm">
+                                        {{-- <td class="fs-sm">
                                             {{ getSetting('order_code_prefix') }}{{ $order->orderGroup->order_code }}
-                                        </td>
+                                        </td> --}}
 
                                         <td>
                                             <div class="d-flex align-items-center">
@@ -188,7 +187,7 @@
                                         </td>
 
 
-                                        <td>
+                                        {{-- <td>
                                             @if ($order->delivery_status == orderDeliveredStatus())
                                                 <span class="badge bg-soft-primary rounded-pill text-capitalize">
                                                     {{ $order->delivery_status }}
@@ -202,16 +201,16 @@
                                                     {{ localize(Str::title(Str::replace('_', ' ', $order->delivery_status))) }}
                                                 </span>
                                             @endif
-                                        </td>
+                                        </td> --}}
 
-                                        <td>
+                                        {{-- <td>
                                             <span
                                                 class="badge rounded-pill text-capitalize {{ $order->shipping_delivery_type == getScheduledDeliveryType() ? 'bg-soft-warning' : 'bg-secondary' }}">
                                                 {{ Str::title(Str::replace('_', ' ', $order->shipping_delivery_type)) }}
                                             </span>
-                                        </td>
+                                        </td> --}}
 
-                                        @if (count($locations) > 0)
+                                        {{-- @if (count($locations) > 0)
                                             <td>
                                                 <span class="badge rounded-pill text-capitalize bg-secondary">
                                                     @if ($order->location)
@@ -221,7 +220,7 @@
                                                     @endif
                                                 </span>
                                             </td>
-                                        @endif
+                                        @endif --}}
 
                                         <td class="text-end">
                                             @can('manage_orders')

@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6">
-                <div class="gshop_subscribe_form text-center">
+                {{-- <div class="gshop_subscribe_form text-center">
                     <h4 class="text-white gshop-title">{{ localize('Subscribe to the us') }}<mark
                             class="p-0 position-relative text-secondary bg-transparent"> {{ localize('New Arrivals') }}
                             <img src="{{ staticAsset('frontend/default/assets/img/shapes/border-line.svg') }}"
@@ -40,7 +40,7 @@
                         <button type="submit"
                             class="btn btn-primary flex-shrink-0">{{ localize('Subscribe Now') }}</button>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
         <span class="gradient-spacer my-8 d-block"></span>
@@ -122,8 +122,8 @@
                     <div class="footer-payments-info d-flex align-items-center justify-content-lg-end gap-2">
                         <div
                             class="rounded-1 d-inline-flex align-items-center justify-content-center p-2 flex-shrink-0">
-                            <img src="{{ uploadedAsset(getSetting('accepted_payment_banner')) }}"
-                                alt="accepted_payment" class="img-fluid">
+                            {{-- <img src="{{ uploadedAsset(getSetting('accepted_payment_banner')) }}"
+                                alt="accepted_payment" class="img-fluid"> --}}
                         </div>
                     </div>
                 </div>

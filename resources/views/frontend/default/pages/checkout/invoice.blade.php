@@ -23,10 +23,10 @@
                                 </span>
                             </div>
                             <table class="invoice-table-sm">
-                                <tr>
+                                {{-- <tr>
                                     <td><strong>{{ localize('Order Code') }}</strong></td>
                                     <td>{{ getSetting('order_code_prefix') }}{{ $orderGroup->order_code }}</td>
-                                </tr>
+                                </tr> --}}
 
                                 <tr>
                                     <td><strong>{{ localize('Date') }}</strong></td>
@@ -38,7 +38,7 @@
                             <div class="text-lg-end">
                                 <a href="{{ route('home') }}"><img src="{{ uploadedAsset(getSetting('navbar_logo')) }}"
                                         alt="logo" class="img-fluid"></a>
-                                <h6 class="mb-0 text-gray mt-4">{{ getSetting('site_address') }}</h6>
+                                {{-- <h6 class="mb-0 text-gray mt-4">{{ getSetting('site_address') }}</h6> --}}
                             </div>
                         </div>
                     </div>
@@ -48,24 +48,7 @@
                             <div class="welcome-message">
                                 <h4 class="mb-2">{{ auth()->user()->name }}</h4>
                                 <p class="mb-0">
-                                    {{ localize('Here are your order details. We thank you for your purchase.') }}</p>
-
-                                @php
-                                    $deliveryInfo = json_decode($order->scheduled_delivery_info);
-                                @endphp
-
-                                <p class="mb-0">{{ localize('Delivery Type') }}:
-                                    <span
-                                        class="badge bg-primary">{{ Str::title(Str::replace('_', ' ', $order->shipping_delivery_type)) }}</span>
-
-
-                                </p>
-                                @if ($order->shipping_delivery_type == getScheduledDeliveryType())
-                                    <p class="mb-0">
-                                        {{ localize('Delivery Time') }}:
-                                        {{ date('d F', $deliveryInfo->scheduled_date) }},
-                                        {{ $deliveryInfo->timeline }}</p>
-                                @endif
+                                    {{ localize('Thank you for shopping On Flowerly, Here are your order details.') }}</p>
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-6">
@@ -197,12 +180,6 @@
                                     <strong class="text-dark d-block text-nowrap">{{ localize('Sub Total') }}</strong>
                                     <span>{{ formatPrice($orderGroup->sub_total_amount) }}</span>
                                 </td>
-
-                                <td>
-                                    <strong class="text-dark d-block text-nowrap">{{ localize('Tips') }}</strong>
-                                    <span>{{ formatPrice($orderGroup->total_tips_amount) }}</span>
-                                </td>
-
                                 <td>
                                     <strong class="text-dark d-block text-nowrap">{{ localize('Shipping Cost') }}</strong>
                                     <span>{{ formatPrice($orderGroup->total_shipping_cost) }}</span>

@@ -27,7 +27,7 @@
 
                             <!--order status-->
                             <div class="row justify-content-between align-items-center g-3">
-                                <div class="col-auto flex-grow-1">
+                                {{-- <div class="col-auto flex-grow-1">
                                     <h5 class="mb-0">{{ localize('Invoice') }}
                                         <span
                                             class="text-accent">{{ getSetting('order_code_prefix') }}{{ $order->orderGroup->order_code }}
@@ -45,7 +45,7 @@
                                         </div>
                                     @endif
 
-                                </div>
+                                </div> --}}
 
                                 <div class="col-auto col-lg-3">
                                     <div class="input-group">

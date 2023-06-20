@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+{{-- @extends('backend.layouts.master')
 
 @section('title')
     {{ localize('Website Homepage Configuration') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
@@ -137,4 +137,4 @@
             showSelectedFilePreviewOnLoad();
         });
     </script>
-@endsection
+@endsection --}}

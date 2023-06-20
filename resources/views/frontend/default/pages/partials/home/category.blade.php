@@ -1,4 +1,4 @@
-<section class="gshop-category-section bg-white pt-120 position-relative z-1 overflow-hidden">
+{{-- <section class="gshop-category-section bg-white pt-120 position-relative z-1 overflow-hidden">
     <img src="{{ staticAsset('frontend/default/assets/img/shapes/bg-shape.png') }}" alt="bg shape"
         class="position-absolute bottom-0 start-0 w-100 z--1">
     <div class="container">
@@ -39,4 +39,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}

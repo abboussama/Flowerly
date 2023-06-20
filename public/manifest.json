@@ -1,9 +1,9 @@
 {
-    "name": "Grostore",
-    "short_name": "Grostore",
+    "name": "Flowerly",
+    "short_name": "Flowerly",
     "start_url": "/",
     "background_color": "#6777ef",
-    "description": "Grostore",
+    "description": "Flowerly",
     "display": "fullscreen",
     "theme_color": "#6eb356",
     "icons": [

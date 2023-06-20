@@ -153,8 +153,8 @@
 
 
     <!--scroll bottom to top button start-->
-    <button class="scroll-top-btn">
-        <i class="fa-regular fa-hand-pointer"></i></button>
+    {{-- <button class="scroll-top-btn">
+        <i class="fa-regular fa-hand-pointer"></i></button> --}}
         <!--scroll bottom to top button end-->
 
         <!--build:js-->

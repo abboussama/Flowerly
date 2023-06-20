@@ -53,7 +53,7 @@
 @endsection
 
 
-@section('breadcrumb-contents')
+{{-- @section('breadcrumb-contents')
     <div class="breadcrumb-content">
         <h2 class="mb-2 text-center">{{ localize('Product Details') }}</h2>
         <nav>
@@ -65,7 +65,7 @@
             </ol>
         </nav>
     </div>
-@endsection
+@endsection --}}
 
 @section('contents')
     <!--breadcrumb-->

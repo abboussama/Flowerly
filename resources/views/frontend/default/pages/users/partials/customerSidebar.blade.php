@@ -23,7 +23,7 @@
                 {{ localize('Dashboard') }}
             </a>
         </li>
-        <li>
+        {{-- <li>
             <a href="{{ route('customers.orderHistory') }}"
                 class="{{ areActiveRoutes(['customers.orderHistory'], 'active') }}">
                 <span class="me-2">
@@ -45,7 +45,7 @@
                 </span>
                 {{ localize('Order History') }}
             </a>
-        </li>
+        </li> --}}
 
         @if (getSetting('enable_reward_points') == 1)
             <li>
@@ -66,7 +66,7 @@
             </li>
         @endif
 
-        <li>
+        {{-- <li>
             <a href="{{ route('customers.walletHistory') }}"
                 class="{{ areActiveRoutes(['customers.walletHistory'], 'active') }}">
                 <span class="me-2">
@@ -81,7 +81,7 @@
                 </span>
                 {{ localize('Wallet History') }}
             </a>
-        </li>
+        </li> --}}
 
 
         @if (getSetting('enable_refund_system') == 1)
@@ -101,7 +101,7 @@
                 </a>
             </li>
         @endif
-        <li>
+        {{-- <li>
             <a href="{{ route('customers.trackOrder') }}"
                 class="{{ areActiveRoutes(['customers.trackOrder'], 'active') }}">
                 <span class="me-2">
@@ -117,9 +117,9 @@
                     </svg>
 
                 </span>
-                {{ localize('Track Order') }}
-            </a>
-        </li>
+                {{-- {{ localize('Track Order') }} --}}
+            {{-- </a>
+        </li> --}}
 
         <li>
             <a href="{{ route('customers.address') }}"
@@ -151,7 +151,7 @@
                             fill="#5D6374" />
                     </svg>
                 </span>
-                {{ localize('Updated Profile') }}
+                {{ localize('Change Password') }}
             </a>
         </li>
 

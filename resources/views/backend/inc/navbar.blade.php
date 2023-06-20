@@ -31,7 +31,7 @@
                 @endif
 
                 <div class="tt-search-box d-none d-md-block d-lg-block flex-grow-1 me-4">
-                    <form action="">
+                    {{-- <form action="">
                         <div class="input-group">
                             <span class="position-absolute top-50 start-0 translate-middle-y ms-2"> <i
                                     data-feather="search"></i></span>
@@ -42,7 +42,7 @@
                                 @endisset
                                 placeholder="{{ localize('Search') }}...">
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
                 <ul class="navbar-nav flex-row align-items-center tt-top-navbar">
 
@@ -59,8 +59,8 @@
 
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link tt-theme-toggle">
-                            <div class="tt-theme-light"><i data-feather="moon" class="fs-xm"></i></div>
-                            <div class="tt-theme-dark"><i data-feather="sun" class="fs-xm"></i></div>
+                            {{-- <div class="tt-theme-light"><i data-feather="moon" class="fs-xm"></i></div>
+                            <div class="tt-theme-dark"><i data-feather="sun" class="fs-xm"></i></div> --}}
                         </a>
                     </li>
 
@@ -82,14 +82,14 @@
                     @endcan
 
 
-                    <a class="nav-link position-relative tt-notification" href="#" role="button"
+                    {{-- <a class="nav-link position-relative tt-notification" href="#" role="button"
                         id="notificationDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                        data-bs-auto-close="outside">
-                        <i data-feather="bell"></i>
-                        @if ($newMsgCount > 0 || $newOrdersCount > 0)
+                        data-bs-auto-close="outside"> --}}
+                        {{-- <i data-feather="bell"></i> --}}
+                        {{-- @if ($newMsgCount > 0 || $newOrdersCount > 0)
                             <span class="tt-notification-dot bg-danger rounded-circle"></span>
-                        @endif
-                    </a>
+                        @endif --}}
+                    {{-- </a> --}}
 
                     <div class="dropdown-menu dropdown-menu-end py-0 shadow-sm border-0"
                         aria-labelledby="notificationDropdown">
@@ -138,7 +138,7 @@
                     </div>
                     </li>
 
-                    <li class="nav-item dropdown tt-user-dropdown">
+                    {{-- <li class="nav-item dropdown tt-user-dropdown">
                         <a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button"
                             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true"
                             aria-expanded="true">
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </nav>

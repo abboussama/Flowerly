@@ -28,7 +28,7 @@
                             <table class="order-history-table table">
                                 <tbody>
                                     <tr>
-                                        <th>{{ localize('Order Code') }}</th>
+                                        {{-- <th>{{ localize('Order ddsdCode') }}</th> --}}
                                         <th>{{ localize('Placed on') }}</th>
                                         <th>{{ localize('Items') }}</th>
                                         <th>{{ localize('Total') }}</th>
@@ -38,8 +38,8 @@
 
                                     @foreach ($recentOrders as $recentOrder)
                                         <tr>
-                                            <td>{{ getSetting('order_code_prefix') }}{{ $recentOrder->orderGroup->order_code }}
-                                            </td>
+                                            {{-- <td>{{ getSetting('order_code_prefix') }}{{ $recentOrder->orderGroup->order_code }}
+                                            </td> --}}
                                             <td>{{ date('d M, Y', strtotime($recentOrder->created_at)) }}</td>
                                             <td>{{ $recentOrder->orderItems()->count() }}</td>
                                             <td class="text-secondary">
@@ -50,11 +50,11 @@
                                                 </span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('customers.trackOrder') }}?code={{ $recentOrder->orderGroup->order_code }}"
+                                                {{-- <a href="{{ route('customers.trackOrder') }}?code={{ $recentOrder->orderGroup->order_code }}"
                                                     class="view-invoice fs-xs me-2" target="_blank" data-bs-toggle="tooltip"
                                                     data-bs-placement="top"
                                                     data-bs-title="{{ localize('Track My Order') }}"><i
-                                                        class="fas fa-truck text-dark"></i></a>
+                                                        class="fas fa-truck text-dark"></i></a> --}}
 
                                                 <a href="{{ route('checkout.invoice', $recentOrder->orderGroup->order_code) }}"
                                                     class="view-invoice fs-xs" target="_blank" data-bs-toggle="tooltip"

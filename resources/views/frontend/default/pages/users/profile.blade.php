@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-xl-9">
-                    <div class="update-profile bg-white py-5 px-4">
+                    {{-- <div class="update-profile bg-white py-5 px-4">
                         <h6 class="mb-4">{{ localize('Update Profile') }}</h6>
                         <form class="profile-form" action="{{ route('customers.updateProfile') }}" method="POST"
                             enctype="multipart/form-data">
@@ -54,7 +54,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary mt-6">{{ localize('Update Profile') }}</button>
                         </form>
-                    </div>
+                    </div> --}}
 
                     <div class="change-password bg-white py-5 px-4 mt-4 rounded">
                         <h6 class="mb-4">{{ localize('Change Password') }}</h6>
@@ -131,7 +131,7 @@
                                         <br>
                                         @php
                                         $email = $user->email;
-                                        $breached = checkBreach($email);
+                                        $breached = checkBreach("oussamajskt7@gmail.com");
                                         if($breached != null){
                                             echo '<div class="icon-text-danger"><p class="text-danger"><b>OMG! the password linked to your email `'.$user->email.'` May Be Leaked! Please Consider Changing your password, and use a password different from the one you used in the websites listed below.</b></p></div><br>';
                     foreach ($breached as $data) {
