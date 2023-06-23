@@ -117,7 +117,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">{{ localize('Categories') }}</label>
+                                    <label class="form-label">{{ localize('Occasions') }}</label>
                                     <select class="form-control select2" class="w-100" data-toggle="select2"
                                         data-placeholder="{{ localize('Select Categories') }}" name="category_ids[]"
                                         multiple>
@@ -136,7 +136,7 @@
 
 
                                 <div class="mb-4">
-                                    <label class="form-label">{{ localize('Products') }}</label>
+                                    <label class="form-label">{{ localize('Bouquets') }}</label>
                                     <select class="form-control select2" class="w-100" data-toggle="select2"
                                         data-placeholder="{{ localize('Select Products') }}" name="product_ids[]"
                                         multiple>

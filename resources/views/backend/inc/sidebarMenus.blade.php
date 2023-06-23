@@ -19,7 +19,7 @@
                 aria-expanded="{{ areActiveRoutes($productsActiveRoutes, 'true') }}" aria-controls="sidebarProducts"
                 class="side-nav-link tt-menu-toggle">
                 <span class="tt-nav-link-icon"><i data-feather="shopping-bag"></i></span>
-                <span class="tt-nav-link-text">{{ localize('Products') }}</span>
+                <span class="tt-nav-link-text">{{ localize('Bouquets') }}</span>
             </a>
 
             <div class="collapse {{ areActiveRoutes($productsActiveRoutes, 'show') }}" id="sidebarProducts">
@@ -29,7 +29,7 @@
                         <li
                             class="{{ areActiveRoutes(['admin.products.index', 'admin.products.create', 'admin.products.edit'], 'tt-menu-item-active') }}">
                             <a href="{{ route('admin.products.index') }}"
-                                class="{{ areActiveRoutes(['admin.products.index', 'admin.products.create', 'admin.products.edit']) }}">{{ localize('All Products') }}</a>
+                                class="{{ areActiveRoutes(['admin.products.index', 'admin.products.create', 'admin.products.edit']) }}">{{ localize('All Bouquets') }}</a>
                         </li>
                     @endcan
 
@@ -317,7 +317,7 @@
                     @can('blog_categories')
                         <li
                             class="{{ areActiveRoutes(['admin.blogCategories.index', 'admin.blogCategories.edit'], 'tt-menu-item-active') }}">
-                            <a href="{{ route('admin.blogCategories.index') }}">{{ localize('Categories') }}</a>
+                            <a href="{{ route('admin.blogCategories.index') }}">{{ localize('Occasions') }}</a>
                         </li>
                     @endcan
                 </ul>

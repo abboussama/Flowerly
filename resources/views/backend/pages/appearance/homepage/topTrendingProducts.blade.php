@@ -32,7 +32,7 @@
                                     @php
                                         $trending_product_categories = getSetting('trending_product_categories') != null ? json_decode(getSetting('trending_product_categories')) : [];
                                     @endphp
-                                    <label class="form-label">{{ localize('Categories') }}</label>
+                                    <label class="form-label">{{ localize('Occasions') }}</label>
                                     <input type="hidden" name="types[]" value="trending_product_categories">
                                     <select class="select2Max3 form-control trending_product_categories" multiple="multiple"
                                         data-placeholder="{{ localize('Select categories') }}"

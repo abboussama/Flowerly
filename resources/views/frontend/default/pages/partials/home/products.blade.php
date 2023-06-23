@@ -5,7 +5,7 @@
             <div class="col-xxl-4 col-lg-6">
                 <div class="product-listing-box bg-white rounded-2">
                     <div class="d-flex align-items-center justify-content-between gap-3 mb-5 flex-wrap">
-                        <h4 class="mb-0">{{ localize('New Products') }}</h4>
+                        <h4 class="mb-0">{{ localize('New Bouquets') }}</h4>
                         <a href="{{ route('products.index') }}"
                             class="explore-btn text-secondary fw-bold">{{ localize('View More') }}<span class="ms-2"><i
                                     class="fas fa-arrow-right"></i></span></a>
@@ -28,7 +28,7 @@
                     <div class="d-flex align-items-center justify-content-between gap-3 mb-5 flex-wrap">
                         <h4 class="mb-0">{{ localize('Best Selling') }}</h4>
                         <a href="{{ route('products.index') }}"
-                            class="explore-btn text-secondary fw-bold">{{ localize('All Products') }}<span
+                            class="explore-btn text-secondary fw-bold">{{ localize('All Bouquets') }}<span
                                 class="ms-2"><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                     @php

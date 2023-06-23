@@ -138,7 +138,7 @@
                                         }
                                     @endphp
 
-                                    <label class="form-label">{{ localize('Categories') }}</label>
+                                    <label class="form-label">{{ localize('Occasions') }}</label>
                                     <select class="form-control select2" class="w-100" data-toggle="select2"
                                         data-placeholder="{{ localize('Select Categories') }}" name="category_ids[]"
                                         multiple>
@@ -164,7 +164,7 @@
                                             $coupon_products = App\Models\Product::whereIn('id', json_decode($coupon->product_ids))->pluck('id');
                                         }
                                     @endphp
-                                    <label for="parent_id" class="form-label">{{ localize('Products') }}</label>
+                                    <label for="parent_id" class="form-label">{{ localize('Bouquets') }}</label>
                                     <select class="form-control select2" class="w-100" data-toggle="select2"
                                         data-placeholder="{{ localize('Select Products') }}" name="product_ids[]"
                                         multiple>

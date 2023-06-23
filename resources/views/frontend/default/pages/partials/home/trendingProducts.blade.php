@@ -13,7 +13,7 @@
                         $trending_product_categories = getSetting('trending_product_categories') != null ? json_decode(getSetting('trending_product_categories')) : [];
                         $categories = \App\Models\Category::whereIn('id', $trending_product_categories)->get();
                     @endphp
-                    <button class="active" data-filter="*">{{ localize('All Products') }}</button>
+                    <button class="active" data-filter="*">{{ localize('All Bouquets') }}</button>
                     @foreach ($categories as $category)
                         <button data-filter=".{{ $category->id }}">{{ $category->collectLocalization('name') }}</button>
                     @endforeach

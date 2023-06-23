@@ -61,7 +61,7 @@
                                     <tr>
                                         <th class="text-center">{{ localize('ID') }}
                                         </th>
-                                        <th>{{ localize('Product Name') }}</th>
+                                        <th>{{ localize('Bouquet Name') }}</th>
                                         <th data-breakpoints="xs sm">{{ localize('Base Price') }}</th>
                                         <th data-breakpoints="xs sm md" class="text-end">{{ localize('Points') }}</th>
                                     </tr>

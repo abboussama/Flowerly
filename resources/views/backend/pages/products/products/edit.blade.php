@@ -53,7 +53,7 @@
                                 <h5 class="mb-4">{{ localize('Basic Information') }}</h5>
 
                                 <div class="mb-4">
-                                    <label for="name" class="form-label">{{ localize('Product Name') }}</label>
+                                    <label for="name" class="form-label">{{ localize('Bouquet Name') }}</label>
                                     <input class="form-control" type="text" id="name"
                                         placeholder="{{ localize('Type your product name') }}" name="name"
                                         value="{{ $product->collectLocalization('name', $lang_key) }}" required>

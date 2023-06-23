@@ -32,7 +32,7 @@
                                     @php
                                         $product_listing_categories = getSetting('product_listing_categories') != null ? json_decode(getSetting('product_listing_categories')) : [];
                                     @endphp
-                                    <label class="form-label">{{ localize('Categories') }}</label>
+                                    <label class="form-label">{{ localize('Occasions') }}</label>
                                     <input type="hidden" name="types[]" value="product_listing_categories">
                                     <select class="select2 form-control product_listing_categories" multiple="multiple"
                                         data-placeholder="{{ localize('Select categories') }}"

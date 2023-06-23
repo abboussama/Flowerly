@@ -82,7 +82,7 @@
                         <table class="table invoice-table">
                             <tr>
                                 <th>{{ localize('ID') }}</th>
-                                <th>{{ localize('Products') }}</th>
+                                <th>{{ localize('Bouquets') }}</th>
                                 <th>{{ localize('U.Price') }}</th>
                                 <th>{{ localize('QTY') }}</th>
                                 <th>{{ localize('T.Price') }}</th>

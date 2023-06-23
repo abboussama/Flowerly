@@ -187,11 +187,11 @@
                         </div>
                         <nav class="gshop-navmenu ms-3 d-none d-xl-block">
                             <ul class="d-flex align-itmes-center justify-content-end">
-                                {{-- <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li> --}}
+                                <li><a href="{{ route('home') }}">{{ localize('Home') }}</a></li>
                                 <li><a href="{{ route('products.index') }}">{{ localize('Bouquets') }}</a></li>
                                 {{-- <li><a href="{{ route('home.campaigns') }}">{{ localize('Campaigns') }}</a> --}}
                                 </li>
-                                {{-- <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a> --}}
+                                <li><a href="{{ route('home.coupons') }}">{{ localize('Coupons') }}</a>
                                 </li>
 
                                 <li class="has-submenu">
@@ -362,7 +362,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div
+                        {{-- <div
                             class="gshop-header-contact align-items-center ms-7 position-relative d-none d-lg-flex d-xl-none d-xxl-flex">
                             <a href="tel:{{ getSetting('navbar_contact_number') }}"
                                 class="d-flex align-items-center">
@@ -381,7 +381,7 @@
                                     <h6 class="mb-0 mt-1 fs-sm">{{ getSetting('navbar_contact_number') }}</h6>
                                 </div>
                             </a>
-                        </div>
+                        </div> --}}
                         <button class="gshop-offcanvas-btn offcanvas-toggle ms-3">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

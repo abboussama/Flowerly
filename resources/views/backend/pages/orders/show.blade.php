@@ -164,7 +164,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center" width="7%">{{ localize('ID') }}</th>
-                                    <th>{{ localize('Products') }}</th>
+                                    <th>{{ localize('Bouquets') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Unit Price') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('QTY') }}</th>
                                     <th data-breakpoints="xs sm" class="text-end">{{ localize('Total Price') }}</th>

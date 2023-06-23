@@ -49,7 +49,7 @@
 
     <div class="sidebar-widget category-widget bg-white py-5 px-4 border-top">
         <div class="widget-title d-flex">
-            <h6 class="mb-0 flex-shrink-0">{{ localize('Categories') }}</h6>
+            <h6 class="mb-0 flex-shrink-0">{{ localize('Occasions') }}</h6>
             <span class="hr-line w-100 position-relative d-block align-self-end ms-1"></span>
         </div>
         <ul class="widget-nav mt-4">

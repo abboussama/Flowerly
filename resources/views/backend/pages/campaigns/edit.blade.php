@@ -84,7 +84,7 @@
                         <!-- products -->
                         <div class="card mb-4" id="section-2">
                             <div class="card-body">
-                                <h5 class="">{{ localize('Products') }}</h5>
+                                <h5 class="">{{ localize('Bouquets') }}</h5>
                                 <div class="mb-4">
                                     <select class="form-control select2" class="w-100" data-toggle="select2"
                                         data-placeholder="{{ localize('Select Products') }}" name="product_ids[]" multiple
@@ -144,7 +144,7 @@
                                         <a href="#section-1" class="active">{{ localize('Basic Information') }}</a>
                                     </li>
                                     <li>
-                                        <a href="#section-2">{{ localize('Products') }}</a>
+                                        <a href="#section-2">{{ localize('Bouquets') }}</a>
                                     </li>
                                 </ul>
                             </div>

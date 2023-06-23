@@ -29,7 +29,7 @@
                 <table class="cart-table w-100 bg-white">
                     <thead>
                         <th>{{ localize('Image') }}</th>
-                        <th>{{ localize('Product Name') }}</th>
+                        <th>{{ localize('Bouquet Name') }}</th>
                         <th>{{ localize('U. Price') }}</th>
                         <th>{{ localize('Quantity') }}</th>
                         <th>{{ localize('T. Price') }}</th>

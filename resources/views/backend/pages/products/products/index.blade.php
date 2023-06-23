@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('title')
-    {{ localize('Products') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
+    {{ localize('Bouquets') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
 @endsection
 
 @section('contents')
@@ -12,12 +12,12 @@
                     <div class="card tt-page-header">
                         <div class="card-body d-lg-flex align-items-center justify-content-lg-between">
                             <div class="tt-page-title">
-                                <h2 class="h5 mb-lg-0">{{ localize('Products') }}</h2>
+                                <h2 class="h5 mb-lg-0">{{ localize('Bouquets') }}</h2>
                             </div>
                             <div class="tt-action">
                                 @can('add_products')
                                     <a href="{{ route('admin.products.create') }}" class="btn btn-primary"><i
-                                            data-feather="plus"></i> {{ localize('Add Product') }}</a>
+                                            data-feather="plus"></i> {{ localize('Add Bouquet') }}</a>
                                 @endcan
                             </div>
                         </div>
@@ -28,74 +28,17 @@
             <div class="row g-4">
                 <div class="col-12">
                     <div class="card mb-4" id="section-1">
-                        <form class="app-search" action="{{ Request::fullUrl() }}" method="GET">
-                            <div class="card-header border-bottom-0">
-                                <div class="row justify-content-between g-3">
-                                    <div class="col-auto flex-grow-1">
-                                        <div class="tt-search-box">
-                                            <div class="input-group">
-                                                <span class="position-absolute top-50 start-0 translate-middle-y ms-2"> <i
-                                                        data-feather="search"></i></span>
-                                                <input class="form-control rounded-start w-100" type="text"
-                                                    id="search" name="search" placeholder="{{ localize('Search') }}"
-                                                    @isset($searchKey)
-                                                value="{{ $searchKey }}"
-                                                @endisset>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="input-group">
-                                            <select class="form-select select2" name="brand_id">
-                                                <option value="">{{ localize('Select Brand') }}</option>
-                                                @foreach ($brands as $brand)
-                                                    <option value="{{ $brand->id }}"
-                                                        @isset($brand_id)
-                                                         @if ($brand_id == $brand->id) selected @endif
-                                                        @endisset>
-                                                        {{ $brand->collectLocalization('name') }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="input-group">
-                                            <select class="form-select select2" name="is_published"
-                                                data-minimum-results-for-search="Infinity">
-                                                <option value="">{{ localize('Select Status') }}</option>
-                                                <option value="1"
-                                                    @isset($is_published)
-                                                         @if ($is_published == 1) selected @endif
-                                                        @endisset>
-                                                    {{ localize('Published') }}</option>
-                                                <option value="0"
-                                                    @isset($is_published)
-                                                         @if ($is_published == 0) selected @endif
-                                                        @endisset>
-                                                    {{ localize('Hidden') }}</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-secondary">
-                                            <i data-feather="search" width="18"></i>
-                                            {{ localize('Search') }}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
 
                         <table class="table tt-footable border-top" data-use-parent-width="true">
                             <thead>
                                 <tr>
                                     <th class="text-center">{{ localize('ID') }}
                                     </th>
-                                    <th>{{ localize('Product Name') }}</th>
-                                    <th data-breakpoints="xs sm">{{ localize('Brand') }}</th>
-                                    <th data-breakpoints="xs sm">{{ localize('Categories') }}</th>
+                                    <th>{{ localize('Bouquet Name') }}</th>
+                                    {{-- <th data-breakpoints="xs sm">{{ localize('Brand') }}</th> --}}
+                                    <th data-breakpoints="xs sm">{{ localize('Occasions') }}</th>
                                     <th data-breakpoints="xs sm">{{ localize('Price') }}</th>
-                                    <th data-breakpoints="xs sm md">{{ localize('Published') }}</th>
+                                    {{-- <th data-breakpoints="xs sm md">{{ localize('Published') }}</th> --}}
                                     <th data-breakpoints="xs sm md" class="text-end">{{ localize('Action') }}</th>
                                 </tr>
                             </thead>
@@ -116,10 +59,10 @@
                                                 </h6>
                                             </a>
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             <span
                                                 class="fs-sm">{{ optional($product->brand)->collectLocalization('name') }}</span>
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @forelse ($product->categories as $category)
                                                 <span
@@ -142,7 +85,7 @@
                                                 </span>
                                             </div>
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             @can('publish_products')
                                                 <div class="form-check form-switch">
                                                     <input type="checkbox" onchange="updatePublishedStatus(this)"
@@ -152,7 +95,7 @@
                                                 </div>
                                             @endcan
 
-                                        </td>
+                                        </td> --}}
                                         <td class="text-end">
                                             <div class="dropdown tt-tb-dropdown">
                                                 <button type="button" class="btn p-0" data-bs-toggle="dropdown"

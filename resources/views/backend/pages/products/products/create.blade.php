@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('title')
-    {{ localize('Add Product') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
+    {{ localize('Add Bouquet') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
 @endsection
 
 @section('contents')
@@ -12,7 +12,7 @@
                     <div class="card tt-page-header">
                         <div class="card-body d-lg-flex align-items-center justify-content-lg-between">
                             <div class="tt-page-title">
-                                <h2 class="h5 mb-lg-0">{{ localize('Add Product') }}</h2>
+                                <h2 class="h5 mb-lg-0">{{ localize('Add Bouquet') }}</h2>
                             </div>
 
                         </div>
@@ -32,18 +32,18 @@
                                 <h5 class="mb-4">{{ localize('Basic Information') }}</h5>
 
                                 <div class="mb-4">
-                                    <label for="name" class="form-label">{{ localize('Product Name') }}</label>
+                                    <label for="name" class="form-label">{{ localize('Bouquet\'s Name') }}</label>
                                     <input class="form-control" type="text" id="name"
-                                        placeholder="{{ localize('Type your product name') }}" name="name" required>
+                                        placeholder="{{ localize('Type your Bouquet\'s Name name') }}" name="name" required>
                                     <span class="fs-sm text-muted">
-                                        {{ localize('Product name is required and recommended to be unique.') }}
+                                        {{ localize('Bouquet\'s Name is required and recommended to be unique.') }}
                                     </span>
                                 </div>
                                 <div class="mb-4">
                                     <label for="short_description"
                                         class="form-label">{{ localize('Short Description') }}</label>
                                     <textarea class="form-control" id="short_description"
-                                        placeholder="{{ localize('Type your product short description') }}" rows="5" name="short_description"></textarea>
+                                        placeholder="{{ localize('Type your Bouquet\'s short description') }}" rows="5" name="short_description"></textarea>
                                 </div>
                                 <div class="mb-4">
                                     <label for="description" class="form-label">{{ localize('Description') }}</label>
@@ -61,7 +61,7 @@
                                 <div class="mb-4">
                                     <label class="form-label">{{ localize('Thumbnail') }} (592x592)</label>
                                     <div class="tt-image-drop rounded">
-                                        <span class="fw-semibold">{{ localize('Choose Product Thumbnail') }}</span>
+                                        <span class="fw-semibold">{{ localize('Choose Bouquet\'s Thumbnail') }}</span>
                                         <!-- choose media -->
                                         <div class="tt-product-thumb show-selected-files mt-3">
                                             <div class="avatar avatar-xl cursor-pointer choose-media"
@@ -102,10 +102,10 @@
                         <!--product category start-->
                         <div class="card mb-4" id="section-3">
                             <div class="card-body">
-                                <h5 class="mb-4">{{ localize('Product Categories') }}</h5>
+                                <h5 class="mb-4">{{ localize('Bouquet\'s Occasions') }}</h5>
                                 <div class="mb-4">
                                     <select class="select2 form-control" multiple="multiple"
-                                        data-placeholder="{{ localize('Select categories') }}" name="category_ids[]"
+                                        data-placeholder="{{ localize('Select Occasions') }}" name="category_ids[]"
                                         required>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">
@@ -524,49 +524,7 @@
                         </div>
                         <!--product sell target & status end-->
 
-                        <!--seo meta description start-->
-                        <div class="card mb-4" id="section-10">
-                            <div class="card-body">
-                                <h5 class="mb-4">{{ localize('SEO Meta Configuration') }}</h5>
-
-                                <div class="mb-4">
-                                    <label for="meta_title" class="form-label">{{ localize('Meta Title') }}</label>
-                                    <input type="text" name="meta_title" id="meta_title"
-                                        placeholder="{{ localize('Type meta title') }}" class="form-control">
-                                    <span class="fs-sm text-muted">
-                                        {{ localize('Set a meta tag title. Recommended to be simple and unique.') }}
-                                    </span>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="meta_description"
-                                        class="form-label">{{ localize('Meta Description') }}</label>
-                                    <textarea class="form-control" name="meta_description" id="meta_description" rows="4"
-                                        placeholder="{{ localize('Type your meta description') }}"></textarea>
-                                </div>
-                                <div class="mb-4">
-                                    <label class="form-label">{{ localize('Meta Image') }}</label>
-                                    <div class="tt-image-drop rounded">
-                                        <span class="fw-semibold">{{ localize('Choose Meta Image') }}</span>
-                                        <!-- choose media -->
-                                        <div class="tt-product-thumb show-selected-files mt-3">
-                                            <div class="avatar avatar-xl cursor-pointer choose-media"
-                                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-                                                onclick="showMediaManager(this)" data-selection="single">
-                                                <input type="hidden" name="meta_image">
-                                                <div class="no-avatar rounded-circle">
-                                                    <span><i data-feather="plus"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- choose media -->
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--seo meta description end-->
-
+                    
                         <!-- submit button -->
                         <div class="row">
                             <div class="col-12">

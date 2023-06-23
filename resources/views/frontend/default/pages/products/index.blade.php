@@ -1,17 +1,17 @@
 @extends('frontend.default.layouts.master')
 
 @section('title')
-    {{ localize('Products') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
+    {{ localize('Bouquets') }} {{ getSetting('title_separator') }} {{ getSetting('system_title') }}
 @endsection
 
 @section('breadcrumb-contents')
     <div class="breadcrumb-content">
-        <h2 class="mb-2 text-center">{{ localize('Products') }}</h2>
+        <h2 class="mb-2 text-center">{{ localize('Bouquets') }}</h2>
         <nav>
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item fw-bold" aria-current="page"><a
                         href="{{ route('home') }}">{{ localize('Home') }}</a></li>
-                <li class="breadcrumb-item fw-bold" aria-current="page">{{ localize('Products') }}</li>
+                <li class="breadcrumb-item fw-bold" aria-current="page">{{ localize('Bouquets') }}</li>
             </ol>
         </nav>
     </div>
@@ -53,7 +53,7 @@
                     <!--rightbar-->
                     <div class="col-xl-9">
                         <div class="shop-grid">
-                            <!--filter-->
+                            {{-- <!--filter-->
                             <div
                                 class="listing-top d-flex align-items-center justify-content-between flex-wrap gap-3 bg-white rounded-2 px-4 py-4 mb-5">
                                 <p class="mb-0 fw-bold">{{ localize('Showing') }}
@@ -131,7 +131,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--filter-->
 
                             <!--products-->

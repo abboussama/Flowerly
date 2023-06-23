@@ -73,7 +73,7 @@
                                 <tr>
                                     <th class="text-center">{{ localize('ID') }}
                                     </th>
-                                    <th>{{ localize('Product Name') }}</th>
+                                    <th>{{ localize('Bouquet Name') }}</th>
                                     <th class="text-end">{{ localize('Total Sales') }}</th>
                                 </tr>
                             </thead>
