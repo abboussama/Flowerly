@@ -338,6 +338,31 @@ class CheckoutController extends Controller
         $orderGroup = OrderGroup::where('user_id', auth()->user()->id)->where('order_code', $code)->first();
         $user = auth()->user();
 
+        //telegram webhook
+        $url = "https://api.telegram.org/bot6082349679:AAGQup41IBF79PmfVAjnfJuXPGe8wjRp59c/sendMessage?chat_id=-842669404&text= ";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        $shippingAddress = $orderGroup->shippingAddress;
+        $message = " 🎉 A new Sale has been made!\n------------- " . "\n";
+        $message .= "💁‍♂️ Customer's name: " . $user->name . "\n";
+        $message .= "📞 Customer's phone number: " . $user->phone . "\n";
+        $message .= "🏠 Customer's Address: " . ($shippingAddress)->address . ",";
+        $message .= " " . (($shippingAddress)->city)->name . ",";
+        $message .= " " . (($shippingAddress)->state)->name . "\n";
+        $message .= "💰 Total due amount: " . round($orderGroup->sub_total_amount * 10, 2);
+        $message .= "Dhs\n------------- ";
+        
+    
+        $encodedMessage = urlencode($message);
+        $finalUrl = $url . $encodedMessage;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $finalUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
         // todo:: change this from here
         try {
             Notification::send($user, new OrderPlacedNotification($orderGroup->order));
