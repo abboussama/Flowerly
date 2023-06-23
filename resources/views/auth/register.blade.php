@@ -1,38 +1,3 @@
-<?php
-
-function is_valid($phone) {
-    $api_key = '8fba9eb7';
-    $api_secret = 'eDGtmXg7mq9fhj17';
-    $endpoint = "https://api.nexmo.com/ni/advanced/json?api_key=$api_key&api_secret=$api_secret&number=$phone";
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $endpoint);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    curl_close($ch);
-
-    if ($httpCode === 200) {
-        // Successful request
-        $data = json_decode($response, true);
-
-        if ($data['valid_number'] === 'valid') {
-            // Phone number is valid
-            return "number is valid";
-        } else {
-            // Phone number is not valid
-            return "number is not valid";
-        }
-    } else {
-        // Request failed
-        return false;
-    }
-}
-
-
-?>
 @extends('layouts.auth')
 
 @section('title')
@@ -100,7 +65,7 @@ function is_valid($phone) {
                                     <label class="fw-bold text-dark fs-sm mb-1">{{ localize('Password') }}<sup
                                             class="text-danger">*</sup></label>
                                     <div class="check-password">
-                                        <input type="password" name="password" placeholder="{{ localize('Password') }}"
+                                        <input type="password" name="password" id="password" placeholder="{{ localize('Password') }}"
                                             class="theme-input" required>
                                         <span class="eye eye-icon"><i class="fa-solid fa-eye"></i></span>
                                         <span class="eye eye-slash"><i class="fa-solid fa-eye-slash"></i></span>
@@ -119,12 +84,17 @@ function is_valid($phone) {
                                     </div>
                                 </div>
                             </div>
+                        </div><br>
+                        <div class="icon-text-danger">
+                            <p class="text-danger"><b>{{ localize('Humans Only, No Cyborgs!') }}</b></p>
                         </div>
+                        <!-- Add the reCAPTCHA checkbox here -->
+                        <div class="g-recaptcha" data-sitekey="6LdYhawmAAAAAFXtd2-LWlayTE4O6O3VUWOXQl8E"></div>
+
                         <div class="row g-4 mt-3">
                             <div class="col-sm-12">
                                 <button type="submit" class="btn btn-primary w-100 sign-in-btn">{{ localize('Sign Up') }}</button>
                             </div>
-
                         </div>
                         <p class="mb-0 fs-xs mt-4">{{ localize('Already have an Account?') }} <a
                                 href="{{ route('login') }}">{{ localize('Sign In') }}</a></p>
@@ -136,40 +106,27 @@ function is_valid($phone) {
 @endsection
 
 @section('scripts')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        "use strict";
-
-//         function is_valid(phone) {
-//     var apiKey = '8fba9eb7';
-//     var apiSecret = 'eDGtmXg7mq9fhj17';
-//     var endpoint = `https://api.nexmo.com/ni/advanced/json?api_key=${apiKey}&api_secret=${apiSecret}&number=${phone}`;
-
-//     return fetch(endpoint)
-//         .then(response => {
-//             if (response.ok) {
-//                 return response.json();
-//             } else {
-//                 throw new Error('Request failed');
-//             }
-//         })
-//         .then(data => {
-//             if (data.valid_number === 'valid') {
-//                 return 'number is valid';
-//             } else {
-//                 return 'number is not valid';
-//             }
-//         })
-//         .catch(error => {
-//             console.error(error);
-//             return false;
-//         });
-// }
-
         document.getElementById('login-form').addEventListener('submit', function(event) {
-            
-                // Phone number is valid, disable the submit button
-                document.querySelector('.sign-in-btn').disabled = true;
-        
+            var response = grecaptcha.getResponse();
+            var password = document.getElementById('password').value;
+            var name = document.getElementById('name').value.toLowerCase();
+
+            if (!response.length) { // Check if reCAPTCHA is not filled
+                event.preventDefault(); // Prevent form submission
+                alert('Please complete the reCAPTCHA.'); // Show an alert message to the user
+            }
+
+            if (password.length < 8 || !/\d/.test(password) || !/[A-Z]/.test(password) || !/[!@#$%^&*]/.test(password) || password.toLowerCase().includes(name)) {
+                event.preventDefault(); // Prevent form submission
+                alert(`Please enter a valid password that meets the following requirements:
+            \n- Minimum length of 8 characters
+            \n- Contains at least one digit
+            \n- Contains at least one uppercase letter
+            \n- Contains at least one special character from the set !@#$%^&*
+            \n- Does not include your name (case-insensitive)`); // Show an alert message to the user
+            }
         });
     </script>
 @endsection
