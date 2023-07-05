@@ -76,8 +76,8 @@
                                             <a class="d-flex align-items-center">
                                                 <div class="avatar avatar-sm">
                                                     <img class="rounded-circle"
-                                                        src="{{ uploadedAsset($campaign->banner) }}"
-                                                        alt="{{ $campaign->code }}" />
+                                                        src="https://i.ibb.co/gPKfjDK/Yellow-Modern-Food-Promotion-Instagram-Story.png"
+                                                        alt="Banner image" />
                                                 </div>
                                                 <h6 class="fs-sm mb-0 ms-2">{{ $campaign->title }}
                                                 </h6>

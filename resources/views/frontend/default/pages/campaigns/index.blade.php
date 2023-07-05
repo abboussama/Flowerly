@@ -38,7 +38,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="card shadow-sm border-0 tt-single-campaign tt-gradient-right"
                             style="background:
-          url('{{ uploadedAsset($campaign->banner) }}')no-repeat center
+          url('https://i.ibb.co/gPKfjDK/Yellow-Modern-Food-Promotion-Instagram-Story.png')no-repeat center
           center / cover">
                             <div class="card-body p-5 w-75">
                                 <h3 class="h5 text-light">{{ $campaign->title }}</h3>

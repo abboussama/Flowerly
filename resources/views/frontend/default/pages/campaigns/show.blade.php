@@ -8,7 +8,7 @@
     <!--breadcrumb-->
     <div class="gstore-breadcrumb position-relative z-1 overflow-hidden mt--50 tt-campaign-single-bg"
         style="background:
-      url('{{ uploadedAsset($campaign->banner) }}')no-repeat center
+      url('https://i.ibb.co/gPKfjDK/Yellow-Modern-Food-Promotion-Instagram-Story.png')no-repeat center
       center / cover">
         <img src="{{ staticAsset('frontend/default/assets/img/shapes/bg-shape-6.png') }}" alt="bg-shape"
             class="position-absolute start-0 z--1 w-100 bg-shape">

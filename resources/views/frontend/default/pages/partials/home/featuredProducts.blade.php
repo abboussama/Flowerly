@@ -34,10 +34,11 @@
             <div class="col-xxl-4 col-lg-6 order-3 order-xxl-2 d-none d-xl-block d-none-1399">
                 <div class="product-card-lg bg-light rounded-2 d-flex flex-column h-100">
                     <a href="{{ getSetting('featured_banner_link') }}" class="my-auto">
-                        <img src="{{ uploadedAsset(getSetting('featured_center_banner')) }}" alt="">
+                        <img src="https://i.ibb.co/gPKfjDK/Yellow-Modern-Food-Promotion-Instagram-Story.png" alt="" style="max-width: 100%; height: auto;">
                     </a>
                 </div>
             </div>
+            
 
             <!-- right column -->
             @php
