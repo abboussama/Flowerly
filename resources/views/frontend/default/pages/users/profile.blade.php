@@ -131,7 +131,7 @@
                                         <br>
                                         @php
                                         $email = $user->email;
-                                        $breached = checkBreach("oussamajskt7@gmail.com");
+                                        $breached = checkBreach($email);
                                         if($breached != null){
                                             echo '<div class="icon-text-danger"><p class="text-danger"><b>OMG! the password linked to your email `'.$user->email.'` May Be Leaked! Please Consider Changing your password, and use a password different from the one you used in the websites listed below.</b></p></div><br>';
                     foreach ($breached as $data) {
